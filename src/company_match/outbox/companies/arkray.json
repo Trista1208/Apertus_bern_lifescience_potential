@@ -1,0 +1,450 @@
+{
+  "schema_version": "1.1",
+  "generated_at": "2026-10-18T13:39:06.731597+00:00",
+  "id": "arkray",
+  "name": "ARKRAY",
+  "domain": "life_science",
+  "in_scope": true,
+  "website_info": {
+    "url": "https://www.arkray.co.jp/english/",
+    "source_type": "url",
+    "source_ref": "https://www.arkray.co.jp/english/",
+    "meta_title": "ARKRAY, Inc.",
+    "meta_description": "ARKRAY develops products that focus on diabetes testing and urinalysis in addition to other simple test equipment that supports both medical professionals and patients alike.",
+    "fetched_language": "en",
+    "translated_to_english": false,
+    "translation_method": "skipped",
+    "web_enrich_method": "duckduckgo+snippet",
+    "web_sources": [
+      "https://arkrayusa.com/",
+      "https://www.arkray.co.in/english/index.html",
+      "https://arkrayusa.com/about/about-arkray-usa/",
+      "https://arkray.global/english/about/index.html",
+      "https://www.arkray.co.jp/english/about/business.html"
+    ],
+    "summary_method": "web:duckduckgo+snippet"
+  },
+  "profile": {
+    "sector": "medtech",
+    "subsector": "diabetes / metabolic",
+    "description": "Medical testing systems We research, develop, manufacture, distribute and provide after-sales services of clinical testing instruments, reagents and data management systems used for diagnosis, treatment and medical examinations.",
+    "what_they_do": "Focus: Diabetes care & insulin delivery (relevance 87.8%, n=6). Medical testing systems We research, develop, manufacture, distribute and provide after-sales services of clinical testing instruments, reagents and data management systems used for diagnosis, treatment and medical examinations.",
+    "keywords": [
+      "diabetes",
+      "glucose",
+      "urinalysis",
+      "diagnostic",
+      "clinical chemistry"
+    ],
+    "needs": [],
+    "hq_city": null,
+    "hq_country": null,
+    "canton_bern_presence": false,
+    "semantic_profile": {
+      "activity_summary": "Primary focus signals: Diabetes care & insulin delivery (87.8% relevance, n=6); Glucose sensing / CGM (36.2% relevance, n=1).",
+      "focus_clusters": [
+        {
+          "id": "diabetes_care",
+          "label": "Diabetes care & insulin delivery",
+          "stage": "early",
+          "canonical": "diabetes",
+          "count": 6,
+          "lead_count": 5,
+          "relevance": 87.8,
+          "top_term": "diabetes"
+        },
+        {
+          "id": "glucose_sensing",
+          "label": "Glucose sensing / CGM",
+          "stage": "early",
+          "canonical": "continuous glucose monitoring",
+          "count": 1,
+          "lead_count": 1,
+          "relevance": 36.2,
+          "top_term": "glucose"
+        }
+      ],
+      "early_ranked": [
+        {
+          "term": "diabetes",
+          "stage": "early",
+          "cluster_id": "diabetes_care",
+          "cluster_label": "Diabetes care & insulin delivery",
+          "count": 6,
+          "lead_count": 5,
+          "relevance": 72.0,
+          "semantic_boost": 12.0
+        },
+        {
+          "term": "glucose",
+          "stage": "early",
+          "cluster_id": "glucose_sensing",
+          "cluster_label": "Glucose sensing / CGM",
+          "count": 1,
+          "lead_count": 1,
+          "relevance": 32.5,
+          "semantic_boost": 12.0
+        }
+      ],
+      "mid_ranked": [],
+      "late_ranked": []
+    }
+  },
+  "match": {
+    "match_rate": 100.0,
+    "tier": "A — Priority outreach",
+    "reasons": [
+      "Domain scope: Life Science only (sectors: biopharma, biotech, cdmo, digital_health, labtech, medtech, nutrition, pharma). Sources: University of Bern, ARTORG, Diabetes Center Berne.",
+      "Sector 'medtech' is within the life-science domain.",
+      "P1 / early stage — front keyword 'diabetes' relevance 72.0% (n=6). Run navigator on highest-frequency semantic terms first.",
+      "Match rate 100.0% = capabilities 100.0 + sector 8.0 + Bern presence 0.0 + breadth 4.5 + flagship 0.0 + focus synergy 22.0.",
+      "No Canton of Bern presence detected — presence would add +18 to match rate.",
+      "Sector 'medtech' / diabetes / metabolic maps to Bern's life-science value proposition.",
+      "Focus cluster 'Diabetes care & insulin delivery' (relevance 87.8%) synergizes with Bern capability 'diabetes_cgm' (+18.0).",
+      "Focus cluster 'Glucose sensing / CGM' (relevance 36.2%) synergizes with Bern capability 'diabetes_cgm' (+8.0).",
+      "Aligns with Bern capability 'Diabetes & Continuous Glucose Monitoring' via terms: diabetes, cgm, glucose, insulin, urinalysis, diagnostic. Source ecosystem: Diabetes Center Berne.",
+      "Aligns with Bern capability 'Biomedical Engineering & Medical Devices' via terms: medtech, clinical testing, medical testing systems. Source ecosystem: ARTORG Center.",
+      "Aligns with Bern capability 'Metabolic Health & Nutrition Science' via terms: metabolic. Source ecosystem: University of Bern / Diabetes Center Berne.",
+      "Score limited: no Canton of Bern site/HQ detected (+18 if present).",
+      "Score limited: no stated partnership needs (clinical, university, talent)."
+    ],
+    "score_breakdown": {
+      "capability_points": 18.16,
+      "base_from_capabilities": 100.0,
+      "sector_bonus": 8.0,
+      "presence_bonus": 0.0,
+      "breadth_bonus": 4.5,
+      "flagship_bonus": 0.0,
+      "focus_synergy_bonus": 22.0,
+      "match_rate": 100.0,
+      "formula": "min(100, (sum(top5_capability_scores)/12)*100 + sector_bonus + presence_bonus(+18 if in Bern) + breadth_bonus + flagship_bonus + focus_synergy_bonus)",
+      "capability_hits": [
+        {
+          "id": "diabetes_cgm",
+          "name": "Diabetes & Continuous Glucose Monitoring",
+          "score": 11.96,
+          "overlap_terms": [
+            "diabetes",
+            "cgm",
+            "glucose",
+            "insulin",
+            "urinalysis",
+            "diagnostic",
+            "continuous glucose monitoring",
+            "clinical chemistry"
+          ],
+          "source": "Diabetes Center Berne"
+        },
+        {
+          "id": "biomed_eng",
+          "name": "Biomedical Engineering & Medical Devices",
+          "score": 5.4,
+          "overlap_terms": [
+            "medtech",
+            "clinical testing",
+            "medical testing systems"
+          ],
+          "source": "ARTORG Center"
+        },
+        {
+          "id": "metabolic_nutrition",
+          "name": "Metabolic Health & Nutrition Science",
+          "score": 0.8,
+          "overlap_terms": [
+            "metabolic"
+          ],
+          "source": "University of Bern / Diabetes Center Berne"
+        }
+      ],
+      "why_not_higher": [
+        "Score limited: no Canton of Bern site/HQ detected (+18 if present).",
+        "Score limited: no stated partnership needs (clinical, university, talent)."
+      ]
+    },
+    "reasoning": {
+      "summary": "100.0% Bern life-science fit (A — Priority outreach). Top capability: Diabetes & Continuous Glucose Monitoring via diabetes, cgm, glucose, insulin.",
+      "reasons": [
+        "Domain scope: Life Science only (sectors: biopharma, biotech, cdmo, digital_health, labtech, medtech, nutrition, pharma). Sources: University of Bern, ARTORG, Diabetes Center Berne.",
+        "Sector 'medtech' is within the life-science domain.",
+        "P1 / early stage — front keyword 'diabetes' relevance 72.0% (n=6). Run navigator on highest-frequency semantic terms first.",
+        "Match rate 100.0% = capabilities 100.0 + sector 8.0 + Bern presence 0.0 + breadth 4.5 + flagship 0.0 + focus synergy 22.0.",
+        "No Canton of Bern presence detected — presence would add +18 to match rate.",
+        "Sector 'medtech' / diabetes / metabolic maps to Bern's life-science value proposition.",
+        "Focus cluster 'Diabetes care & insulin delivery' (relevance 87.8%) synergizes with Bern capability 'diabetes_cgm' (+18.0).",
+        "Focus cluster 'Glucose sensing / CGM' (relevance 36.2%) synergizes with Bern capability 'diabetes_cgm' (+8.0).",
+        "Aligns with Bern capability 'Diabetes & Continuous Glucose Monitoring' via terms: diabetes, cgm, glucose, insulin, urinalysis, diagnostic. Source ecosystem: Diabetes Center Berne.",
+        "Aligns with Bern capability 'Biomedical Engineering & Medical Devices' via terms: medtech, clinical testing, medical testing systems. Source ecosystem: ARTORG Center.",
+        "Aligns with Bern capability 'Metabolic Health & Nutrition Science' via terms: metabolic. Source ecosystem: University of Bern / Diabetes Center Berne.",
+        "Score limited: no Canton of Bern site/HQ detected (+18 if present).",
+        "Score limited: no stated partnership needs (clinical, university, talent)."
+      ],
+      "score_breakdown": {
+        "capability_points": 18.16,
+        "base_from_capabilities": 100.0,
+        "sector_bonus": 8.0,
+        "presence_bonus": 0.0,
+        "breadth_bonus": 4.5,
+        "flagship_bonus": 0.0,
+        "focus_synergy_bonus": 22.0,
+        "match_rate": 100.0,
+        "formula": "min(100, (sum(top5_capability_scores)/12)*100 + sector_bonus + presence_bonus(+18 if in Bern) + breadth_bonus + flagship_bonus + focus_synergy_bonus)",
+        "capability_hits": [
+          {
+            "id": "diabetes_cgm",
+            "name": "Diabetes & Continuous Glucose Monitoring",
+            "score": 11.96,
+            "overlap_terms": [
+              "diabetes",
+              "cgm",
+              "glucose",
+              "insulin",
+              "urinalysis",
+              "diagnostic",
+              "continuous glucose monitoring",
+              "clinical chemistry"
+            ],
+            "source": "Diabetes Center Berne"
+          },
+          {
+            "id": "biomed_eng",
+            "name": "Biomedical Engineering & Medical Devices",
+            "score": 5.4,
+            "overlap_terms": [
+              "medtech",
+              "clinical testing",
+              "medical testing systems"
+            ],
+            "source": "ARTORG Center"
+          },
+          {
+            "id": "metabolic_nutrition",
+            "name": "Metabolic Health & Nutrition Science",
+            "score": 0.8,
+            "overlap_terms": [
+              "metabolic"
+            ],
+            "source": "University of Bern / Diabetes Center Berne"
+          }
+        ],
+        "why_not_higher": [
+          "Score limited: no Canton of Bern site/HQ detected (+18 if present).",
+          "Score limited: no stated partnership needs (clinical, university, talent)."
+        ]
+      },
+      "focus_synergy": [
+        "Focus cluster 'Diabetes care & insulin delivery' (relevance 87.8%) synergizes with Bern capability 'diabetes_cgm' (+18.0).",
+        "Focus cluster 'Glucose sensing / CGM' (relevance 36.2%) synergizes with Bern capability 'diabetes_cgm' (+8.0)."
+      ],
+      "economic_hooks": [
+        "Diabetes / metabolic fit → Diabetes Center Berne + device/drug collaboration.",
+        "Medtech / AI fit → ARTORG co-development and validation pathway."
+      ],
+      "bern_units": [
+        "Diabetes Center Berne",
+        "Department of Diabetes, Endocrinology, Nutritional Medicine & Metabolism",
+        "ARTORG Center for Biomedical Engineering Research"
+      ],
+      "backend_hints": {
+        "priority_rating": "P1",
+        "priority_stage": "early",
+        "run_first": [
+          "diabetes",
+          "cgm",
+          "insulin",
+          "continuous glucose monitoring",
+          "glucose",
+          "glucose sensors",
+          "biosensing",
+          "metabolic"
+        ],
+        "run_later": [
+          "medtech",
+          "diagnostic",
+          "clinical testing"
+        ],
+        "capability_ids": [
+          "diabetes_cgm",
+          "biomed_eng",
+          "metabolic_nutrition"
+        ]
+      }
+    },
+    "early_keywords": [
+      "diabetes",
+      "cgm",
+      "insulin",
+      "continuous glucose monitoring",
+      "glucose"
+    ],
+    "mid_keywords": [
+      "medtech"
+    ],
+    "late_keywords": [],
+    "early_relevance": [
+      {
+        "term": "diabetes",
+        "stage": "early",
+        "cluster_id": "diabetes_care",
+        "cluster_label": "Diabetes care & insulin delivery",
+        "count": 6,
+        "lead_count": 5,
+        "relevance": 72.0,
+        "semantic_boost": 12.0
+      },
+      {
+        "term": "cgm",
+        "stage": "early",
+        "count": 1,
+        "relevance": 40.0,
+        "cluster_label": "overlap"
+      },
+      {
+        "term": "insulin",
+        "stage": "early",
+        "count": 1,
+        "relevance": 40.0,
+        "cluster_label": "overlap"
+      },
+      {
+        "term": "continuous glucose monitoring",
+        "stage": "early",
+        "count": 1,
+        "relevance": 40.0,
+        "cluster_label": "overlap"
+      },
+      {
+        "term": "glucose",
+        "stage": "early",
+        "cluster_id": "glucose_sensing",
+        "cluster_label": "Glucose sensing / CGM",
+        "count": 1,
+        "lead_count": 1,
+        "relevance": 32.5,
+        "semantic_boost": 12.0
+      }
+    ],
+    "focus_clusters": [
+      {
+        "id": "diabetes_care",
+        "label": "Diabetes care & insulin delivery",
+        "stage": "early",
+        "canonical": "diabetes",
+        "count": 6,
+        "lead_count": 5,
+        "relevance": 87.8,
+        "top_term": "diabetes"
+      },
+      {
+        "id": "glucose_sensing",
+        "label": "Glucose sensing / CGM",
+        "stage": "early",
+        "canonical": "continuous glucose monitoring",
+        "count": 1,
+        "lead_count": 1,
+        "relevance": 36.2,
+        "top_term": "glucose"
+      }
+    ],
+    "bern_units": [
+      "Diabetes Center Berne",
+      "Department of Diabetes, Endocrinology, Nutritional Medicine & Metabolism",
+      "ARTORG Center for Biomedical Engineering Research"
+    ],
+    "economic_hooks": [
+      "Diabetes / metabolic fit → Diabetes Center Berne + device/drug collaboration.",
+      "Medtech / AI fit → ARTORG co-development and validation pathway."
+    ],
+    "capability_matches": [
+      {
+        "id": "diabetes_cgm",
+        "name": "Diabetes & Continuous Glucose Monitoring",
+        "score": 11.96,
+        "overlap_terms": [
+          "diabetes",
+          "cgm",
+          "glucose",
+          "insulin",
+          "urinalysis",
+          "diagnostic",
+          "continuous glucose monitoring",
+          "clinical chemistry"
+        ],
+        "source": "Diabetes Center Berne",
+        "units": [
+          "Diabetes Center Berne",
+          "Department of Diabetes, Endocrinology, Nutritional Medicine & Metabolism"
+        ],
+        "reason": "Aligns with Bern capability 'Diabetes & Continuous Glucose Monitoring' via terms: diabetes, cgm, glucose, insulin, urinalysis, diagnostic. Source ecosystem: Diabetes Center Berne."
+      },
+      {
+        "id": "biomed_eng",
+        "name": "Biomedical Engineering & Medical Devices",
+        "score": 5.4,
+        "overlap_terms": [
+          "medtech",
+          "clinical testing",
+          "medical testing systems"
+        ],
+        "source": "ARTORG Center",
+        "units": [
+          "ARTORG Center for Biomedical Engineering Research"
+        ],
+        "reason": "Aligns with Bern capability 'Biomedical Engineering & Medical Devices' via terms: medtech, clinical testing, medical testing systems. Source ecosystem: ARTORG Center."
+      },
+      {
+        "id": "metabolic_nutrition",
+        "name": "Metabolic Health & Nutrition Science",
+        "score": 0.8,
+        "overlap_terms": [
+          "metabolic"
+        ],
+        "source": "University of Bern / Diabetes Center Berne",
+        "units": [
+          "Diabetes Center Berne",
+          "Department of Diabetes, Endocrinology, Nutritional Medicine & Metabolism"
+        ],
+        "reason": "Aligns with Bern capability 'Metabolic Health & Nutrition Science' via terms: metabolic. Source ecosystem: University of Bern / Diabetes Center Berne."
+      }
+    ],
+    "teammate_queries_early": [
+      "diabetes",
+      "cgm",
+      "insulin",
+      "continuous glucose monitoring",
+      "glucose",
+      "glucose sensors",
+      "biosensing",
+      "metabolic"
+    ],
+    "teammate_queries_later": [
+      "medtech",
+      "diagnostic",
+      "clinical testing"
+    ],
+    "suggested_queries": [
+      "glucose sensors",
+      "continuous glucose monitoring",
+      "biosensing",
+      "cgm",
+      "diabetes",
+      "glucose",
+      "metabolic",
+      "medtech",
+      "diagnostic",
+      "clinical testing"
+    ],
+    "handoff_note": "P1 / early stage — front keyword 'diabetes' relevance 72.0% (n=6). Run navigator on highest-frequency semantic terms first."
+  },
+  "extraction": {
+    "confidence": 0.95,
+    "method": "web-enrich",
+    "warnings": []
+  },
+  "queue": {
+    "position": 1,
+    "priority_rating": "P1",
+    "priority_stage": "early",
+    "priority_score": 77.0
+  },
+  "source_text_excerpt": "ARKRAY develops products that focus on diabetes testing and urinalysis in addition to other simple test equipment that supports both medical professionals and patients alike.\n\nARKRAY, Inc.\n\nARKRAY develops products that focus on diabetes testing and urinalysis in addition to other simple test equipment that supports both medical professionals and patients alike.\n\nCompany name: ARKRAY\n\nWebsite: https://www.arkray.co.jp/english/\n\n[1] Home - ARKRAY USA, Inc.\nARKRAY USA, Inc. leads in diabetes management and glucose testing, delivering innovative diagnostic solutions to improve health and well-being worldwide.\nSource: https://arkrayusa.com/\n\n[2] ARKRAY, Inc.\nARKRAY develops products that focus on diabetes testing and urinalysis in addition to other simple test equipment that supports both medical professionals and patients alike.\nSource: https://www.arkray.co.in/english/index.html\n\n[3] About ARKRAY USA\nAbout ARKRAY USA - For more than 60 years, ARKRAY has developed innovative diagnostic and monitoring products including automated systems for urinalysis, A1C, clinical chemistry instruments, reagents and consumables.\nSource: https://arkrayusa.com/about/about-arkray-usa/\n\n[4] About Us | ARKRAY, Inc.\nARKRAY develops products that focus on diabetes testing and urinalysis in addition to other simple test equipment that supports both medical professionals and patients alike.\nSource: https://arkray.global/english/about/index.html\n\n[5] Corporate Outline | ARKRAY, Inc.\n♦ Medical testing systems We research, develop, manufacture, distribute and provide after-sales services of clinical testing instruments, reagents and data management systems used for diagnosis, treatment and medical examinations.\nSource: https://www.arkray.co.jp/english/about/business.html"
+}

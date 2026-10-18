@@ -1,0 +1,455 @@
+{
+  "schema_version": "2.0",
+  "generated_at": "2026-10-18T15:17:37.411816+00:00",
+  "domain": "life_science",
+  "owner_layer": "company_match",
+  "how_to_use": "Backend / teammate: load companies[]. Use match.score_breakdown.components (sums to match_rate) and match.bern_matches (records from data/bern_records with source_url). See src/company_match/BACKEND_CONTRACT.md. website_info holds the ingested site metadata. Push each company object (or this batch) to your API.",
+  "source_count": 1,
+  "company_count": 1,
+  "companies": [
+    {
+      "schema_version": "2.0",
+      "generated_at": "2026-10-18T15:17:37.411777+00:00",
+      "id": "novartis",
+      "name": "novartis",
+      "domain": "life_science",
+      "in_scope": true,
+      "website_info": {
+        "url": null,
+        "source_type": "text",
+        "source_ref": "inline",
+        "meta_title": "",
+        "meta_description": "Novartis is a multinational pharmaceutical and healthcare company with a focus on diagnostic tests and personalized medicine. The company acquired Genoptix in 2011 to support its individualized treatment programs. Novartis also develops imaging systems and is involved in the development of diagnostic tests and therapies, particularly in the area of genomic diagnostics.",
+        "fetched_language": "en",
+        "translated_to_english": false,
+        "translation_method": "identity",
+        "web_enrich_method": "wikipedia+duckduckgo+ollama:qwen2.5:7b",
+        "web_sources": [
+          "https://en.wikipedia.org/wiki/Novartis_Medal_and_Prize",
+          "https://www.novartis.com/",
+          "https://www.novartis.com/healthcare-professionals/novartis-medical-information",
+          "https://en.wikipedia.org/wiki/Novartis",
+          "https://www.switzerland-innovation.com/rd-topics/life-sciences/medtech-and-diagnostics",
+          "https://medinfo.novartispharmaceuticals.com/medinfo/s/"
+        ],
+        "summary_method": "profile:ollama:qwen2.5:7b"
+      },
+      "profile": {
+        "sector": "pharma",
+        "subsector": "imaging & diagnostics",
+        "description": "Novartis focuses on personalized medicine and genomic diagnostics, developing diagnostic tests and therapies. The company acquired Genoptix in 2011 to support its individualized treatment programs and is involved in imaging systems and diagnostic tests.",
+        "what_they_do": "Pharmaceutical company developing and manufacturing drugs, diagnostic tests, and personalized medicine, including genomic diagnostics and imaging systems.",
+        "keywords": [
+          "genomic diagnostics",
+          "diagnostic tests",
+          "personalized medicine",
+          "imaging systems",
+          "medtech",
+          "diagnostic",
+          "diagnostics",
+          "laboratory"
+        ],
+        "needs": [],
+        "hq_city": "Basel",
+        "hq_country": "Switzerland",
+        "canton_bern_presence": false,
+        "hq_source": {
+          "method": "wikidata",
+          "evidence": "Wikidata Q507154 (matched by exact name + company description)",
+          "url": "https://www.wikidata.org/wiki/Q507154",
+          "verified": true
+        },
+        "bern_sites": [],
+        "medical_profile": {
+          "therapeutic_areas": [
+            {
+              "term": "genomic diagnostics",
+              "evidence": "particularly in the area of genomic diagnostics"
+            }
+          ],
+          "indications": [],
+          "modalities_technologies": [
+            {
+              "term": "genomic diagnostics",
+              "evidence": "particularly in the area of genomic diagnostics"
+            }
+          ],
+          "products_platforms": [],
+          "patient_populations": [],
+          "development_activities": [
+            {
+              "term": "acquisition of Genoptix",
+              "evidence": "acquired the medical laboratory diagnostics company Genoptix in 2011"
+            }
+          ],
+          "business_model": {
+            "value": "pharmaceutical (drug developer)",
+            "evidence": "multinational pharmaceutical and healthcare company"
+          },
+          "partnership_needs": [],
+          "headquarters": null,
+          "sites": [],
+          "medical_keywords": [
+            "genomic diagnostics",
+            "diagnostic tests",
+            "personalized medicine",
+            "imaging systems"
+          ],
+          "what_they_do": "Pharmaceutical company developing and manufacturing drugs, diagnostic tests, and personalized medicine, including genomic diagnostics and imaging systems.",
+          "summary": "Novartis focuses on personalized medicine and genomic diagnostics, developing diagnostic tests and therapies. The company acquired Genoptix in 2011 to support its individualized treatment programs and is involved in imaging systems and diagnostic tests.",
+          "information_sufficiency": "limited",
+          "missing_information": [
+            "specific therapeutic areas, indications, modalities, and detailed development activities"
+          ],
+          "company_name": "Novartis AG",
+          "dropped_unsupported": [
+            "products_platforms: diagnostic tests and therapies",
+            "patient_populations: various patient populations",
+            "need: unspecified",
+            "headquarters: Basel Switzerland"
+          ],
+          "model": "ollama:qwen2.5:7b",
+          "prompt_version": "medical-profile-v2"
+        },
+        "semantic_profile": {
+          "activity_summary": "Primary focus signals: Medical devices / medtech (40.5% relevance, n=3).",
+          "focus_clusters": [
+            {
+              "id": "medtech_devices",
+              "label": "Medical devices / medtech",
+              "stage": "mid",
+              "canonical": "medical device",
+              "count": 3,
+              "lead_count": 0,
+              "relevance": 40.5,
+              "top_term": "medtech"
+            }
+          ],
+          "early_ranked": [
+            {
+              "term": "medtech",
+              "stage": "mid",
+              "cluster_id": "medtech_devices",
+              "cluster_label": "Medical devices / medtech",
+              "count": 3,
+              "lead_count": 0,
+              "relevance": 33.0,
+              "semantic_boost": 8.0
+            }
+          ],
+          "mid_ranked": [],
+          "late_ranked": []
+        }
+      },
+      "match": {
+        "match_rate": 12.8,
+        "tier": "D — Weak / monitor",
+        "reasons": [
+          "Domain scope: Life Science only (sectors: biopharma, biotech, cdmo, digital_health, labtech, medtech, nutrition, pharma). Sources: University of Bern, ARTORG, Diabetes Center Berne.",
+          "Sector 'pharma' is within the life-science domain.",
+          "P2 / front relevance — strongest keyword 'medical device' (42.0% relevance, n=1). Run navigator on highest-relevance terms first.",
+          "Match rate 12.8% = capability fit 6.3/35 + breadth 1.3/10 + needs alignment 0.0/15 + bern presence 0.0/10 + focus synergy 2.0/10 + evidence 3.2/20.",
+          "No Canton of Bern presence detected — presence would add +10.",
+          "Sector 'pharma' / imaging & diagnostics maps to Bern's life-science value proposition.",
+          "Main theme 'medtech_devices' maps to Bern capability 'diabetes_cgm' (+2.0).",
+          "Aligns with Bern capability 'Biomedical Engineering & Medical Devices' via terms: medical device, medtech. Source ecosystem: ARTORG Center.",
+          "Aligns with Bern capability 'Diabetes & Continuous Glucose Monitoring' via terms: diagnostic, diagnostics. Source ecosystem: Diabetes Center Berne.",
+          "Few specific overlapping terms with the best Bern capability — add product/technology detail.",
+          "No stated partnership needs (clinical validation, university, talent…)."
+        ],
+        "score_breakdown": {
+          "model": "bounded-v2",
+          "components": {
+            "capability_fit": 6.3,
+            "breadth": 1.3,
+            "needs_alignment": 0.0,
+            "bern_presence": 0.0,
+            "focus_synergy": 2.0,
+            "evidence": 3.2
+          },
+          "component_max": {
+            "capability_fit": 35.0,
+            "breadth": 10.0,
+            "needs_alignment": 15.0,
+            "bern_presence": 10.0,
+            "focus_synergy": 10.0,
+            "evidence": 20.0
+          },
+          "details": {
+            "capability_fit_ratio": 0.181,
+            "best_capability": "diabetes_cgm",
+            "needs_scored": [],
+            "focus_cluster": "medtech_devices",
+            "evidence_source": "term_proxy"
+          },
+          "match_rate": 12.8,
+          "formula": "match_rate = capability_fit(≤35) + breadth(≤10) + needs_alignment(≤15) + bern_presence(≤10) + focus_synergy(≤10) + evidence(≤20; ≤8 without Bern records). Fits use 1-exp(-raw/3.0) saturation.",
+          "capability_hits": [
+            {
+              "id": "biomed_eng",
+              "name": "Biomedical Engineering & Medical Devices",
+              "score": 3.2,
+              "overlap_terms": [
+                "medical device",
+                "medtech"
+              ],
+              "source": "ARTORG Center"
+            },
+            {
+              "id": "diabetes_cgm",
+              "name": "Diabetes & Continuous Glucose Monitoring",
+              "score": 2.3,
+              "overlap_terms": [
+                "diagnostic",
+                "diagnostics"
+              ],
+              "source": "Diabetes Center Berne"
+            }
+          ],
+          "bern_records_loaded": 0,
+          "why_not_higher": [
+            "Few specific overlapping terms with the best Bern capability — add product/technology detail.",
+            "No stated partnership needs (clinical validation, university, talent…).",
+            "No Canton of Bern site/HQ detected (+10 if present).",
+            "No verified Bern expert/unit records matched yet (load teammate data in data/bern_records/) — evidence capped at 8/20."
+          ]
+        },
+        "reasoning": {
+          "summary": "12.8% Bern life-science fit (D — Weak / monitor). Top capability: Biomedical Engineering & Medical Devices via medical device, medtech.",
+          "reasons": [
+            "Domain scope: Life Science only (sectors: biopharma, biotech, cdmo, digital_health, labtech, medtech, nutrition, pharma). Sources: University of Bern, ARTORG, Diabetes Center Berne.",
+            "Sector 'pharma' is within the life-science domain.",
+            "P2 / front relevance — strongest keyword 'medical device' (42.0% relevance, n=1). Run navigator on highest-relevance terms first.",
+            "Match rate 12.8% = capability fit 6.3/35 + breadth 1.3/10 + needs alignment 0.0/15 + bern presence 0.0/10 + focus synergy 2.0/10 + evidence 3.2/20.",
+            "No Canton of Bern presence detected — presence would add +10.",
+            "Sector 'pharma' / imaging & diagnostics maps to Bern's life-science value proposition.",
+            "Main theme 'medtech_devices' maps to Bern capability 'diabetes_cgm' (+2.0).",
+            "Aligns with Bern capability 'Biomedical Engineering & Medical Devices' via terms: medical device, medtech. Source ecosystem: ARTORG Center.",
+            "Aligns with Bern capability 'Diabetes & Continuous Glucose Monitoring' via terms: diagnostic, diagnostics. Source ecosystem: Diabetes Center Berne.",
+            "Few specific overlapping terms with the best Bern capability — add product/technology detail.",
+            "No stated partnership needs (clinical validation, university, talent…)."
+          ],
+          "score_breakdown": {
+            "model": "bounded-v2",
+            "components": {
+              "capability_fit": 6.3,
+              "breadth": 1.3,
+              "needs_alignment": 0.0,
+              "bern_presence": 0.0,
+              "focus_synergy": 2.0,
+              "evidence": 3.2
+            },
+            "component_max": {
+              "capability_fit": 35.0,
+              "breadth": 10.0,
+              "needs_alignment": 15.0,
+              "bern_presence": 10.0,
+              "focus_synergy": 10.0,
+              "evidence": 20.0
+            },
+            "details": {
+              "capability_fit_ratio": 0.181,
+              "best_capability": "diabetes_cgm",
+              "needs_scored": [],
+              "focus_cluster": "medtech_devices",
+              "evidence_source": "term_proxy"
+            },
+            "match_rate": 12.8,
+            "formula": "match_rate = capability_fit(≤35) + breadth(≤10) + needs_alignment(≤15) + bern_presence(≤10) + focus_synergy(≤10) + evidence(≤20; ≤8 without Bern records). Fits use 1-exp(-raw/3.0) saturation.",
+            "capability_hits": [
+              {
+                "id": "biomed_eng",
+                "name": "Biomedical Engineering & Medical Devices",
+                "score": 3.2,
+                "overlap_terms": [
+                  "medical device",
+                  "medtech"
+                ],
+                "source": "ARTORG Center"
+              },
+              {
+                "id": "diabetes_cgm",
+                "name": "Diabetes & Continuous Glucose Monitoring",
+                "score": 2.3,
+                "overlap_terms": [
+                  "diagnostic",
+                  "diagnostics"
+                ],
+                "source": "Diabetes Center Berne"
+              }
+            ],
+            "bern_records_loaded": 0,
+            "why_not_higher": [
+              "Few specific overlapping terms with the best Bern capability — add product/technology detail.",
+              "No stated partnership needs (clinical validation, university, talent…).",
+              "No Canton of Bern site/HQ detected (+10 if present).",
+              "No verified Bern expert/unit records matched yet (load teammate data in data/bern_records/) — evidence capped at 8/20."
+            ]
+          },
+          "focus_synergy": [
+            "Main theme 'medtech_devices' maps to Bern capability 'diabetes_cgm' (+2.0)."
+          ],
+          "economic_hooks": [
+            "Diabetes / metabolic fit → Diabetes Center Berne + device/drug collaboration.",
+            "Medtech / AI fit → ARTORG co-development and validation pathway.",
+            "Pharma/biotech profile → soft-landing / Swiss hub narrative for WFB."
+          ],
+          "bern_units": [
+            "ARTORG Center for Biomedical Engineering Research",
+            "Diabetes Center Berne",
+            "Department of Diabetes, Endocrinology, Nutritional Medicine & Metabolism"
+          ],
+          "bern_matches": [],
+          "backend_hints": {
+            "priority_rating": "P2",
+            "priority_stage": "early",
+            "run_first": [
+              "medical device",
+              "diagnostic",
+              "diagnostics",
+              "medtech",
+              "genomic diagnostics",
+              "diagnostic tests",
+              "personalized medicine",
+              "imaging systems"
+            ],
+            "run_later": [
+              "medtech",
+              "laboratory"
+            ],
+            "capability_ids": [
+              "biomed_eng",
+              "diabetes_cgm"
+            ]
+          }
+        },
+        "early_keywords": [
+          "medical device",
+          "diagnostic",
+          "diagnostics"
+        ],
+        "mid_keywords": [
+          "medtech"
+        ],
+        "late_keywords": [],
+        "early_relevance": [
+          {
+            "term": "medical device",
+            "stage": "early",
+            "count": 1,
+            "relevance": 42.0,
+            "cluster_label": "capability overlap"
+          },
+          {
+            "term": "diagnostic",
+            "stage": "early",
+            "count": 1,
+            "relevance": 42.0,
+            "cluster_label": "capability overlap"
+          },
+          {
+            "term": "diagnostics",
+            "stage": "early",
+            "count": 1,
+            "relevance": 42.0,
+            "cluster_label": "capability overlap"
+          }
+        ],
+        "focus_clusters": [
+          {
+            "id": "medtech_devices",
+            "label": "Medical devices / medtech",
+            "stage": "mid",
+            "canonical": "medical device",
+            "count": 3,
+            "lead_count": 0,
+            "relevance": 40.5,
+            "top_term": "medtech"
+          }
+        ],
+        "bern_units": [
+          "ARTORG Center for Biomedical Engineering Research",
+          "Diabetes Center Berne",
+          "Department of Diabetes, Endocrinology, Nutritional Medicine & Metabolism"
+        ],
+        "bern_matches": [],
+        "economic_hooks": [
+          "Diabetes / metabolic fit → Diabetes Center Berne + device/drug collaboration.",
+          "Medtech / AI fit → ARTORG co-development and validation pathway.",
+          "Pharma/biotech profile → soft-landing / Swiss hub narrative for WFB."
+        ],
+        "capability_matches": [
+          {
+            "id": "biomed_eng",
+            "name": "Biomedical Engineering & Medical Devices",
+            "score": 3.2,
+            "overlap_terms": [
+              "medical device",
+              "medtech"
+            ],
+            "source": "ARTORG Center",
+            "units": [
+              "ARTORG Center for Biomedical Engineering Research"
+            ],
+            "reason": "Aligns with Bern capability 'Biomedical Engineering & Medical Devices' via terms: medical device, medtech. Source ecosystem: ARTORG Center."
+          },
+          {
+            "id": "diabetes_cgm",
+            "name": "Diabetes & Continuous Glucose Monitoring",
+            "score": 2.3,
+            "overlap_terms": [
+              "diagnostic",
+              "diagnostics"
+            ],
+            "source": "Diabetes Center Berne",
+            "units": [
+              "Diabetes Center Berne",
+              "Department of Diabetes, Endocrinology, Nutritional Medicine & Metabolism"
+            ],
+            "reason": "Aligns with Bern capability 'Diabetes & Continuous Glucose Monitoring' via terms: diagnostic, diagnostics. Source ecosystem: Diabetes Center Berne."
+          }
+        ],
+        "teammate_queries_early": [
+          "medical device",
+          "diagnostic",
+          "diagnostics",
+          "medtech",
+          "genomic diagnostics",
+          "diagnostic tests",
+          "personalized medicine",
+          "imaging systems"
+        ],
+        "teammate_queries_later": [
+          "medtech",
+          "laboratory"
+        ],
+        "suggested_queries": [
+          "medical device",
+          "medtech",
+          "diagnostic",
+          "diagnostics",
+          "genomic diagnostics",
+          "diagnostic tests",
+          "personalized medicine",
+          "imaging systems",
+          "laboratory"
+        ],
+        "handoff_note": "P2 / front relevance — strongest keyword 'medical device' (42.0% relevance, n=1). Run navigator on highest-relevance terms first."
+      },
+      "extraction": {
+        "confidence": 0.95,
+        "method": "llm-profile",
+        "warnings": [
+          "Dropped 4 LLM item(s) without verifiable source quote."
+        ]
+      },
+      "queue": {
+        "position": 1,
+        "priority_rating": "P2",
+        "priority_stage": "early",
+        "priority_score": 39.3
+      },
+      "source_text_excerpt": "novartis\n\nCompany name: novartis\n\n[1] Novartis Medal and Prize\nThe Portland Press Excellence in Science Award was an annual award instituted in 1964 to recognize notable research in any branch of biochemistry undertaken in the UK or Republic of Ireland. It was initially called the CIBA Medal and Prize, then the Novartis Medal and Prize. The prize consists of a medal and a £3000 cash award. The winner is invited to present a lecture at a Society conference and submit an article to one of the Society's publications. Notable recipients include the Nobel laureates John E. Walker, Paul Nurse, Sydney Brenner, César Milstein, Peter D. Mitchell, Rodney Porter, and John Cornforth.\nSource: https://en.wikipedia.org/wiki/Novartis_Medal_and_Prize\n\n[2] Novartis\nNovartis Financial Results - Q2 2026 Novartis announces the company&#x27;s financial results for the second quarter and first half of 2026.\nSource: https://www.novartis.com/\n\n[3] Novartis medical information\nNovartis Medical Information is committed to providing the most up‑to‑date, accurate, and balanced scientific information regarding Novartis products. Select your region from the list below\nSource: https://www.novartis.com/healthcare-professionals/novartis-medical-information\n\n[4] Novartis - Wikipedia\nIn 2011, Novartis acquired the medical laboratory diagnostics company Genoptix to &quot;serve as a strong foundation for our (Novartis&#x27;) individualized treatment programs&quot;.\nSource: https://en.wikipedia.org/wiki/Novartis\n\n[5] Medtech &amp; Diagnostics in Switzerland | Roche &amp; Novartis: Switzerland ...\nMedtech is also a key growth driver for the Swiss MEM industry. Companies such as Roche and Novartis are driving the development of diagnostic tests, personalized medicine and imaging systems. Roche is a global leader in diagnostic tests and therapies, while Novartis focuses on genomic diagnostics and customized treatments.\nSource: https://www.switzerland-innovation.com/rd-topics/life-sciences/medtech-and-diagnostics\n\n[6] Welcome to the Novartis US Medical Affairs Website!\nWelcome to the Novartis US Medical Affairs Website! Where science meets hope, our goal is to reimagine medicine together. We use innovative science and technology to address some of society&#x27;s most challenging healthcare issues. We discover and develop breakthrough treatments and find new ways to deliver them to as many people as possible. This resource is intended to support the sharing of ...\nSource: https://medinfo.novartispharmaceuticals.com/medinfo/s/"
+    }
+  ]
+}

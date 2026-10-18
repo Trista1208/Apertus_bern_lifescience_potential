@@ -1,0 +1,874 @@
+{
+  "schema_version": "1.1",
+  "generated_at": "2026-10-18T13:45:03.233510+00:00",
+  "domain": "life_science",
+  "owner_layer": "company_match",
+  "how_to_use": "Backend / teammate: load companies[]. Use match.reasoning + match.score_breakdown to align navigator scoring. website_info holds the ingested site metadata. Push each company object (or this batch) to your API.",
+  "source_count": 2,
+  "company_count": 2,
+  "companies": [
+    {
+      "schema_version": "1.1",
+      "generated_at": "2026-10-18T13:45:03.231633+00:00",
+      "id": "mindray",
+      "name": "Mindray",
+      "domain": "life_science",
+      "in_scope": true,
+      "website_info": {
+        "url": "https://www.mindray.com/cn",
+        "source_type": "url",
+        "source_ref": "https://www.mindray.com/cn",
+        "meta_title": "生命科技如此亲近 - 迈瑞医疗",
+        "meta_description": "迈瑞创始于1991年，是全球创新的医疗器械与解决方案供应商。迈瑞总部设在中国深圳，在北美、欧洲、亚洲、非洲、拉美等地区的超过30个国家设有44家境外子公司；在国内设有17家子公司，超过40家分支机构，全球员工超万人，形成了庞大的全球化研发、营销及服务网络。\n\n[lexicon_en] medical device",
+        "fetched_language": "zh",
+        "translated_to_english": true,
+        "translation_method": "lexicon_bridge",
+        "web_enrich_method": "wikipedia+duckduckgo+snippet",
+        "web_sources": [
+          "https://en.wikipedia.org/wiki/Mindray_(company)",
+          "https://www.mindray.com/en",
+          "https://www.mindray.com/en/solutions/laboratory-diagnostics",
+          "https://www.medtechfirms.com/company/mindray",
+          "https://en.wikipedia.org/wiki/Mindray",
+          "https://www.mindraysupply.com/"
+        ],
+        "summary_method": "rules"
+      },
+      "profile": {
+        "sector": "medtech",
+        "subsector": "imaging & diagnostics",
+        "description": "迈瑞创始于1991年，是全球创新的医疗器械与解决方案供应商。迈瑞总部设在中国深圳，在北美、欧洲、亚洲、非洲、拉美等地区的超过30个国家设有44家境外子公司；在国内设有17家子公司，超过40家分支机构，全球员工超万人，形成了庞大的全球化研发、营销及服务网络。",
+        "what_they_do": "Focus: Medical devices / medtech (relevance 49.4%, n=4). 迈瑞创始于1991年，是全球创新的医疗器械与解决方案供应商。迈瑞总部设在中国深圳，在北美、欧洲、亚洲、非洲、拉美等地区的超过30个国家设有44家境外子公司；在国内设有17家子公司，超过40家分支机构，全球员工超万人，形成了庞大的全球化研发、营销及服务网络。",
+        "keywords": [
+          "medical device",
+          "medical imaging",
+          "veterinary",
+          "medtech",
+          "diagnostic",
+          "diagnostics",
+          "laboratory"
+        ],
+        "needs": [
+          "EU partners"
+        ],
+        "hq_city": "Shenzhen",
+        "hq_country": "Guangdong",
+        "canton_bern_presence": false,
+        "semantic_profile": {
+          "activity_summary": "Primary focus signals: Medical devices / medtech (49.4% relevance, n=4); Medical imaging & clinical AI (23.2% relevance, n=1).",
+          "focus_clusters": [
+            {
+              "id": "medtech_devices",
+              "label": "Medical devices / medtech",
+              "stage": "mid",
+              "canonical": "medical device",
+              "count": 4,
+              "lead_count": 1,
+              "relevance": 49.4,
+              "top_term": "medical device"
+            },
+            {
+              "id": "imaging_ai",
+              "label": "Medical imaging & clinical AI",
+              "stage": "mid",
+              "canonical": "medical imaging",
+              "count": 1,
+              "lead_count": 0,
+              "relevance": 23.2,
+              "top_term": "medical imaging"
+            }
+          ],
+          "early_ranked": [],
+          "mid_ranked": [
+            {
+              "term": "medical device",
+              "stage": "mid",
+              "cluster_id": "medtech_devices",
+              "cluster_label": "Medical devices / medtech",
+              "count": 4,
+              "lead_count": 1,
+              "relevance": 51.0,
+              "semantic_boost": 6.0
+            },
+            {
+              "term": "medical imaging",
+              "stage": "mid",
+              "cluster_id": "imaging_ai",
+              "cluster_label": "Medical imaging & clinical AI",
+              "count": 1,
+              "lead_count": 0,
+              "relevance": 26.5,
+              "semantic_boost": 6.0
+            }
+          ],
+          "late_ranked": []
+        }
+      },
+      "match": {
+        "match_rate": 100.0,
+        "tier": "A — Priority outreach",
+        "reasons": [
+          "Domain scope: Life Science only (sectors: biopharma, biotech, cdmo, digital_health, labtech, medtech, nutrition, pharma). Sources: University of Bern, ARTORG, Diabetes Center Berne.",
+          "Sector 'medtech' is within the life-science domain.",
+          "P3 / mid stage — no strong CGM/diabetes front hit; match mid keywords next: medical device, medtech, medical imaging.",
+          "Match rate 100.0% = capabilities 100.0 + sector 8.0 + Bern presence 0.0 + breadth 6.0 + flagship 0.0 + focus synergy 0.0.",
+          "No Canton of Bern presence detected — presence would add +18 to match rate.",
+          "Sector 'medtech' / imaging & diagnostics maps to Bern's life-science value proposition.",
+          "Aligns with Bern capability 'Medical Imaging & Clinical AI' via terms: medical imaging, ultrasound, mri, clinical ai. Source ecosystem: University of Bern / ARTORG.",
+          "Aligns with Bern capability 'Biomedical Engineering & Medical Devices' via terms: medical device, medtech, medical technology. Source ecosystem: ARTORG Center.",
+          "Aligns with Bern capability 'Diabetes & Continuous Glucose Monitoring' via terms: diagnostic, diagnostics. Source ecosystem: Diabetes Center Berne.",
+          "Aligns with Bern capability 'One Health & Veterinary Sciences' via terms: veterinary. Source ecosystem: University of Bern.",
+          "Score limited: no Canton of Bern site/HQ detected (+18 if present).",
+          "Score limited: no strong focus-cluster ↔ Bern capability synergy yet."
+        ],
+        "score_breakdown": {
+          "capability_points": 14.16,
+          "base_from_capabilities": 100.0,
+          "sector_bonus": 8.0,
+          "presence_bonus": 0.0,
+          "breadth_bonus": 6.0,
+          "flagship_bonus": 0.0,
+          "focus_synergy_bonus": 0.0,
+          "match_rate": 100.0,
+          "formula": "min(100, (sum(top5_capability_scores)/12)*100 + sector_bonus + presence_bonus(+18 if in Bern) + breadth_bonus + flagship_bonus + focus_synergy_bonus)",
+          "capability_hits": [
+            {
+              "id": "medical_imaging_ai",
+              "name": "Medical Imaging & Clinical AI",
+              "score": 5.76,
+              "overlap_terms": [
+                "medical imaging",
+                "ultrasound",
+                "mri",
+                "clinical ai"
+              ],
+              "source": "University of Bern / ARTORG"
+            },
+            {
+              "id": "biomed_eng",
+              "name": "Biomedical Engineering & Medical Devices",
+              "score": 5.4,
+              "overlap_terms": [
+                "medical device",
+                "medtech",
+                "medical technology"
+              ],
+              "source": "ARTORG Center"
+            },
+            {
+              "id": "diabetes_cgm",
+              "name": "Diabetes & Continuous Glucose Monitoring",
+              "score": 2.3,
+              "overlap_terms": [
+                "diagnostic",
+                "diagnostics"
+              ],
+              "source": "Diabetes Center Berne"
+            },
+            {
+              "id": "one_health_vet",
+              "name": "One Health & Veterinary Sciences",
+              "score": 0.7,
+              "overlap_terms": [
+                "veterinary"
+              ],
+              "source": "University of Bern"
+            }
+          ],
+          "why_not_higher": [
+            "Score limited: no Canton of Bern site/HQ detected (+18 if present).",
+            "Score limited: no strong focus-cluster ↔ Bern capability synergy yet."
+          ]
+        },
+        "reasoning": {
+          "summary": "100.0% Bern life-science fit (A — Priority outreach). Top capability: Medical Imaging & Clinical AI via medical imaging, ultrasound, mri, clinical ai.",
+          "reasons": [
+            "Domain scope: Life Science only (sectors: biopharma, biotech, cdmo, digital_health, labtech, medtech, nutrition, pharma). Sources: University of Bern, ARTORG, Diabetes Center Berne.",
+            "Sector 'medtech' is within the life-science domain.",
+            "P3 / mid stage — no strong CGM/diabetes front hit; match mid keywords next: medical device, medtech, medical imaging.",
+            "Match rate 100.0% = capabilities 100.0 + sector 8.0 + Bern presence 0.0 + breadth 6.0 + flagship 0.0 + focus synergy 0.0.",
+            "No Canton of Bern presence detected — presence would add +18 to match rate.",
+            "Sector 'medtech' / imaging & diagnostics maps to Bern's life-science value proposition.",
+            "Aligns with Bern capability 'Medical Imaging & Clinical AI' via terms: medical imaging, ultrasound, mri, clinical ai. Source ecosystem: University of Bern / ARTORG.",
+            "Aligns with Bern capability 'Biomedical Engineering & Medical Devices' via terms: medical device, medtech, medical technology. Source ecosystem: ARTORG Center.",
+            "Aligns with Bern capability 'Diabetes & Continuous Glucose Monitoring' via terms: diagnostic, diagnostics. Source ecosystem: Diabetes Center Berne.",
+            "Aligns with Bern capability 'One Health & Veterinary Sciences' via terms: veterinary. Source ecosystem: University of Bern.",
+            "Score limited: no Canton of Bern site/HQ detected (+18 if present).",
+            "Score limited: no strong focus-cluster ↔ Bern capability synergy yet."
+          ],
+          "score_breakdown": {
+            "capability_points": 14.16,
+            "base_from_capabilities": 100.0,
+            "sector_bonus": 8.0,
+            "presence_bonus": 0.0,
+            "breadth_bonus": 6.0,
+            "flagship_bonus": 0.0,
+            "focus_synergy_bonus": 0.0,
+            "match_rate": 100.0,
+            "formula": "min(100, (sum(top5_capability_scores)/12)*100 + sector_bonus + presence_bonus(+18 if in Bern) + breadth_bonus + flagship_bonus + focus_synergy_bonus)",
+            "capability_hits": [
+              {
+                "id": "medical_imaging_ai",
+                "name": "Medical Imaging & Clinical AI",
+                "score": 5.76,
+                "overlap_terms": [
+                  "medical imaging",
+                  "ultrasound",
+                  "mri",
+                  "clinical ai"
+                ],
+                "source": "University of Bern / ARTORG"
+              },
+              {
+                "id": "biomed_eng",
+                "name": "Biomedical Engineering & Medical Devices",
+                "score": 5.4,
+                "overlap_terms": [
+                  "medical device",
+                  "medtech",
+                  "medical technology"
+                ],
+                "source": "ARTORG Center"
+              },
+              {
+                "id": "diabetes_cgm",
+                "name": "Diabetes & Continuous Glucose Monitoring",
+                "score": 2.3,
+                "overlap_terms": [
+                  "diagnostic",
+                  "diagnostics"
+                ],
+                "source": "Diabetes Center Berne"
+              },
+              {
+                "id": "one_health_vet",
+                "name": "One Health & Veterinary Sciences",
+                "score": 0.7,
+                "overlap_terms": [
+                  "veterinary"
+                ],
+                "source": "University of Bern"
+              }
+            ],
+            "why_not_higher": [
+              "Score limited: no Canton of Bern site/HQ detected (+18 if present).",
+              "Score limited: no strong focus-cluster ↔ Bern capability synergy yet."
+            ]
+          },
+          "focus_synergy": [],
+          "economic_hooks": [
+            "Diabetes / metabolic fit → Diabetes Center Berne + device/drug collaboration.",
+            "Medtech / AI fit → ARTORG co-development and validation pathway."
+          ],
+          "bern_units": [
+            "ARTORG",
+            "Department of Diagnostic, Interventional and Pediatric Radiology",
+            "ARTORG Center for Biomedical Engineering Research",
+            "Diabetes Center Berne",
+            "Department of Diabetes, Endocrinology, Nutritional Medicine & Metabolism",
+            "Vetsuisse Faculty"
+          ],
+          "backend_hints": {
+            "priority_rating": "P3",
+            "priority_stage": "mid",
+            "run_first": [],
+            "run_later": [
+              "medical device",
+              "medtech",
+              "medical imaging",
+              "diagnostic",
+              "diagnostics",
+              "ultrasound",
+              "mri",
+              "medical technology",
+              "veterinary",
+              "laboratory"
+            ],
+            "capability_ids": [
+              "medical_imaging_ai",
+              "biomed_eng",
+              "diabetes_cgm",
+              "one_health_vet"
+            ]
+          }
+        },
+        "early_keywords": [],
+        "mid_keywords": [
+          "medical device",
+          "medtech",
+          "medical imaging"
+        ],
+        "late_keywords": [],
+        "early_relevance": [],
+        "focus_clusters": [
+          {
+            "id": "medtech_devices",
+            "label": "Medical devices / medtech",
+            "stage": "mid",
+            "canonical": "medical device",
+            "count": 4,
+            "lead_count": 1,
+            "relevance": 49.4,
+            "top_term": "medical device"
+          },
+          {
+            "id": "imaging_ai",
+            "label": "Medical imaging & clinical AI",
+            "stage": "mid",
+            "canonical": "medical imaging",
+            "count": 1,
+            "lead_count": 0,
+            "relevance": 23.2,
+            "top_term": "medical imaging"
+          }
+        ],
+        "bern_units": [
+          "ARTORG",
+          "Department of Diagnostic, Interventional and Pediatric Radiology",
+          "ARTORG Center for Biomedical Engineering Research",
+          "Diabetes Center Berne",
+          "Department of Diabetes, Endocrinology, Nutritional Medicine & Metabolism",
+          "Vetsuisse Faculty"
+        ],
+        "economic_hooks": [
+          "Diabetes / metabolic fit → Diabetes Center Berne + device/drug collaboration.",
+          "Medtech / AI fit → ARTORG co-development and validation pathway."
+        ],
+        "capability_matches": [
+          {
+            "id": "medical_imaging_ai",
+            "name": "Medical Imaging & Clinical AI",
+            "score": 5.76,
+            "overlap_terms": [
+              "medical imaging",
+              "ultrasound",
+              "mri",
+              "clinical ai"
+            ],
+            "source": "University of Bern / ARTORG",
+            "units": [
+              "ARTORG",
+              "Department of Diagnostic, Interventional and Pediatric Radiology"
+            ],
+            "reason": "Aligns with Bern capability 'Medical Imaging & Clinical AI' via terms: medical imaging, ultrasound, mri, clinical ai. Source ecosystem: University of Bern / ARTORG."
+          },
+          {
+            "id": "biomed_eng",
+            "name": "Biomedical Engineering & Medical Devices",
+            "score": 5.4,
+            "overlap_terms": [
+              "medical device",
+              "medtech",
+              "medical technology"
+            ],
+            "source": "ARTORG Center",
+            "units": [
+              "ARTORG Center for Biomedical Engineering Research"
+            ],
+            "reason": "Aligns with Bern capability 'Biomedical Engineering & Medical Devices' via terms: medical device, medtech, medical technology. Source ecosystem: ARTORG Center."
+          },
+          {
+            "id": "diabetes_cgm",
+            "name": "Diabetes & Continuous Glucose Monitoring",
+            "score": 2.3,
+            "overlap_terms": [
+              "diagnostic",
+              "diagnostics"
+            ],
+            "source": "Diabetes Center Berne",
+            "units": [
+              "Diabetes Center Berne",
+              "Department of Diabetes, Endocrinology, Nutritional Medicine & Metabolism"
+            ],
+            "reason": "Aligns with Bern capability 'Diabetes & Continuous Glucose Monitoring' via terms: diagnostic, diagnostics. Source ecosystem: Diabetes Center Berne."
+          },
+          {
+            "id": "one_health_vet",
+            "name": "One Health & Veterinary Sciences",
+            "score": 0.7,
+            "overlap_terms": [
+              "veterinary"
+            ],
+            "source": "University of Bern",
+            "units": [
+              "Vetsuisse Faculty"
+            ],
+            "reason": "Aligns with Bern capability 'One Health & Veterinary Sciences' via terms: veterinary. Source ecosystem: University of Bern."
+          }
+        ],
+        "teammate_queries_early": [],
+        "teammate_queries_later": [
+          "medical device",
+          "medtech",
+          "medical imaging",
+          "diagnostic",
+          "diagnostics",
+          "ultrasound",
+          "mri",
+          "medical technology",
+          "veterinary",
+          "laboratory"
+        ],
+        "suggested_queries": [
+          "medical imaging",
+          "medical device",
+          "medtech",
+          "diagnostic",
+          "diagnostics",
+          "ultrasound",
+          "mri",
+          "medical technology",
+          "veterinary",
+          "laboratory"
+        ],
+        "handoff_note": "P3 / mid stage — no strong CGM/diabetes front hit; match mid keywords next: medical device, medtech, medical imaging."
+      },
+      "extraction": {
+        "confidence": 0.95,
+        "method": "web-enrich",
+        "warnings": [
+          "Apertus translation unavailable (set LLM_BASE_URL / LLM_API_KEY / LLM_NAME).",
+          "Full MT unavailable right now (configure Apertus LLM_* for best quality, or deep-translator when not rate-limited). Using multilingual lexicon bridge.",
+          "Source language 'zh' normalized to English via lexicon_bridge."
+        ]
+      },
+      "queue": {
+        "position": 1,
+        "priority_rating": "P3",
+        "priority_stage": "mid",
+        "priority_score": 25.9
+      },
+      "source_text_excerpt": "迈瑞创始于1991年，是全球创新的医疗器械与解决方案供应商。迈瑞总部设在中国深圳，在北美、欧洲、亚洲、非洲、拉美等地区的超过30个国家设有44家境外子公司；在国内设有17家子公司，超过40家分支机构，全球员工超万人，形成了庞大的全球化研发、营销及服务网络。\n\n生命科技如此亲近 - 迈瑞医疗\n\n生命科技如此亲近 - 迈瑞医疗\nmindray\nsearch\nsearch\n我的账户\n注销\n产品及解决方案\n解决方案\n产品\n启元大模型\n解决方案\n瑞智生态\n瑞智急救解决方案\n瑞智普护解决方案\n瑞智围术期决策辅助系统\n瑞智重症决策辅助系统\n瑞智设备管理信息系统\n数字一体化手术室系统\n瑞检生态\n瑞影数智影像生态\n瑞影云++\n数字医学影像整体解决方案\n了解更多\n网络安全\n负责任AI\n产品\n监护系统\n重症监护\nBeneVision V系列\nBeneVision VMAX/V700/V500/V200\nBeneVision VMAX/V700/V500/V200 ICU\nBeneVision VMAX/V700/V500/V200 OR\nBeneVision V700/V500/V200 Neo\n了解更多\nBeneVision N系列\nBeneVision N22/19\nBeneVision N22/N19/N17 ICU\nBeneVision N17/N15/N12\nBeneVision N17/N15 OR\nBeneVision N17/N15/N12 Neo\nBeneVision N1\n了解更多\n亚重症监护\nePM 10M/12M\nePM 10/12/15\nePM 10 Neo\n了解更多\n常规监护\nuMEC10/12\n了解更多\n查房/分诊监护\nVS 9\nVS 8\nVS-600\n了解更多\n穿戴监护\nmWear\nePM 10M/12M\n了解更多\n转运监护\nBeneVision N1\nePM 10\n了解更多\n遥测监护\nBeneVision TMS60 Pro\nBeneVision TMS30\n了解更多\n中央监护\nBeneVision 中央监护系统\nHYPERVISOR X\nHypervisor VI\n了解更多\n手持式血氧仪\nPM60\n了解更多\n监护仪配附件\n移动应用\nMobile Viewer\nAlarmGUARD\nM-Scan\n了解更多\n了解更多\n麻醉机\nA 系列\nA9\nA8\nA7\nA5\nA3\nA1\n了解更多\nWATO 系列\nWATO EX-75\nWATO EX-65\nWATO EX-55\nWATO EX-35\nWATO EX-20\n了解更多\n麻醉蒸发器\nV60\n了解更多\n呼吸机\nSV系列\nSV900/SV700\nSV800/SV600\nSV300 Pro\nSV300\nSV70/SV60\nSV50/SV30\n了解更多\nNB系列\nNB650H / NB650\nNB350\nTV系列\nTV80\nTV80 MRI\nTV50\n了解更多\n呼吸湿化仪\nNH9/NH6\n了解更多\n了解更多\n输注系统\nBeneFusion n 系列\nBeneFusion e 系列\nBeneFusion i/u 系列\n磁共振输液信息采集系统\nBeneFusion 肠内营养泵\n了解更多\nAED\nBeneHeart E 系列\nBeneHeart L 系列\nBeneHeart C系列\nBeneHeart D1 pro\nBeneHeart S系列\nAED配附件\n了解更多\n除颤监护仪\nBeneHeart DX\nBeneHeart D60\nBeneHeart D30\nBeneHeart D6\nBeneHeart D3\nBeneHeart D2\nPHEIS远程数据传输系统\n除颤仪配附件\n了解更多\n心电图机\nBeneHeart R900\nBeneHeart R700\nBeneHeart R300\n心电图机配附件\n了解更多\n体外诊断仪器\n全实验室自动化检测系统\nMT 8000\nM1000\nM980\n了解更多\n血液细胞检测系统\n太行血液分析流水线\nCAL 8000\nCAL 7000\nCAL 6000\nCAL 3000\nMC-80\n五分类血液细胞分析仪\nBC-760 CS\nBC-7500 系列\nBC-6900\nBC-6800Plus\nBC-6800\nBC-6000\nBC-5390\nBC-5390CRP 系列\nBC-5150\nBC-5000\n三分群血液细胞分析仪\nBC-30s\nBC-30\nBC-20s\nBC-20\nBC-10\n全自动细胞形态学分析仪\nMC-80\n了解更多\n生化分析检测系统\n天河生化免疫分析流水线\nSAL 9000\nSAL 6000\n了解更多\n模块化生化检测系统\nBS-5000\nBS-2800M\nBS-2000M\nBS-1000M\nBS-800M\n了解更多\n全自动生化分析仪\nBS-600M\nBS-830\nBS-600\nBS-350E\nBS-200\nBS-180\n了解更多\n生化试剂套餐\n了解更多\n化学发光免疫检测系统\nCL-9000i\nCL-8000i\nCL-6000i\nCL-2600i\nCL-2000i\nCL-1000i\nCL-900i\n化学发光试剂套餐\n了解更多\n凝血检测系统\nMT 8000C\nCX-9000\nCX-6000\nCX-3000\nCX-2000\nExC810\nExC800\nC3510\nC3280\nC3200\nC3100\nC2000-4\nC2000-2\n了解更多\n糖化血红蛋白分析仪\nH50\n了解更多\n流式细胞仪\nBriCyte MX\nBriCyte E6\n了解更多\n尿液检测系统\n全自动尿液分析流水线\nEU 8600/EU 8600 GT\n全自动尿液分析系统\nEU-5600 Pro/EU-5300 Pro\n尿液有形成分分析仪\nEH-2090\n全自动干化学尿液分析仪\nUA-5600\n了解更多\n微生物诊断系统\n手动装卸培养瓶机型\nFA-N系列\n自动装卸培养瓶机型\nFA-M400\n血培养设备配套试剂\n微生物培养瓶\n全自动微生物鉴定药敏分析系统\nAF-600/300\nAP-100\nAZ-300\n全自动微生物鉴定药敏分析仪检测试剂盒\n了解更多\n了解更多\n试剂套餐及原材料\n化学发光试剂套餐\n生化试剂套餐\n试剂原材料\n了解更多\n超声影像\n全身成像\n昆仑 Resona A20\n昆仑 Resona R9\n昆仑 Resona I9 精英版\n昆仑 Resona I8\nDC-90\nDC-80\nDC-75\nZS3 Exp\nZS2 Exp\n了解更多\n女性健康\n女娲 Nuewa A20\n女娲 Nuewa R9\n女娲 Nuewa I9 精英版\n女娲 Nuewa I8\n了解更多\n临床超声\nTE9\nTE7\nM9\n了解更多\n心血管成像\n鲲鹏 Recho R9\n基础医疗\nConsona N 系列\nDC-30\nZ60\nZ50\nDP-50Exp\n了解更多\n掌上超声\nTE Air 泰阿i3P\nTE Air 泰阿e5M\n肝纤设备\nHepatus 6\n了解更多\n医用X射线成像系统\n数字X射线成像系统 (DR)\nDigiEye U 系列\nDigiEye 330/350/360系列\n了解更多\n移动数字X射线成像系统 (移动DR)\nMobiEye 700/750/800系列\n了解更多\n了解更多\n微创外科\n腔镜系统\nHyPixel UX7\nHyPixel UX5\nHyPixel UX3\nHyPixel UX1\n了解更多\n能量平台\n超声高频集成手术设备\n腔镜吻合器\n一次性电动腔镜吻合器和钉仓\n一次性腔镜吻合器和钉仓\n了解更多\n重复性手术器械\n瑞莱系列\n穿刺器\n三通冲洗管\n持针钳\n施夹器\n其他腹腔镜手术器械\n了解更多\n一次性手术器械\n一次性腹腔镜高频手术器械\n一次性电凝切割器\n一次性使用腹腔镜高频手术电极\n一次性腹腔镜用穿刺器\n一次性多通道单孔腹腔镜手术穿刺器\n一次性切口保护牵开固定器\n一次性冲洗吸引器 (冲洗引流管)\n一次性使用内窥镜标本取物袋\n一次性结扎夹\n了解更多\n了解更多\n手术床\nHyBase V9\nHyBase V8\nHyBase V6\nHyBase V5 Pro\nHyBase V5\nHyBase V3\n了解更多\n手术灯\nHyLED X系列\nHyLED C系列\nHyLED Q系列\n了解更多\n吊塔吊桥\nHyPort P系列\nHyPort P20\nHyPort R80\nHyPort R20\n了解更多\n骨科产品\n创伤\n锁定加压接骨板系统\n髓内钉\n锁定螺钉\n空心钉\n脊柱\nMS 颈椎前路钉板系统\nMS 脊柱后路内固定系统\nMS 脊柱后路内固定系统\nMS 融合器\n3D 打印融合器\n关节\n髋关节系统\n膝关节\n生物材料\n多孔生物陶瓷人工骨\n封闭负压引流材料\n了解更多\n心血管介入\n惠泰医疗\n迈瑞动物医疗\n了解更多\n启元大模型\n启元围术期医学大模型\n启元重症医学大模型\n启元设备管理大模型\n启元检验大模型\n启元超声大模型\n启元医疗技术服务大模型\n数智创新\n用户服务\n操作视频\n监护配附件\n联系我们\n了解更多\n投资者关系\n人才招聘\n关于我们\n理念\n创新\n业务\n历史\n文化\nESG\nESG\n媒体中心\n联系我们\n选择地区/语言\n选择地区/语言\nGlobal - English\nAustralia - English\nArgentina - Español\nBrazil - Português\nCanada - English\nChile - Español\nColombia - Español\nEcuador - Español\nEgypt - English\nFrance - Français\nGermany - Deutsch\nKenya - English\nMalaysia - English\nMexico - Español\nMorocco - English\nNetherlands - Dutch\nNigeria - English\nPanama - Español\nPeru - Español\nPoland - Polski\nRussia - Русский\nSaudi Arabia - English\nSouth Africa - English\nTürkiye - Türkçe\nVenezuela - Español\nVietnam - English\n启域数智实验室，现登场！\n科技释力，精准至真，全面升维检验医学价值。\n了解更多\n看得见的患者，被看见的英雄\n南非数智化院前急救实践，数智急救体系为团队所有人提供可靠的支撑。\n了解更多\n让医院向患者奔去\n迈瑞用超声为院外 ECPR 打开急救的「生死通路」。\n了解更多\nExpert Talks\n与国际专家对话，共探检验未来。\n了解更多\n新闻速递\n关注我们的最新动态\n最新资讯 ｜\nm-Elite | 南京首场！全球专家共探妇儿超声新未来\n最新资讯 ｜ 2026/10/12\nm-Elite | 在雷根斯堡，共探超声影像学术前沿\n最新资讯 ｜ 2026/09/30\n砀山迈瑞医疗科技产业园正式开园\n最新资讯 ｜ 2026/09/24\n数贸会上的“惊喜时刻”，遇见迈瑞数智创新\n最新资讯 ｜ 2026/09/21\n国家自然科学基金委员会党组书记、主任窦贤康率队到迈瑞总部调研\n最新资讯 ｜ 2026/09/19\nNCLM 2026，迈瑞创新之旅\n了解更多\n关于我们\n探索我们的医疗之旅\n了解更多\n首页\nMindray and Cookies\nMindray respects your privacy. We use cookies for a variety of purposes, such as website functionality, improving your experience of our website, building integration with social media and helping target our advertising. By continuing your visit on our website, you are consenting to our use of cookies. However, you can change your cookie settings at any time.\nCookie preference\nAccept and Proceed\nYour Choices Regarding Cookies on this Site\nCookies are important to the proper functioning of a site. To improve your experience, we use cookies to remember log-in details and provide secure log-in, collect statistics to optimize site functionality, and deliver content tailored to your interests.\nClick Agree and Proceed to accept cookies and go directly to the site or click on More Information to see detailed descriptions of the types of cookies and choose whether to accept certain cookies while on the site.\nAccept and Proceed\nMore Information\nFunction unavailable\nSome functions cannot be used properly because of the privacy settings of your browser. Please modify your privacy settings and retry. (Conact Us, Remember Me, Accessories Search)\n产品及解决方案\n瑞智生态\n瑞检生态\n瑞影数智影像生态\n监护系统\n呼吸机\n麻醉机\n超声影像\n体外诊断仪器\n外科产品\n骨科产品\n启元大模型\n启元围术期医学大模型\n启元重症医学大模型\n启元设备管理大模型\n启元检验大模型\n启元超声大模型\n启元医疗技术服务大模型\n用户服务\n操作视"
+    },
+    {
+      "schema_version": "1.1",
+      "generated_at": "2026-10-18T13:45:03.232450+00:00",
+      "id": "mindray",
+      "name": "Mindray",
+      "domain": "life_science",
+      "in_scope": true,
+      "website_info": {
+        "url": "https://www.mindray.com/cn",
+        "source_type": "url",
+        "source_ref": "https://www.mindray.com/cn",
+        "meta_title": "生命科技如此亲近 - 迈瑞医疗",
+        "meta_description": "迈瑞创始于1991年，是全球创新的医疗器械与解决方案供应商。迈瑞总部设在中国深圳，在北美、欧洲、亚洲、非洲、拉美等地区的超过30个国家设有44家境外子公司；在国内设有17家子公司，超过40家分支机构，全球员工超万人，形成了庞大的全球化研发、营销及服务网络。\n\n[lexicon_en] medical device",
+        "fetched_language": "zh",
+        "translated_to_english": true,
+        "translation_method": "lexicon_bridge",
+        "web_enrich_method": "wikipedia+duckduckgo+snippet",
+        "web_sources": [
+          "https://en.wikipedia.org/wiki/Mindray_(company)",
+          "https://www.mindray.com/en/solutions/laboratory-diagnostics",
+          "https://www.mindray.com/en",
+          "https://en.wikipedia.org/wiki/Mindray",
+          "https://www.medtechfirms.com/company/mindray",
+          "https://www.mindraysupply.com/"
+        ],
+        "summary_method": "rules"
+      },
+      "profile": {
+        "sector": "medtech",
+        "subsector": "imaging & diagnostics",
+        "description": "迈瑞创始于1991年，是全球创新的医疗器械与解决方案供应商。迈瑞总部设在中国深圳，在北美、欧洲、亚洲、非洲、拉美等地区的超过30个国家设有44家境外子公司；在国内设有17家子公司，超过40家分支机构，全球员工超万人，形成了庞大的全球化研发、营销及服务网络。",
+        "what_they_do": "Focus: Medical devices / medtech (relevance 49.4%, n=4). 迈瑞创始于1991年，是全球创新的医疗器械与解决方案供应商。迈瑞总部设在中国深圳，在北美、欧洲、亚洲、非洲、拉美等地区的超过30个国家设有44家境外子公司；在国内设有17家子公司，超过40家分支机构，全球员工超万人，形成了庞大的全球化研发、营销及服务网络。",
+        "keywords": [
+          "medical device",
+          "medical imaging",
+          "veterinary",
+          "medtech",
+          "diagnostic",
+          "diagnostics",
+          "laboratory"
+        ],
+        "needs": [
+          "EU partners"
+        ],
+        "hq_city": "Shenzhen",
+        "hq_country": "Guangdong",
+        "canton_bern_presence": false,
+        "semantic_profile": {
+          "activity_summary": "Primary focus signals: Medical devices / medtech (49.4% relevance, n=4); Medical imaging & clinical AI (23.2% relevance, n=1).",
+          "focus_clusters": [
+            {
+              "id": "medtech_devices",
+              "label": "Medical devices / medtech",
+              "stage": "mid",
+              "canonical": "medical device",
+              "count": 4,
+              "lead_count": 1,
+              "relevance": 49.4,
+              "top_term": "medical device"
+            },
+            {
+              "id": "imaging_ai",
+              "label": "Medical imaging & clinical AI",
+              "stage": "mid",
+              "canonical": "medical imaging",
+              "count": 1,
+              "lead_count": 0,
+              "relevance": 23.2,
+              "top_term": "medical imaging"
+            }
+          ],
+          "early_ranked": [],
+          "mid_ranked": [
+            {
+              "term": "medical device",
+              "stage": "mid",
+              "cluster_id": "medtech_devices",
+              "cluster_label": "Medical devices / medtech",
+              "count": 4,
+              "lead_count": 1,
+              "relevance": 51.0,
+              "semantic_boost": 6.0
+            },
+            {
+              "term": "medical imaging",
+              "stage": "mid",
+              "cluster_id": "imaging_ai",
+              "cluster_label": "Medical imaging & clinical AI",
+              "count": 1,
+              "lead_count": 0,
+              "relevance": 26.5,
+              "semantic_boost": 6.0
+            }
+          ],
+          "late_ranked": []
+        }
+      },
+      "match": {
+        "match_rate": 100.0,
+        "tier": "A — Priority outreach",
+        "reasons": [
+          "Domain scope: Life Science only (sectors: biopharma, biotech, cdmo, digital_health, labtech, medtech, nutrition, pharma). Sources: University of Bern, ARTORG, Diabetes Center Berne.",
+          "Sector 'medtech' is within the life-science domain.",
+          "P3 / mid stage — no strong CGM/diabetes front hit; match mid keywords next: medical device, medtech, medical imaging.",
+          "Match rate 100.0% = capabilities 100.0 + sector 8.0 + Bern presence 0.0 + breadth 6.0 + flagship 0.0 + focus synergy 0.0.",
+          "No Canton of Bern presence detected — presence would add +18 to match rate.",
+          "Sector 'medtech' / imaging & diagnostics maps to Bern's life-science value proposition.",
+          "Aligns with Bern capability 'Biomedical Engineering & Medical Devices' via terms: medical device, medtech, medical technology. Source ecosystem: ARTORG Center.",
+          "Aligns with Bern capability 'Medical Imaging & Clinical AI' via terms: medical imaging, mri, clinical ai. Source ecosystem: University of Bern / ARTORG.",
+          "Aligns with Bern capability 'Diabetes & Continuous Glucose Monitoring' via terms: diagnostic, diagnostics. Source ecosystem: Diabetes Center Berne.",
+          "Aligns with Bern capability 'One Health & Veterinary Sciences' via terms: veterinary. Source ecosystem: University of Bern.",
+          "Score limited: no Canton of Bern site/HQ detected (+18 if present).",
+          "Score limited: no strong focus-cluster ↔ Bern capability synergy yet."
+        ],
+        "score_breakdown": {
+          "capability_points": 13.26,
+          "base_from_capabilities": 100.0,
+          "sector_bonus": 8.0,
+          "presence_bonus": 0.0,
+          "breadth_bonus": 6.0,
+          "flagship_bonus": 0.0,
+          "focus_synergy_bonus": 0.0,
+          "match_rate": 100.0,
+          "formula": "min(100, (sum(top5_capability_scores)/12)*100 + sector_bonus + presence_bonus(+18 if in Bern) + breadth_bonus + flagship_bonus + focus_synergy_bonus)",
+          "capability_hits": [
+            {
+              "id": "biomed_eng",
+              "name": "Biomedical Engineering & Medical Devices",
+              "score": 5.4,
+              "overlap_terms": [
+                "medical device",
+                "medtech",
+                "medical technology"
+              ],
+              "source": "ARTORG Center"
+            },
+            {
+              "id": "medical_imaging_ai",
+              "name": "Medical Imaging & Clinical AI",
+              "score": 4.86,
+              "overlap_terms": [
+                "medical imaging",
+                "mri",
+                "clinical ai"
+              ],
+              "source": "University of Bern / ARTORG"
+            },
+            {
+              "id": "diabetes_cgm",
+              "name": "Diabetes & Continuous Glucose Monitoring",
+              "score": 2.3,
+              "overlap_terms": [
+                "diagnostic",
+                "diagnostics"
+              ],
+              "source": "Diabetes Center Berne"
+            },
+            {
+              "id": "one_health_vet",
+              "name": "One Health & Veterinary Sciences",
+              "score": 0.7,
+              "overlap_terms": [
+                "veterinary"
+              ],
+              "source": "University of Bern"
+            }
+          ],
+          "why_not_higher": [
+            "Score limited: no Canton of Bern site/HQ detected (+18 if present).",
+            "Score limited: no strong focus-cluster ↔ Bern capability synergy yet."
+          ]
+        },
+        "reasoning": {
+          "summary": "100.0% Bern life-science fit (A — Priority outreach). Top capability: Biomedical Engineering & Medical Devices via medical device, medtech, medical technology.",
+          "reasons": [
+            "Domain scope: Life Science only (sectors: biopharma, biotech, cdmo, digital_health, labtech, medtech, nutrition, pharma). Sources: University of Bern, ARTORG, Diabetes Center Berne.",
+            "Sector 'medtech' is within the life-science domain.",
+            "P3 / mid stage — no strong CGM/diabetes front hit; match mid keywords next: medical device, medtech, medical imaging.",
+            "Match rate 100.0% = capabilities 100.0 + sector 8.0 + Bern presence 0.0 + breadth 6.0 + flagship 0.0 + focus synergy 0.0.",
+            "No Canton of Bern presence detected — presence would add +18 to match rate.",
+            "Sector 'medtech' / imaging & diagnostics maps to Bern's life-science value proposition.",
+            "Aligns with Bern capability 'Biomedical Engineering & Medical Devices' via terms: medical device, medtech, medical technology. Source ecosystem: ARTORG Center.",
+            "Aligns with Bern capability 'Medical Imaging & Clinical AI' via terms: medical imaging, mri, clinical ai. Source ecosystem: University of Bern / ARTORG.",
+            "Aligns with Bern capability 'Diabetes & Continuous Glucose Monitoring' via terms: diagnostic, diagnostics. Source ecosystem: Diabetes Center Berne.",
+            "Aligns with Bern capability 'One Health & Veterinary Sciences' via terms: veterinary. Source ecosystem: University of Bern.",
+            "Score limited: no Canton of Bern site/HQ detected (+18 if present).",
+            "Score limited: no strong focus-cluster ↔ Bern capability synergy yet."
+          ],
+          "score_breakdown": {
+            "capability_points": 13.26,
+            "base_from_capabilities": 100.0,
+            "sector_bonus": 8.0,
+            "presence_bonus": 0.0,
+            "breadth_bonus": 6.0,
+            "flagship_bonus": 0.0,
+            "focus_synergy_bonus": 0.0,
+            "match_rate": 100.0,
+            "formula": "min(100, (sum(top5_capability_scores)/12)*100 + sector_bonus + presence_bonus(+18 if in Bern) + breadth_bonus + flagship_bonus + focus_synergy_bonus)",
+            "capability_hits": [
+              {
+                "id": "biomed_eng",
+                "name": "Biomedical Engineering & Medical Devices",
+                "score": 5.4,
+                "overlap_terms": [
+                  "medical device",
+                  "medtech",
+                  "medical technology"
+                ],
+                "source": "ARTORG Center"
+              },
+              {
+                "id": "medical_imaging_ai",
+                "name": "Medical Imaging & Clinical AI",
+                "score": 4.86,
+                "overlap_terms": [
+                  "medical imaging",
+                  "mri",
+                  "clinical ai"
+                ],
+                "source": "University of Bern / ARTORG"
+              },
+              {
+                "id": "diabetes_cgm",
+                "name": "Diabetes & Continuous Glucose Monitoring",
+                "score": 2.3,
+                "overlap_terms": [
+                  "diagnostic",
+                  "diagnostics"
+                ],
+                "source": "Diabetes Center Berne"
+              },
+              {
+                "id": "one_health_vet",
+                "name": "One Health & Veterinary Sciences",
+                "score": 0.7,
+                "overlap_terms": [
+                  "veterinary"
+                ],
+                "source": "University of Bern"
+              }
+            ],
+            "why_not_higher": [
+              "Score limited: no Canton of Bern site/HQ detected (+18 if present).",
+              "Score limited: no strong focus-cluster ↔ Bern capability synergy yet."
+            ]
+          },
+          "focus_synergy": [],
+          "economic_hooks": [
+            "Diabetes / metabolic fit → Diabetes Center Berne + device/drug collaboration.",
+            "Medtech / AI fit → ARTORG co-development and validation pathway."
+          ],
+          "bern_units": [
+            "ARTORG Center for Biomedical Engineering Research",
+            "ARTORG",
+            "Department of Diagnostic, Interventional and Pediatric Radiology",
+            "Diabetes Center Berne",
+            "Department of Diabetes, Endocrinology, Nutritional Medicine & Metabolism",
+            "Vetsuisse Faculty"
+          ],
+          "backend_hints": {
+            "priority_rating": "P3",
+            "priority_stage": "mid",
+            "run_first": [],
+            "run_later": [
+              "medical device",
+              "medtech",
+              "medical imaging",
+              "diagnostic",
+              "diagnostics",
+              "medical technology",
+              "mri",
+              "clinical ai",
+              "veterinary",
+              "laboratory"
+            ],
+            "capability_ids": [
+              "biomed_eng",
+              "medical_imaging_ai",
+              "diabetes_cgm",
+              "one_health_vet"
+            ]
+          }
+        },
+        "early_keywords": [],
+        "mid_keywords": [
+          "medical device",
+          "medtech",
+          "medical imaging"
+        ],
+        "late_keywords": [],
+        "early_relevance": [],
+        "focus_clusters": [
+          {
+            "id": "medtech_devices",
+            "label": "Medical devices / medtech",
+            "stage": "mid",
+            "canonical": "medical device",
+            "count": 4,
+            "lead_count": 1,
+            "relevance": 49.4,
+            "top_term": "medical device"
+          },
+          {
+            "id": "imaging_ai",
+            "label": "Medical imaging & clinical AI",
+            "stage": "mid",
+            "canonical": "medical imaging",
+            "count": 1,
+            "lead_count": 0,
+            "relevance": 23.2,
+            "top_term": "medical imaging"
+          }
+        ],
+        "bern_units": [
+          "ARTORG Center for Biomedical Engineering Research",
+          "ARTORG",
+          "Department of Diagnostic, Interventional and Pediatric Radiology",
+          "Diabetes Center Berne",
+          "Department of Diabetes, Endocrinology, Nutritional Medicine & Metabolism",
+          "Vetsuisse Faculty"
+        ],
+        "economic_hooks": [
+          "Diabetes / metabolic fit → Diabetes Center Berne + device/drug collaboration.",
+          "Medtech / AI fit → ARTORG co-development and validation pathway."
+        ],
+        "capability_matches": [
+          {
+            "id": "biomed_eng",
+            "name": "Biomedical Engineering & Medical Devices",
+            "score": 5.4,
+            "overlap_terms": [
+              "medical device",
+              "medtech",
+              "medical technology"
+            ],
+            "source": "ARTORG Center",
+            "units": [
+              "ARTORG Center for Biomedical Engineering Research"
+            ],
+            "reason": "Aligns with Bern capability 'Biomedical Engineering & Medical Devices' via terms: medical device, medtech, medical technology. Source ecosystem: ARTORG Center."
+          },
+          {
+            "id": "medical_imaging_ai",
+            "name": "Medical Imaging & Clinical AI",
+            "score": 4.86,
+            "overlap_terms": [
+              "medical imaging",
+              "mri",
+              "clinical ai"
+            ],
+            "source": "University of Bern / ARTORG",
+            "units": [
+              "ARTORG",
+              "Department of Diagnostic, Interventional and Pediatric Radiology"
+            ],
+            "reason": "Aligns with Bern capability 'Medical Imaging & Clinical AI' via terms: medical imaging, mri, clinical ai. Source ecosystem: University of Bern / ARTORG."
+          },
+          {
+            "id": "diabetes_cgm",
+            "name": "Diabetes & Continuous Glucose Monitoring",
+            "score": 2.3,
+            "overlap_terms": [
+              "diagnostic",
+              "diagnostics"
+            ],
+            "source": "Diabetes Center Berne",
+            "units": [
+              "Diabetes Center Berne",
+              "Department of Diabetes, Endocrinology, Nutritional Medicine & Metabolism"
+            ],
+            "reason": "Aligns with Bern capability 'Diabetes & Continuous Glucose Monitoring' via terms: diagnostic, diagnostics. Source ecosystem: Diabetes Center Berne."
+          },
+          {
+            "id": "one_health_vet",
+            "name": "One Health & Veterinary Sciences",
+            "score": 0.7,
+            "overlap_terms": [
+              "veterinary"
+            ],
+            "source": "University of Bern",
+            "units": [
+              "Vetsuisse Faculty"
+            ],
+            "reason": "Aligns with Bern capability 'One Health & Veterinary Sciences' via terms: veterinary. Source ecosystem: University of Bern."
+          }
+        ],
+        "teammate_queries_early": [],
+        "teammate_queries_later": [
+          "medical device",
+          "medtech",
+          "medical imaging",
+          "diagnostic",
+          "diagnostics",
+          "medical technology",
+          "mri",
+          "clinical ai",
+          "veterinary",
+          "laboratory"
+        ],
+        "suggested_queries": [
+          "medical device",
+          "medtech",
+          "medical imaging",
+          "diagnostic",
+          "diagnostics",
+          "medical technology",
+          "mri",
+          "clinical ai",
+          "veterinary",
+          "laboratory"
+        ],
+        "handoff_note": "P3 / mid stage — no strong CGM/diabetes front hit; match mid keywords next: medical device, medtech, medical imaging."
+      },
+      "extraction": {
+        "confidence": 0.95,
+        "method": "web-enrich",
+        "warnings": [
+          "Apertus translation unavailable (set LLM_BASE_URL / LLM_API_KEY / LLM_NAME).",
+          "Full MT unavailable right now (configure Apertus LLM_* for best quality, or deep-translator when not rate-limited). Using multilingual lexicon bridge.",
+          "Source language 'zh' normalized to English via lexicon_bridge."
+        ]
+      },
+      "queue": {
+        "position": 2,
+        "priority_rating": "P3",
+        "priority_stage": "mid",
+        "priority_score": 25.9
+      },
+      "source_text_excerpt": "迈瑞创始于1991年，是全球创新的医疗器械与解决方案供应商。迈瑞总部设在中国深圳，在北美、欧洲、亚洲、非洲、拉美等地区的超过30个国家设有44家境外子公司；在国内设有17家子公司，超过40家分支机构，全球员工超万人，形成了庞大的全球化研发、营销及服务网络。\n\n生命科技如此亲近 - 迈瑞医疗\n\n生命科技如此亲近 - 迈瑞医疗\nmindray\nsearch\nsearch\n我的账户\n注销\n产品及解决方案\n解决方案\n产品\n启元大模型\n解决方案\n瑞智生态\n瑞智急救解决方案\n瑞智普护解决方案\n瑞智围术期决策辅助系统\n瑞智重症决策辅助系统\n瑞智设备管理信息系统\n数字一体化手术室系统\n瑞检生态\n瑞影数智影像生态\n瑞影云++\n数字医学影像整体解决方案\n了解更多\n网络安全\n负责任AI\n产品\n监护系统\n重症监护\nBeneVision V系列\nBeneVision VMAX/V700/V500/V200\nBeneVision VMAX/V700/V500/V200 ICU\nBeneVision VMAX/V700/V500/V200 OR\nBeneVision V700/V500/V200 Neo\n了解更多\nBeneVision N系列\nBeneVision N22/19\nBeneVision N22/N19/N17 ICU\nBeneVision N17/N15/N12\nBeneVision N17/N15 OR\nBeneVision N17/N15/N12 Neo\nBeneVision N1\n了解更多\n亚重症监护\nePM 10M/12M\nePM 10/12/15\nePM 10 Neo\n了解更多\n常规监护\nuMEC10/12\n了解更多\n查房/分诊监护\nVS 9\nVS 8\nVS-600\n了解更多\n穿戴监护\nmWear\nePM 10M/12M\n了解更多\n转运监护\nBeneVision N1\nePM 10\n了解更多\n遥测监护\nBeneVision TMS60 Pro\nBeneVision TMS30\n了解更多\n中央监护\nBeneVision 中央监护系统\nHYPERVISOR X\nHypervisor VI\n了解更多\n手持式血氧仪\nPM60\n了解更多\n监护仪配附件\n移动应用\nMobile Viewer\nAlarmGUARD\nM-Scan\n了解更多\n了解更多\n麻醉机\nA 系列\nA9\nA8\nA7\nA5\nA3\nA1\n了解更多\nWATO 系列\nWATO EX-75\nWATO EX-65\nWATO EX-55\nWATO EX-35\nWATO EX-20\n了解更多\n麻醉蒸发器\nV60\n了解更多\n呼吸机\nSV系列\nSV900/SV700\nSV800/SV600\nSV300 Pro\nSV300\nSV70/SV60\nSV50/SV30\n了解更多\nNB系列\nNB650H / NB650\nNB350\nTV系列\nTV80\nTV80 MRI\nTV50\n了解更多\n呼吸湿化仪\nNH9/NH6\n了解更多\n了解更多\n输注系统\nBeneFusion n 系列\nBeneFusion e 系列\nBeneFusion i/u 系列\n磁共振输液信息采集系统\nBeneFusion 肠内营养泵\n了解更多\nAED\nBeneHeart E 系列\nBeneHeart L 系列\nBeneHeart C系列\nBeneHeart D1 pro\nBeneHeart S系列\nAED配附件\n了解更多\n除颤监护仪\nBeneHeart DX\nBeneHeart D60\nBeneHeart D30\nBeneHeart D6\nBeneHeart D3\nBeneHeart D2\nPHEIS远程数据传输系统\n除颤仪配附件\n了解更多\n心电图机\nBeneHeart R900\nBeneHeart R700\nBeneHeart R300\n心电图机配附件\n了解更多\n体外诊断仪器\n全实验室自动化检测系统\nMT 8000\nM1000\nM980\n了解更多\n血液细胞检测系统\n太行血液分析流水线\nCAL 8000\nCAL 7000\nCAL 6000\nCAL 3000\nMC-80\n五分类血液细胞分析仪\nBC-760 CS\nBC-7500 系列\nBC-6900\nBC-6800Plus\nBC-6800\nBC-6000\nBC-5390\nBC-5390CRP 系列\nBC-5150\nBC-5000\n三分群血液细胞分析仪\nBC-30s\nBC-30\nBC-20s\nBC-20\nBC-10\n全自动细胞形态学分析仪\nMC-80\n了解更多\n生化分析检测系统\n天河生化免疫分析流水线\nSAL 9000\nSAL 6000\n了解更多\n模块化生化检测系统\nBS-5000\nBS-2800M\nBS-2000M\nBS-1000M\nBS-800M\n了解更多\n全自动生化分析仪\nBS-600M\nBS-830\nBS-600\nBS-350E\nBS-200\nBS-180\n了解更多\n生化试剂套餐\n了解更多\n化学发光免疫检测系统\nCL-9000i\nCL-8000i\nCL-6000i\nCL-2600i\nCL-2000i\nCL-1000i\nCL-900i\n化学发光试剂套餐\n了解更多\n凝血检测系统\nMT 8000C\nCX-9000\nCX-6000\nCX-3000\nCX-2000\nExC810\nExC800\nC3510\nC3280\nC3200\nC3100\nC2000-4\nC2000-2\n了解更多\n糖化血红蛋白分析仪\nH50\n了解更多\n流式细胞仪\nBriCyte MX\nBriCyte E6\n了解更多\n尿液检测系统\n全自动尿液分析流水线\nEU 8600/EU 8600 GT\n全自动尿液分析系统\nEU-5600 Pro/EU-5300 Pro\n尿液有形成分分析仪\nEH-2090\n全自动干化学尿液分析仪\nUA-5600\n了解更多\n微生物诊断系统\n手动装卸培养瓶机型\nFA-N系列\n自动装卸培养瓶机型\nFA-M400\n血培养设备配套试剂\n微生物培养瓶\n全自动微生物鉴定药敏分析系统\nAF-600/300\nAP-100\nAZ-300\n全自动微生物鉴定药敏分析仪检测试剂盒\n了解更多\n了解更多\n试剂套餐及原材料\n化学发光试剂套餐\n生化试剂套餐\n试剂原材料\n了解更多\n超声影像\n全身成像\n昆仑 Resona A20\n昆仑 Resona R9\n昆仑 Resona I9 精英版\n昆仑 Resona I8\nDC-90\nDC-80\nDC-75\nZS3 Exp\nZS2 Exp\n了解更多\n女性健康\n女娲 Nuewa A20\n女娲 Nuewa R9\n女娲 Nuewa I9 精英版\n女娲 Nuewa I8\n了解更多\n临床超声\nTE9\nTE7\nM9\n了解更多\n心血管成像\n鲲鹏 Recho R9\n基础医疗\nConsona N 系列\nDC-30\nZ60\nZ50\nDP-50Exp\n了解更多\n掌上超声\nTE Air 泰阿i3P\nTE Air 泰阿e5M\n肝纤设备\nHepatus 6\n了解更多\n医用X射线成像系统\n数字X射线成像系统 (DR)\nDigiEye U 系列\nDigiEye 330/350/360系列\n了解更多\n移动数字X射线成像系统 (移动DR)\nMobiEye 700/750/800系列\n了解更多\n了解更多\n微创外科\n腔镜系统\nHyPixel UX7\nHyPixel UX5\nHyPixel UX3\nHyPixel UX1\n了解更多\n能量平台\n超声高频集成手术设备\n腔镜吻合器\n一次性电动腔镜吻合器和钉仓\n一次性腔镜吻合器和钉仓\n了解更多\n重复性手术器械\n瑞莱系列\n穿刺器\n三通冲洗管\n持针钳\n施夹器\n其他腹腔镜手术器械\n了解更多\n一次性手术器械\n一次性腹腔镜高频手术器械\n一次性电凝切割器\n一次性使用腹腔镜高频手术电极\n一次性腹腔镜用穿刺器\n一次性多通道单孔腹腔镜手术穿刺器\n一次性切口保护牵开固定器\n一次性冲洗吸引器 (冲洗引流管)\n一次性使用内窥镜标本取物袋\n一次性结扎夹\n了解更多\n了解更多\n手术床\nHyBase V9\nHyBase V8\nHyBase V6\nHyBase V5 Pro\nHyBase V5\nHyBase V3\n了解更多\n手术灯\nHyLED X系列\nHyLED C系列\nHyLED Q系列\n了解更多\n吊塔吊桥\nHyPort P系列\nHyPort P20\nHyPort R80\nHyPort R20\n了解更多\n骨科产品\n创伤\n锁定加压接骨板系统\n髓内钉\n锁定螺钉\n空心钉\n脊柱\nMS 颈椎前路钉板系统\nMS 脊柱后路内固定系统\nMS 脊柱后路内固定系统\nMS 融合器\n3D 打印融合器\n关节\n髋关节系统\n膝关节\n生物材料\n多孔生物陶瓷人工骨\n封闭负压引流材料\n了解更多\n心血管介入\n惠泰医疗\n迈瑞动物医疗\n了解更多\n启元大模型\n启元围术期医学大模型\n启元重症医学大模型\n启元设备管理大模型\n启元检验大模型\n启元超声大模型\n启元医疗技术服务大模型\n数智创新\n用户服务\n操作视频\n监护配附件\n联系我们\n了解更多\n投资者关系\n人才招聘\n关于我们\n理念\n创新\n业务\n历史\n文化\nESG\nESG\n媒体中心\n联系我们\n选择地区/语言\n选择地区/语言\nGlobal - English\nAustralia - English\nArgentina - Español\nBrazil - Português\nCanada - English\nChile - Español\nColombia - Español\nEcuador - Español\nEgypt - English\nFrance - Français\nGermany - Deutsch\nKenya - English\nMalaysia - English\nMexico - Español\nMorocco - English\nNetherlands - Dutch\nNigeria - English\nPanama - Español\nPeru - Español\nPoland - Polski\nRussia - Русский\nSaudi Arabia - English\nSouth Africa - English\nTürkiye - Türkçe\nVenezuela - Español\nVietnam - English\n启域数智实验室，现登场！\n科技释力，精准至真，全面升维检验医学价值。\n了解更多\n看得见的患者，被看见的英雄\n南非数智化院前急救实践，数智急救体系为团队所有人提供可靠的支撑。\n了解更多\n让医院向患者奔去\n迈瑞用超声为院外 ECPR 打开急救的「生死通路」。\n了解更多\nExpert Talks\n与国际专家对话，共探检验未来。\n了解更多\n新闻速递\n关注我们的最新动态\n最新资讯 ｜\nm-Elite | 南京首场！全球专家共探妇儿超声新未来\n最新资讯 ｜ 2026/10/12\nm-Elite | 在雷根斯堡，共探超声影像学术前沿\n最新资讯 ｜ 2026/09/30\n砀山迈瑞医疗科技产业园正式开园\n最新资讯 ｜ 2026/09/24\n数贸会上的“惊喜时刻”，遇见迈瑞数智创新\n最新资讯 ｜ 2026/09/21\n国家自然科学基金委员会党组书记、主任窦贤康率队到迈瑞总部调研\n最新资讯 ｜ 2026/09/19\nNCLM 2026，迈瑞创新之旅\n了解更多\n关于我们\n探索我们的医疗之旅\n了解更多\n首页\nMindray and Cookies\nMindray respects your privacy. We use cookies for a variety of purposes, such as website functionality, improving your experience of our website, building integration with social media and helping target our advertising. By continuing your visit on our website, you are consenting to our use of cookies. However, you can change your cookie settings at any time.\nCookie preference\nAccept and Proceed\nYour Choices Regarding Cookies on this Site\nCookies are important to the proper functioning of a site. To improve your experience, we use cookies to remember log-in details and provide secure log-in, collect statistics to optimize site functionality, and deliver content tailored to your interests.\nClick Agree and Proceed to accept cookies and go directly to the site or click on More Information to see detailed descriptions of the types of cookies and choose whether to accept certain cookies while on the site.\nAccept and Proceed\nMore Information\nFunction unavailable\nSome functions cannot be used properly because of the privacy settings of your browser. Please modify your privacy settings and retry. (Conact Us, Remember Me, Accessories Search)\n产品及解决方案\n瑞智生态\n瑞检生态\n瑞影数智影像生态\n监护系统\n呼吸机\n麻醉机\n超声影像\n体外诊断仪器\n外科产品\n骨科产品\n启元大模型\n启元围术期医学大模型\n启元重症医学大模型\n启元设备管理大模型\n启元检验大模型\n启元超声大模型\n启元医疗技术服务大模型\n用户服务\n操作视"
+    }
+  ]
+}

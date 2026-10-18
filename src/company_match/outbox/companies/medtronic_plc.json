@@ -1,0 +1,264 @@
+{
+  "schema_version": "1.1",
+  "generated_at": "2026-10-18T13:41:57.596586+00:00",
+  "id": "medtronic_plc",
+  "name": "Medtronic plc",
+  "domain": "life_science",
+  "in_scope": true,
+  "website_info": {
+    "url": null,
+    "source_type": "text",
+    "source_ref": "inline",
+    "meta_title": "",
+    "meta_description": "Medtronic plc is an international medical device company. The company's legal and executive headquarters are in Ireland, while its operational headquarters are in Minneapolis, Minnesota. Medtronic rebased to Ireland following its acquisition of Irish-based Covidien in 2015. While it primarily operates in the United States, it operates in more than 150 countries and employs over 90,000 people. It develops and manufactures healthcare technologies and therapies. It is one of the biggest medical tech companies in the world and is currently the largest medical device company in the world by revenue.",
+    "fetched_language": "en",
+    "translated_to_english": false,
+    "translation_method": "identity",
+    "web_enrich_method": "wikipedia+duckduckgo+snippet",
+    "web_sources": [
+      "https://en.wikipedia.org/wiki/Medtronic_plc",
+      "https://www.medtronic.com/in-en/index.html",
+      "https://en.wikipedia.org/wiki/Medtronic",
+      "https://www.medtroniclabs.org/",
+      "https://news.medtronic.com/press-releases",
+      "https://stockanalysis.com/stocks/mdt/company/"
+    ],
+    "summary_method": "rules"
+  },
+  "profile": {
+    "sector": "medtech",
+    "subsector": null,
+    "description": "Medtronic plc is an international medical device company. The company's legal and executive headquarters are in Ireland, while its operational headquarters are in Minneapolis, Minnesota. Medtronic rebased to Ireland following its acquisition of Irish-based Covidien in 2015. While it primarily operates in the United States, it operates in more than 150 countries and employs over 90,000 people. It develops and manufactures healthcare technologies and therapies. It is one of the biggest medical tech companies in the world and is currently the largest medical device company in the world by revenue.",
+    "what_they_do": "Focus: Medical devices / medtech (relevance 74.8%, n=6). Medtronic plc is an international medical device company. The company's legal and executive headquarters are in Ireland, while its operational headquarters are in Minneapolis, Minnesota. Medtronic rebased to Ireland following its acquisition of Irish-based Covidien in 2015. While it primarily operates in the United Sta",
+    "keywords": [
+      "medical device",
+      "wearable"
+    ],
+    "needs": [
+      "Swiss hub"
+    ],
+    "hq_city": "are in",
+    "hq_country": "are in Ireland",
+    "canton_bern_presence": false,
+    "semantic_profile": {
+      "activity_summary": "Primary focus signals: Medical devices / medtech (74.8% relevance, n=6).",
+      "focus_clusters": [
+        {
+          "id": "medtech_devices",
+          "label": "Medical devices / medtech",
+          "stage": "mid",
+          "canonical": "medical device",
+          "count": 6,
+          "lead_count": 4,
+          "relevance": 74.8,
+          "top_term": "medical device"
+        }
+      ],
+      "early_ranked": [],
+      "mid_ranked": [
+        {
+          "term": "medical device",
+          "stage": "mid",
+          "cluster_id": "medtech_devices",
+          "cluster_label": "Medical devices / medtech",
+          "count": 5,
+          "lead_count": 4,
+          "relevance": 71.3,
+          "semantic_boost": 6.0
+        },
+        {
+          "term": "wearable",
+          "stage": "mid",
+          "cluster_id": "medtech_devices",
+          "cluster_label": "Medical devices / medtech",
+          "count": 1,
+          "lead_count": 0,
+          "relevance": 18.5,
+          "semantic_boost": 6.0
+        }
+      ],
+      "late_ranked": []
+    }
+  },
+  "match": {
+    "match_rate": 62.8,
+    "tier": "B — Strong fit",
+    "reasons": [
+      "Domain scope: Life Science only (sectors: biopharma, biotech, cdmo, digital_health, labtech, medtech, nutrition, pharma). Sources: University of Bern, ARTORG, Diabetes Center Berne.",
+      "Sector 'medtech' is within the life-science domain.",
+      "P3 / mid stage — no strong CGM/diabetes front hit; match mid keywords next: medical device, medtech, wearable.",
+      "Match rate 62.8% = capabilities 53.3 + sector 8.0 + Bern presence 0.0 + breadth 1.5 + flagship 0.0 + focus synergy 0.0.",
+      "No Canton of Bern presence detected — presence would add +18 to match rate.",
+      "Sector 'medtech' maps to Bern's life-science value proposition.",
+      "Aligns with Bern capability 'Biomedical Engineering & Medical Devices' via terms: medical device, medtech, wearable, medical technology. Source ecosystem: ARTORG Center.",
+      "Score limited: no Canton of Bern site/HQ detected (+18 if present).",
+      "Score limited: no strong focus-cluster ↔ Bern capability synergy yet."
+    ],
+    "score_breakdown": {
+      "capability_points": 6.4,
+      "base_from_capabilities": 53.3,
+      "sector_bonus": 8.0,
+      "presence_bonus": 0.0,
+      "breadth_bonus": 1.5,
+      "flagship_bonus": 0.0,
+      "focus_synergy_bonus": 0.0,
+      "match_rate": 62.8,
+      "formula": "min(100, (sum(top5_capability_scores)/12)*100 + sector_bonus + presence_bonus(+18 if in Bern) + breadth_bonus + flagship_bonus + focus_synergy_bonus)",
+      "capability_hits": [
+        {
+          "id": "biomed_eng",
+          "name": "Biomedical Engineering & Medical Devices",
+          "score": 6.4,
+          "overlap_terms": [
+            "medical device",
+            "medtech",
+            "wearable",
+            "medical technology"
+          ],
+          "source": "ARTORG Center"
+        }
+      ],
+      "why_not_higher": [
+        "Score limited: no Canton of Bern site/HQ detected (+18 if present).",
+        "Score limited: no strong focus-cluster ↔ Bern capability synergy yet.",
+        "Score limited: matched fewer than 2 Bern capabilities."
+      ]
+    },
+    "reasoning": {
+      "summary": "62.8% Bern life-science fit (B — Strong fit). Top capability: Biomedical Engineering & Medical Devices via medical device, medtech, wearable, medical technology.",
+      "reasons": [
+        "Domain scope: Life Science only (sectors: biopharma, biotech, cdmo, digital_health, labtech, medtech, nutrition, pharma). Sources: University of Bern, ARTORG, Diabetes Center Berne.",
+        "Sector 'medtech' is within the life-science domain.",
+        "P3 / mid stage — no strong CGM/diabetes front hit; match mid keywords next: medical device, medtech, wearable.",
+        "Match rate 62.8% = capabilities 53.3 + sector 8.0 + Bern presence 0.0 + breadth 1.5 + flagship 0.0 + focus synergy 0.0.",
+        "No Canton of Bern presence detected — presence would add +18 to match rate.",
+        "Sector 'medtech' maps to Bern's life-science value proposition.",
+        "Aligns with Bern capability 'Biomedical Engineering & Medical Devices' via terms: medical device, medtech, wearable, medical technology. Source ecosystem: ARTORG Center.",
+        "Score limited: no Canton of Bern site/HQ detected (+18 if present).",
+        "Score limited: no strong focus-cluster ↔ Bern capability synergy yet."
+      ],
+      "score_breakdown": {
+        "capability_points": 6.4,
+        "base_from_capabilities": 53.3,
+        "sector_bonus": 8.0,
+        "presence_bonus": 0.0,
+        "breadth_bonus": 1.5,
+        "flagship_bonus": 0.0,
+        "focus_synergy_bonus": 0.0,
+        "match_rate": 62.8,
+        "formula": "min(100, (sum(top5_capability_scores)/12)*100 + sector_bonus + presence_bonus(+18 if in Bern) + breadth_bonus + flagship_bonus + focus_synergy_bonus)",
+        "capability_hits": [
+          {
+            "id": "biomed_eng",
+            "name": "Biomedical Engineering & Medical Devices",
+            "score": 6.4,
+            "overlap_terms": [
+              "medical device",
+              "medtech",
+              "wearable",
+              "medical technology"
+            ],
+            "source": "ARTORG Center"
+          }
+        ],
+        "why_not_higher": [
+          "Score limited: no Canton of Bern site/HQ detected (+18 if present).",
+          "Score limited: no strong focus-cluster ↔ Bern capability synergy yet.",
+          "Score limited: matched fewer than 2 Bern capabilities."
+        ]
+      },
+      "focus_synergy": [],
+      "economic_hooks": [
+        "Medtech / AI fit → ARTORG co-development and validation pathway."
+      ],
+      "bern_units": [
+        "ARTORG Center for Biomedical Engineering Research"
+      ],
+      "backend_hints": {
+        "priority_rating": "P3",
+        "priority_stage": "mid",
+        "run_first": [
+          "wearable"
+        ],
+        "run_later": [
+          "medical device",
+          "medtech",
+          "wearable"
+        ],
+        "capability_ids": [
+          "biomed_eng"
+        ]
+      }
+    },
+    "early_keywords": [],
+    "mid_keywords": [
+      "medical device",
+      "medtech",
+      "wearable"
+    ],
+    "late_keywords": [],
+    "early_relevance": [],
+    "focus_clusters": [
+      {
+        "id": "medtech_devices",
+        "label": "Medical devices / medtech",
+        "stage": "mid",
+        "canonical": "medical device",
+        "count": 6,
+        "lead_count": 4,
+        "relevance": 74.8,
+        "top_term": "medical device"
+      }
+    ],
+    "bern_units": [
+      "ARTORG Center for Biomedical Engineering Research"
+    ],
+    "economic_hooks": [
+      "Medtech / AI fit → ARTORG co-development and validation pathway."
+    ],
+    "capability_matches": [
+      {
+        "id": "biomed_eng",
+        "name": "Biomedical Engineering & Medical Devices",
+        "score": 6.4,
+        "overlap_terms": [
+          "medical device",
+          "medtech",
+          "wearable",
+          "medical technology"
+        ],
+        "source": "ARTORG Center",
+        "units": [
+          "ARTORG Center for Biomedical Engineering Research"
+        ],
+        "reason": "Aligns with Bern capability 'Biomedical Engineering & Medical Devices' via terms: medical device, medtech, wearable, medical technology. Source ecosystem: ARTORG Center."
+      }
+    ],
+    "teammate_queries_early": [
+      "wearable"
+    ],
+    "teammate_queries_later": [
+      "medical device",
+      "medtech",
+      "wearable"
+    ],
+    "suggested_queries": [
+      "wearable",
+      "medical device",
+      "medtech"
+    ],
+    "handoff_note": "P3 / mid stage — no strong CGM/diabetes front hit; match mid keywords next: medical device, medtech, wearable."
+  },
+  "extraction": {
+    "confidence": 0.88,
+    "method": "web-enrich",
+    "warnings": []
+  },
+  "queue": {
+    "position": 1,
+    "priority_rating": "P3",
+    "priority_stage": "mid",
+    "priority_score": 27.2
+  },
+  "source_text_excerpt": "Medtronic plc\n\nCompany name: Medtronic plc\n\n[1] Medtronic plc\nMedtronic plc is an international medical device company. The company's legal and executive headquarters are in Ireland, while its operational headquarters are in Minneapolis, Minnesota. Medtronic rebased to Ireland following its acquisition of Irish-based Covidien in 2015. While it primarily operates in the United States, it operates in more than 150 countries and employs over 90,000 people. It develops and manufactures healthcare technologies and therapies. It is one of the biggest medical tech companies in the world and is currently the largest medical device company in the world by revenue.\nSource: https://en.wikipedia.org/wiki/Medtronic_plc\n\n[2] Home | Medtronic\nMedtronic is a global leader in medical technology, services, and solutions. We collaborate with others to take on healthcare&#x27;s greatest challenges. See how.\nSource: https://www.medtronic.com/in-en/index.html\n\n[3] Medtronic - Wikipedia\nMedtronic plc is an international medical device company. The company&#x27;s legal and executive headquarters are in Ireland, while its operational headquarters are in Minneapolis, Minnesota.\nSource: https://en.wikipedia.org/wiki/Medtronic\n\n[4] Expanding Access to Healthcare For All | Medtronic LABS\nMedtronic LABS is the only health systems innovator that develops tech-enabled solutions for underserved communities worldwide. Explore our solutions.\nSource: https://www.medtroniclabs.org/\n\n[5] Press releases | Medtronic\nMedtronic Named to TIME Best Inventions of 2026 List for Stealth AXiS™ surgical system and Corsano™* multi-parameter wearable Annual list recognizes inventions making the world better and smarter GALWAY, Ireland, Oct. 15, 2026 /PRNewswire/ -- Medtronic plc (NYSE: MDT), a global leader in healthcare technology, today...\nSource: https://news.medtronic.com/press-releases\n\n[6] Medtronic (MDT) Company Profile &amp; Description - Stock Analysis\nCompany Description Medtronic plc develops, manufactures, and sells device-based medical therapies to healthcare systems, physicians, clinicians, and patients in the United States, Ireland, and internationally. It operates through three segments: The Cardiovascular Portfolio, Neuroscience Portfolio, and Medical Surgical Portfolio.\nSource: https://stockanalysis.com/stocks/mdt/company/"
+}

@@ -1,0 +1,366 @@
+{
+  "schema_version": "2.0",
+  "generated_at": "2026-10-18T17:19:05.876585+00:00",
+  "domain": "life_science",
+  "owner_layer": "company_match",
+  "how_to_use": "Backend / teammate: load companies[]. Use match.score_breakdown.components (sums to match_rate) and match.bern_matches (records from data/bern_records with source_url). See src/company_match/BACKEND_CONTRACT.md. website_info holds the ingested site metadata. Push each company object (or this batch) to your API.",
+  "source_count": 1,
+  "company_count": 1,
+  "companies": [
+    {
+      "schema_version": "2.0",
+      "generated_at": "2026-10-18T17:19:05.876522+00:00",
+      "id": "mindray",
+      "name": "Mindray",
+      "domain": "life_science",
+      "in_scope": true,
+      "website_info": {
+        "url": "https://www.mindray.com/cn",
+        "source_type": "url",
+        "source_ref": "https://www.mindray.com/cn",
+        "meta_title": "Life Sciences So Close - Mindray Healthcare",
+        "meta_description": "Founded in 1991, Mindray is a global provider of innovative medical devices and solutions. Headquartered in Shenzhen, China, Mindray has 44 overseas subsidiaries in more than 30 countries in North America, Europe, Asia, Africa, Latin America and other regions; 17 subsidiaries in China, more than 40 branches, and more than 10,000 employees worldwide, forming a huge global R&D, marketing and service network.",
+        "fetched_language": "zh",
+        "translated_to_english": true,
+        "translation_method": "deep_translator",
+        "web_enrich_method": "disabled",
+        "web_sources": [],
+        "summary_method": "rules"
+      },
+      "profile": {
+        "sector": "medtech",
+        "subsector": null,
+        "description": "Headquartered in Shenzhen, China, Mindray has 44 overseas subsidiaries in more than 30 countries in North America, Europe, Asia, Africa, Latin America and other regions; 17 subsidiaries in China, more than 40 branches, and more than 10,000 employees worldwide, forming a huge global R&D, marketing and service network.",
+        "what_they_do": "Founded in 1991, Mindray is a global provider of innovative medical devices and solutions.",
+        "keywords": [
+          "medical device",
+          "medical devices"
+        ],
+        "needs": [],
+        "hq_city": "Shenzhen",
+        "hq_country": "China",
+        "canton_bern_presence": false,
+        "hq_source": {
+          "method": "source",
+          "evidence": "labelled HQ / location line in the source",
+          "url": null,
+          "verified": true
+        },
+        "bern_sites": [],
+        "medical_profile": null,
+        "semantic_profile": {
+          "activity_summary": "Primary focus signals: Medical devices / medtech (79.4% relevance, n=5).",
+          "focus_clusters": [
+            {
+              "id": "medtech_devices",
+              "label": "Medical devices / medtech",
+              "stage": "mid",
+              "canonical": "medical device",
+              "count": 5,
+              "lead_count": 5,
+              "relevance": 79.4,
+              "top_term": "medical device"
+            }
+          ],
+          "early_ranked": [
+            {
+              "term": "medical device",
+              "stage": "early",
+              "cluster_id": "medtech_devices",
+              "cluster_label": "Medical devices / medtech",
+              "count": 3,
+              "lead_count": 3,
+              "relevance": 65.0,
+              "semantic_boost": 8.0
+            },
+            {
+              "term": "medical devices",
+              "stage": "early",
+              "cluster_id": "medtech_devices",
+              "cluster_label": "Medical devices / medtech",
+              "count": 2,
+              "lead_count": 2,
+              "relevance": 51.8,
+              "semantic_boost": 8.0
+            }
+          ],
+          "mid_ranked": [],
+          "late_ranked": []
+        }
+      },
+      "match": {
+        "match_rate": 46.8,
+        "tier": "Possible — need more signal",
+        "reasons": [
+          "Domain scope: Life Science only (sectors: biopharma, biotech, cdmo, digital_health, labtech, medtech, nutrition, pharma). Sources: University of Bern, ARTORG, Diabetes Center Berne.",
+          "Sector 'medtech' is within the life-science domain.",
+          "P2 / front relevance — strongest keyword 'medical device' (65.0% relevance). Collaboration potential 47%.",
+          "Possible — gather more needs / capability detail (46.8%).",
+          "Collaboration potential 46.8% = domain fit 28.5/30 + swiss proximity 0.0/20 + signal depth 12.8/15 + capability overlap 5.5/20 + partnership readiness 0.0/15.",
+          "No Canton of Bern presence detected — partnership readiness would rise with a local site.",
+          "Sector 'medtech' maps to Bern's life-science value proposition.",
+          "Main theme 'medtech_devices' maps to Bern capability 'biomed_eng' (+7.9).",
+          "Aligns with Bern capability 'Biomedical Engineering & Medical Devices' via terms: medical device, medtech. Source ecosystem: ARTORG Center.",
+          "HQ outside Switzerland — lower proximity score.",
+          "No stated partnership needs (clinical validation, university, talent…)."
+        ],
+        "score_breakdown": {
+          "model": "collaboration-v1",
+          "meaning": "Collaboration potential for Bern life-science outreach (0–100).",
+          "verdict": "possible",
+          "verdict_label": "Possible — gather more needs / capability detail",
+          "components": {
+            "domain_fit": 28.5,
+            "swiss_proximity": 0.0,
+            "signal_depth": 12.8,
+            "capability_overlap": 5.5,
+            "partnership_readiness": 0.0
+          },
+          "component_max": {
+            "domain_fit": 30.0,
+            "swiss_proximity": 20.0,
+            "signal_depth": 15.0,
+            "capability_overlap": 20.0,
+            "partnership_readiness": 15.0
+          },
+          "details": {
+            "capability_fit_ratio": 0.158,
+            "best_capability": "biomed_eng",
+            "needs_scored": [],
+            "focus_cluster": "medtech_devices",
+            "evidence_source": "term_proxy",
+            "capability_components": {
+              "capability_fit": 5.5,
+              "breadth": 0.0,
+              "needs_alignment": 0.0,
+              "bern_presence": 0.0,
+              "focus_synergy": 7.9,
+              "evidence": 1.6
+            },
+            "verdict": "possible",
+            "verdict_label": "Possible — gather more needs / capability detail",
+            "score_meaning": "Collaboration potential for Canton of Bern life-science outreach (0–100)."
+          },
+          "match_rate": 46.8,
+          "formula": "collaboration_potential = domain_fit(≤30) + swiss_proximity(≤20) + signal_depth(≤15) + capability_overlap(≤20) + partnership_readiness(≤15).",
+          "capability_hits": [
+            {
+              "id": "biomed_eng",
+              "name": "Biomedical Engineering & Medical Devices",
+              "score": 3.2,
+              "overlap_terms": [
+                "medical device",
+                "medtech"
+              ],
+              "source": "ARTORG Center"
+            }
+          ],
+          "bern_records_loaded": 0,
+          "why_not_higher": [
+            "HQ outside Switzerland — lower proximity score.",
+            "No stated partnership needs (clinical validation, university, talent…).",
+            "Few specific overlaps with indexed Bern capabilities — add product/tech detail."
+          ]
+        },
+        "reasoning": {
+          "summary": "46.8% collaboration potential — Possible — gather more needs / capability detail. Top capability: Biomedical Engineering & Medical Devices via medical device, medtech.",
+          "reasons": [
+            "Domain scope: Life Science only (sectors: biopharma, biotech, cdmo, digital_health, labtech, medtech, nutrition, pharma). Sources: University of Bern, ARTORG, Diabetes Center Berne.",
+            "Sector 'medtech' is within the life-science domain.",
+            "P2 / front relevance — strongest keyword 'medical device' (65.0% relevance). Collaboration potential 47%.",
+            "Possible — gather more needs / capability detail (46.8%).",
+            "Collaboration potential 46.8% = domain fit 28.5/30 + swiss proximity 0.0/20 + signal depth 12.8/15 + capability overlap 5.5/20 + partnership readiness 0.0/15.",
+            "No Canton of Bern presence detected — partnership readiness would rise with a local site.",
+            "Sector 'medtech' maps to Bern's life-science value proposition.",
+            "Main theme 'medtech_devices' maps to Bern capability 'biomed_eng' (+7.9).",
+            "Aligns with Bern capability 'Biomedical Engineering & Medical Devices' via terms: medical device, medtech. Source ecosystem: ARTORG Center.",
+            "HQ outside Switzerland — lower proximity score.",
+            "No stated partnership needs (clinical validation, university, talent…)."
+          ],
+          "score_breakdown": {
+            "model": "collaboration-v1",
+            "meaning": "Collaboration potential for Bern life-science outreach (0–100).",
+            "verdict": "possible",
+            "verdict_label": "Possible — gather more needs / capability detail",
+            "components": {
+              "domain_fit": 28.5,
+              "swiss_proximity": 0.0,
+              "signal_depth": 12.8,
+              "capability_overlap": 5.5,
+              "partnership_readiness": 0.0
+            },
+            "component_max": {
+              "domain_fit": 30.0,
+              "swiss_proximity": 20.0,
+              "signal_depth": 15.0,
+              "capability_overlap": 20.0,
+              "partnership_readiness": 15.0
+            },
+            "details": {
+              "capability_fit_ratio": 0.158,
+              "best_capability": "biomed_eng",
+              "needs_scored": [],
+              "focus_cluster": "medtech_devices",
+              "evidence_source": "term_proxy",
+              "capability_components": {
+                "capability_fit": 5.5,
+                "breadth": 0.0,
+                "needs_alignment": 0.0,
+                "bern_presence": 0.0,
+                "focus_synergy": 7.9,
+                "evidence": 1.6
+              },
+              "verdict": "possible",
+              "verdict_label": "Possible — gather more needs / capability detail",
+              "score_meaning": "Collaboration potential for Canton of Bern life-science outreach (0–100)."
+            },
+            "match_rate": 46.8,
+            "formula": "collaboration_potential = domain_fit(≤30) + swiss_proximity(≤20) + signal_depth(≤15) + capability_overlap(≤20) + partnership_readiness(≤15).",
+            "capability_hits": [
+              {
+                "id": "biomed_eng",
+                "name": "Biomedical Engineering & Medical Devices",
+                "score": 3.2,
+                "overlap_terms": [
+                  "medical device",
+                  "medtech"
+                ],
+                "source": "ARTORG Center"
+              }
+            ],
+            "bern_records_loaded": 0,
+            "why_not_higher": [
+              "HQ outside Switzerland — lower proximity score.",
+              "No stated partnership needs (clinical validation, university, talent…).",
+              "Few specific overlaps with indexed Bern capabilities — add product/tech detail."
+            ]
+          },
+          "focus_synergy": [
+            "Main theme 'medtech_devices' maps to Bern capability 'biomed_eng' (+7.9)."
+          ],
+          "economic_hooks": [
+            "Medtech / AI fit → ARTORG co-development and validation pathway."
+          ],
+          "bern_units": [
+            "ARTORG Center for Biomedical Engineering Research"
+          ],
+          "bern_matches": [],
+          "backend_hints": {
+            "priority_rating": "P2",
+            "priority_stage": "early",
+            "run_first": [
+              "medical device",
+              "medical devices",
+              "medtech"
+            ],
+            "run_later": [],
+            "capability_ids": [
+              "biomed_eng"
+            ]
+          }
+        },
+        "early_keywords": [
+          "medical device",
+          "medical devices",
+          "medtech"
+        ],
+        "mid_keywords": [],
+        "late_keywords": [],
+        "early_relevance": [
+          {
+            "term": "medical device",
+            "stage": "early",
+            "cluster_id": "medtech_devices",
+            "cluster_label": "Medical devices / medtech",
+            "count": 3,
+            "lead_count": 3,
+            "relevance": 65.0,
+            "semantic_boost": 8.0
+          },
+          {
+            "term": "medical devices",
+            "stage": "early",
+            "cluster_id": "medtech_devices",
+            "cluster_label": "Medical devices / medtech",
+            "count": 2,
+            "lead_count": 2,
+            "relevance": 51.8,
+            "semantic_boost": 8.0
+          },
+          {
+            "term": "medtech",
+            "stage": "early",
+            "count": 1,
+            "relevance": 42.0,
+            "cluster_label": "capability overlap"
+          }
+        ],
+        "focus_clusters": [
+          {
+            "id": "medtech_devices",
+            "label": "Medical devices / medtech",
+            "stage": "mid",
+            "canonical": "medical device",
+            "count": 5,
+            "lead_count": 5,
+            "relevance": 79.4,
+            "top_term": "medical device"
+          }
+        ],
+        "bern_units": [
+          "ARTORG Center for Biomedical Engineering Research"
+        ],
+        "bern_matches": [],
+        "economic_hooks": [
+          "Medtech / AI fit → ARTORG co-development and validation pathway."
+        ],
+        "capability_matches": [
+          {
+            "id": "biomed_eng",
+            "name": "Biomedical Engineering & Medical Devices",
+            "score": 3.2,
+            "overlap_terms": [
+              "medical device",
+              "medtech"
+            ],
+            "source": "ARTORG Center",
+            "units": [
+              "ARTORG Center for Biomedical Engineering Research"
+            ],
+            "reason": "Aligns with Bern capability 'Biomedical Engineering & Medical Devices' via terms: medical device, medtech. Source ecosystem: ARTORG Center."
+          }
+        ],
+        "teammate_queries_early": [
+          "medical device",
+          "medical devices",
+          "medtech"
+        ],
+        "teammate_queries_later": [],
+        "suggested_queries": [
+          "medical device",
+          "medtech",
+          "medical devices"
+        ],
+        "handoff_note": "P2 / front relevance — strongest keyword 'medical device' (65.0% relevance). Collaboration potential 47%."
+      },
+      "extraction": {
+        "confidence": 0.92,
+        "method": "rules",
+        "warnings": [
+          "LLM translation unavailable (start Ollama or set LLM_* for Apertus).",
+          "Source language 'zh' normalized to English via deep_translator.",
+          "Web enrich disabled (set WEB_ENRICH=1). Name-only seeds force a search.",
+          "LLM skipped: an earlier call in this request timed out.",
+          "LLM profile: no valid JSON returned; using rule-based fields."
+        ]
+      },
+      "queue": {
+        "position": 1,
+        "priority_rating": "P2",
+        "priority_stage": "early",
+        "priority_score": 55.9
+      },
+      "source_text_excerpt": "Founded in 1991, Mindray is a global provider of innovative medical devices and solutions.Headquartered in Shenzhen, China, Mindray has 44 overseas subsidiaries in more than 30 countries in North America, Europe, Asia, Africa, Latin America and other regions; 17 subsidiaries in China, more than 40 branches, and more than 10,000 employees worldwide, forming a huge global R&D, marketing and service network.\n\nLife Sciences So Close - Mindray Healthcare\n\nQUERY LENGTH LIMIT EXCEEDED. MAX ALLOWED QUERY : 500 CHARS\n\n[lexicon_en] medical device"
+    }
+  ]
+}

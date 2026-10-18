@@ -1,0 +1,314 @@
+{
+  "schema_version": "2.0",
+  "generated_at": "2026-10-18T14:31:46.338953+00:00",
+  "domain": "life_science",
+  "owner_layer": "company_match",
+  "how_to_use": "Backend / teammate: load companies[]. Use match.score_breakdown.components (sums to match_rate) and match.bern_matches (records from data/bern_records with source_url). See src/company_match/BACKEND_CONTRACT.md. website_info holds the ingested site metadata. Push each company object (or this batch) to your API.",
+  "source_count": 1,
+  "company_count": 1,
+  "companies": [
+    {
+      "schema_version": "2.0",
+      "generated_at": "2026-10-18T14:31:46.338934+00:00",
+      "id": "novartis",
+      "name": "Novartis",
+      "domain": "life_science",
+      "in_scope": true,
+      "website_info": {
+        "url": "https://www.novartis.com",
+        "source_type": "url",
+        "source_ref": "https://www.novartis.com",
+        "meta_title": "Novartis",
+        "meta_description": "For more than 250 years–and 30 years as Novartis–we’ve pursued scientific breakthroughs for one purpose: people. Today, we take on the toughest challenges in healthcare and turn innovations into medicines that redefine the future for patients.",
+        "fetched_language": "en",
+        "translated_to_english": false,
+        "translation_method": "identity",
+        "web_enrich_method": "disabled",
+        "web_sources": [],
+        "summary_method": "rules"
+      },
+      "profile": {
+        "sector": "pharma",
+        "subsector": null,
+        "description": "For more than 250 years–and 30 years as Novartis–we’ve pursued scientific breakthroughs for one purpose: people. Today, we take on the toughest challenges in healthcare and turn innovations into medicines that redefine the future for patients.",
+        "what_they_do": "Pharmaceutical company focused on clinical / translational (source terms: clinical trial).",
+        "keywords": [
+          "clinical trial"
+        ],
+        "needs": [],
+        "hq_city": null,
+        "hq_country": null,
+        "canton_bern_presence": false,
+        "semantic_profile": {
+          "activity_summary": "Primary focus signals: Clinical / translational (25.2% relevance, n=1).",
+          "focus_clusters": [
+            {
+              "id": "clinical_translation",
+              "label": "Clinical / translational",
+              "stage": "mid",
+              "canonical": "clinical trial",
+              "count": 1,
+              "lead_count": 0,
+              "relevance": 25.2,
+              "top_term": "clinical trial"
+            }
+          ],
+          "early_ranked": [
+            {
+              "term": "clinical trial",
+              "stage": "early",
+              "cluster_id": "clinical_translation",
+              "cluster_label": "Clinical / translational",
+              "count": 1,
+              "lead_count": 0,
+              "relevance": 28.5,
+              "semantic_boost": 8.0
+            }
+          ],
+          "mid_ranked": [],
+          "late_ranked": []
+        }
+      },
+      "match": {
+        "match_rate": 14.8,
+        "tier": "D — Weak / monitor",
+        "reasons": [
+          "Domain scope: Life Science only (sectors: biopharma, biotech, cdmo, digital_health, labtech, medtech, nutrition, pharma). Sources: University of Bern, ARTORG, Diabetes Center Berne.",
+          "Sector 'pharma' is within the life-science domain.",
+          "P2 / front relevance — strongest keyword 'translational' (42.0% relevance, n=1). Run navigator on highest-relevance terms first.",
+          "Match rate 14.8% = capability fit 10.7/35 + breadth 0.0/10 + needs alignment 0.0/15 + bern presence 0.0/10 + focus synergy 2.5/10 + evidence 1.6/20.",
+          "No Canton of Bern presence detected — presence would add +10.",
+          "Sector 'pharma' maps to Bern's life-science value proposition.",
+          "Main theme 'clinical_translation' maps to Bern capability 'translational_medicine' (+2.5).",
+          "Aligns with Bern capability 'Translational & Clinical Research' via terms: clinical trial, translational. Source ecosystem: University of Bern / Inselspital.",
+          "Few specific overlapping terms with the best Bern capability — add product/technology detail.",
+          "Matches fewer than 2 Bern capabilities."
+        ],
+        "score_breakdown": {
+          "model": "bounded-v2",
+          "components": {
+            "capability_fit": 10.7,
+            "breadth": 0.0,
+            "needs_alignment": 0.0,
+            "bern_presence": 0.0,
+            "focus_synergy": 2.5,
+            "evidence": 1.6
+          },
+          "component_max": {
+            "capability_fit": 35.0,
+            "breadth": 10.0,
+            "needs_alignment": 15.0,
+            "bern_presence": 10.0,
+            "focus_synergy": 10.0,
+            "evidence": 20.0
+          },
+          "details": {
+            "capability_fit_ratio": 0.306,
+            "best_capability": "translational_medicine",
+            "needs_scored": [],
+            "focus_cluster": "clinical_translation",
+            "evidence_source": "term_proxy"
+          },
+          "match_rate": 14.8,
+          "formula": "match_rate = capability_fit(≤35) + breadth(≤10) + needs_alignment(≤15) + bern_presence(≤10) + focus_synergy(≤10) + evidence(≤20; ≤8 without Bern records). Fits use 1-exp(-raw/3.0) saturation.",
+          "capability_hits": [
+            {
+              "id": "translational_medicine",
+              "name": "Translational & Clinical Research",
+              "score": 2.72,
+              "overlap_terms": [
+                "clinical trial",
+                "translational"
+              ],
+              "source": "University of Bern / Inselspital"
+            }
+          ],
+          "bern_records_loaded": 0,
+          "why_not_higher": [
+            "Few specific overlapping terms with the best Bern capability — add product/technology detail.",
+            "Matches fewer than 2 Bern capabilities.",
+            "No stated partnership needs (clinical validation, university, talent…).",
+            "No Canton of Bern site/HQ detected (+10 if present).",
+            "No verified Bern expert/unit records matched yet (load teammate data in data/bern_records/) — evidence capped at 8/20."
+          ]
+        },
+        "reasoning": {
+          "summary": "14.8% Bern life-science fit (D — Weak / monitor). Top capability: Translational & Clinical Research via clinical trial, translational.",
+          "reasons": [
+            "Domain scope: Life Science only (sectors: biopharma, biotech, cdmo, digital_health, labtech, medtech, nutrition, pharma). Sources: University of Bern, ARTORG, Diabetes Center Berne.",
+            "Sector 'pharma' is within the life-science domain.",
+            "P2 / front relevance — strongest keyword 'translational' (42.0% relevance, n=1). Run navigator on highest-relevance terms first.",
+            "Match rate 14.8% = capability fit 10.7/35 + breadth 0.0/10 + needs alignment 0.0/15 + bern presence 0.0/10 + focus synergy 2.5/10 + evidence 1.6/20.",
+            "No Canton of Bern presence detected — presence would add +10.",
+            "Sector 'pharma' maps to Bern's life-science value proposition.",
+            "Main theme 'clinical_translation' maps to Bern capability 'translational_medicine' (+2.5).",
+            "Aligns with Bern capability 'Translational & Clinical Research' via terms: clinical trial, translational. Source ecosystem: University of Bern / Inselspital.",
+            "Few specific overlapping terms with the best Bern capability — add product/technology detail.",
+            "Matches fewer than 2 Bern capabilities."
+          ],
+          "score_breakdown": {
+            "model": "bounded-v2",
+            "components": {
+              "capability_fit": 10.7,
+              "breadth": 0.0,
+              "needs_alignment": 0.0,
+              "bern_presence": 0.0,
+              "focus_synergy": 2.5,
+              "evidence": 1.6
+            },
+            "component_max": {
+              "capability_fit": 35.0,
+              "breadth": 10.0,
+              "needs_alignment": 15.0,
+              "bern_presence": 10.0,
+              "focus_synergy": 10.0,
+              "evidence": 20.0
+            },
+            "details": {
+              "capability_fit_ratio": 0.306,
+              "best_capability": "translational_medicine",
+              "needs_scored": [],
+              "focus_cluster": "clinical_translation",
+              "evidence_source": "term_proxy"
+            },
+            "match_rate": 14.8,
+            "formula": "match_rate = capability_fit(≤35) + breadth(≤10) + needs_alignment(≤15) + bern_presence(≤10) + focus_synergy(≤10) + evidence(≤20; ≤8 without Bern records). Fits use 1-exp(-raw/3.0) saturation.",
+            "capability_hits": [
+              {
+                "id": "translational_medicine",
+                "name": "Translational & Clinical Research",
+                "score": 2.72,
+                "overlap_terms": [
+                  "clinical trial",
+                  "translational"
+                ],
+                "source": "University of Bern / Inselspital"
+              }
+            ],
+            "bern_records_loaded": 0,
+            "why_not_higher": [
+              "Few specific overlapping terms with the best Bern capability — add product/technology detail.",
+              "Matches fewer than 2 Bern capabilities.",
+              "No stated partnership needs (clinical validation, university, talent…).",
+              "No Canton of Bern site/HQ detected (+10 if present).",
+              "No verified Bern expert/unit records matched yet (load teammate data in data/bern_records/) — evidence capped at 8/20."
+            ]
+          },
+          "focus_synergy": [
+            "Main theme 'clinical_translation' maps to Bern capability 'translational_medicine' (+2.5)."
+          ],
+          "economic_hooks": [
+            "Pharma/biotech profile → soft-landing / Swiss hub narrative for WFB."
+          ],
+          "bern_units": [
+            "Inselspital",
+            "sitem-insel",
+            "Faculty of Medicine UniBE"
+          ],
+          "bern_matches": [],
+          "backend_hints": {
+            "priority_rating": "P2",
+            "priority_stage": "early",
+            "run_first": [
+              "translational",
+              "clinical trial"
+            ],
+            "run_later": [],
+            "capability_ids": [
+              "translational_medicine"
+            ]
+          }
+        },
+        "early_keywords": [
+          "translational",
+          "clinical trial"
+        ],
+        "mid_keywords": [],
+        "late_keywords": [],
+        "early_relevance": [
+          {
+            "term": "translational",
+            "stage": "early",
+            "count": 1,
+            "relevance": 42.0,
+            "cluster_label": "capability overlap"
+          },
+          {
+            "term": "clinical trial",
+            "stage": "early",
+            "cluster_id": "clinical_translation",
+            "cluster_label": "Clinical / translational",
+            "count": 1,
+            "lead_count": 0,
+            "relevance": 28.5,
+            "semantic_boost": 8.0
+          }
+        ],
+        "focus_clusters": [
+          {
+            "id": "clinical_translation",
+            "label": "Clinical / translational",
+            "stage": "mid",
+            "canonical": "clinical trial",
+            "count": 1,
+            "lead_count": 0,
+            "relevance": 25.2,
+            "top_term": "clinical trial"
+          }
+        ],
+        "bern_units": [
+          "Inselspital",
+          "sitem-insel",
+          "Faculty of Medicine UniBE"
+        ],
+        "bern_matches": [],
+        "economic_hooks": [
+          "Pharma/biotech profile → soft-landing / Swiss hub narrative for WFB."
+        ],
+        "capability_matches": [
+          {
+            "id": "translational_medicine",
+            "name": "Translational & Clinical Research",
+            "score": 2.72,
+            "overlap_terms": [
+              "clinical trial",
+              "translational"
+            ],
+            "source": "University of Bern / Inselspital",
+            "units": [
+              "Inselspital",
+              "sitem-insel",
+              "Faculty of Medicine UniBE"
+            ],
+            "reason": "Aligns with Bern capability 'Translational & Clinical Research' via terms: clinical trial, translational. Source ecosystem: University of Bern / Inselspital."
+          }
+        ],
+        "teammate_queries_early": [
+          "translational",
+          "clinical trial"
+        ],
+        "teammate_queries_later": [],
+        "suggested_queries": [
+          "clinical trial",
+          "translational"
+        ],
+        "handoff_note": "P2 / front relevance — strongest keyword 'translational' (42.0% relevance, n=1). Run navigator on highest-relevance terms first."
+      },
+      "extraction": {
+        "confidence": 0.92,
+        "method": "rules",
+        "warnings": [
+          "kimi HTTP 429: {\"error\":{\"message\":\"Your account org-1bc0e87a1f394078b08ea01d23614fac \\u003cak-fdce1fsjr9ji11hg5zq1\\u003e is suspended due to insufficient balance, please recharge your account or check your plan and billing details\",\"type\":\"exceeded_current_quota_error\"}}",
+          "LLM profile: no valid JSON returned; using rule-based fields."
+        ]
+      },
+      "queue": {
+        "position": 1,
+        "priority_rating": "P2",
+        "priority_stage": "early",
+        "priority_score": 31.4
+      },
+      "source_text_excerpt": "Skip to main content\nHeader\nReimagining medicine, together .\nFor more than 250 years–and 30 years as Novartis–we’ve pursued scientific breakthroughs for one purpose: people. Today, we take on the toughest challenges in healthcare and turn innovations into medicines that redefine the future for patients.\n30 years of Novartis, powered by 250 years of innovation\nRooted in a legacy of scientific discovery, Novartis continues to advance breakthrough medicines that redefine the future of care for patients.\nLearn more about the 30 years of Novartis\nPrevious\nNext\nTherapeutic areas\nDiscover our medicines\nResearch and development\nExplore our science\nESG\nLearn about our impact\nCareers\nJoin our team\nLatest news\nOct 07, 2026\nPress release\nNovartis Rhapsido® (remibrutinib) receives FDA approval as first treatment for symptomatic dermographism (SD), expanding its use beyond chronic spontaneous urticaria (CSU)\nOct 07, 2026\nPress release\nNovartis advances multiple sclerosis innovation with late-breaking remibrutinib and broad portfolio data at MSToronto2026\nSep 22, 2026\nStatement\nEurope Is Losing the Pharma Investment Race – But the Comeback Is Within Reach: An open letter from the Chairs of AstraZeneca, Boehringer Ingelheim, Chiesi Group, Ipsen, GSK, Novo, Novartis, Roche, and Sanofi\nAll news\nNovartis Financial Results – Q2 2026\nNovartis announces the company’s financial results for the second quarter and first half of 2026.\nLearn more about the Q2 2026 results\nLive. Magazine\nThe Novartis story\n30 years of innovation and engagement.\nRead the Novartis story\nAnnual reporting suite\nExplore and download our Annual Report 2025, Report on Nonfinancial Matters 2025 and other reporting documents.\nLearn more\nResource links\nAbout Novartis\nPatients and caregivers\nHealthcare professionals\nClinical trials\nPipeline\nProducts"
+    }
+  ]
+}

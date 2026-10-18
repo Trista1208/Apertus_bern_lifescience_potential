@@ -1,0 +1,543 @@
+{
+  "schema_version": "2.0",
+  "generated_at": "2026-10-18T15:31:40.816121+00:00",
+  "domain": "life_science",
+  "owner_layer": "company_match",
+  "how_to_use": "Backend / teammate: load companies[]. Use match.score_breakdown.components (sums to match_rate) and match.bern_matches (records from data/bern_records with source_url). See src/company_match/BACKEND_CONTRACT.md. website_info holds the ingested site metadata. Push each company object (or this batch) to your API.",
+  "source_count": 1,
+  "company_count": 1,
+  "companies": [
+    {
+      "schema_version": "2.0",
+      "generated_at": "2026-10-18T15:31:40.815996+00:00",
+      "id": "medtronic",
+      "name": "Medtronic",
+      "domain": "life_science",
+      "in_scope": true,
+      "website_info": {
+        "url": null,
+        "source_type": "text",
+        "source_ref": "inline",
+        "meta_title": "",
+        "meta_description": "Medtronic is an international medical device company that develops and manufactures healthcare technologies and therapies. Its core products include advanced cardiac and neurovascular care, as well as robotic-assisted surgery. Medtronic focuses on solving global health challenges through innovative technology, with a particular emphasis on expanding access to healthcare for underserved communities.",
+        "fetched_language": "en",
+        "translated_to_english": false,
+        "translation_method": "identity",
+        "web_enrich_method": "wikipedia+duckduckgo+ollama:qwen2.5:7b",
+        "web_sources": [
+          "https://en.wikipedia.org/wiki/Medtronic",
+          "https://www.medtronic.com/",
+          "https://www.medtronic.com/en-us/our-company.html",
+          "https://www.medtroniclabs.org/",
+          "https://www.medtroniclabs.org/technology-platform/"
+        ],
+        "summary_method": "profile:ollama:qwen2.5:7b"
+      },
+      "profile": {
+        "sector": "medtech",
+        "subsector": "surgical robotics",
+        "description": "Medtronic is a global leader in medical devices, focusing on advanced cardiac and neurovascular care, robotic-assisted surgery, and digital health solutions. The company aims to address global health challenges by providing innovative technologies and expanding access to healthcare in underserved communities.",
+        "what_they_do": "Medical device manufacturer developing and manufacturing advanced cardiac and neurovascular care, as well as robotic-assisted surgery, with a focus on expanding access to healthcare.",
+        "keywords": [
+          "cardiovascular",
+          "neurovascular",
+          "robotic-assisted surgery",
+          "digital health",
+          "healthcare technologies",
+          "therapies",
+          "medical device"
+        ],
+        "needs": [],
+        "hq_city": "Minneapolis",
+        "hq_country": "United States",
+        "canton_bern_presence": false,
+        "hq_source": {
+          "method": "llm_quote",
+          "evidence": "operational headquarters are in Minneapolis, Minnesota",
+          "url": null,
+          "verified": true
+        },
+        "bern_sites": [],
+        "medical_profile": {
+          "therapeutic_areas": [
+            {
+              "term": "cardiovascular",
+              "evidence": "advanced cardiac and neurovascular care"
+            },
+            {
+              "term": "neurovascular",
+              "evidence": "advanced cardiac and neurovascular care"
+            }
+          ],
+          "indications": [],
+          "modalities_technologies": [
+            {
+              "term": "advanced cardiac and neurovascular care",
+              "evidence": "advanced cardiac and neurovascular care"
+            },
+            {
+              "term": "robotic-assisted surgery",
+              "evidence": "robotic-assisted surgery"
+            },
+            {
+              "term": "digital health platform",
+              "evidence": "Our patented SPICE technology supports healthcare delivery models with communities that pair digital and product technologies across the care continuum."
+            }
+          ],
+          "products_platforms": [
+            {
+              "term": "advanced cardiac and neurovascular care products",
+              "evidence": "advanced cardiac and neurovascular care"
+            },
+            {
+              "term": "robotic-assisted surgery systems",
+              "evidence": "robotic-assisted surgery"
+            },
+            {
+              "term": "digital health platform",
+              "evidence": "Our patented SPICE technology supports healthcare delivery models with communities that pair digital and product technologies across the care continuum."
+            }
+          ],
+          "patient_populations": [],
+          "development_activities": [],
+          "business_model": {
+            "value": "medical device manufacturer",
+            "evidence": "develops and manufactures healthcare technologies and therapies"
+          },
+          "partnership_needs": [],
+          "headquarters": {
+            "city": "Minneapolis",
+            "country": "United States",
+            "evidence": "operational headquarters are in Minneapolis, Minnesota"
+          },
+          "sites": [
+            {
+              "place": "Ireland",
+              "type": "legal and executive headquarters",
+              "evidence": "legal and executive headquarters are in Ireland"
+            }
+          ],
+          "medical_keywords": [
+            "cardiovascular",
+            "neurovascular",
+            "robotic-assisted surgery",
+            "digital health",
+            "healthcare technologies",
+            "therapies"
+          ],
+          "what_they_do": "Medical device manufacturer developing and manufacturing advanced cardiac and neurovascular care, as well as robotic-assisted surgery, with a focus on expanding access to healthcare.",
+          "summary": "Medtronic is a global leader in medical devices, focusing on advanced cardiac and neurovascular care, robotic-assisted surgery, and digital health solutions. The company aims to address global health challenges by providing innovative technologies and expanding access to healthcare in underserved communities.",
+          "information_sufficiency": "limited",
+          "missing_information": [
+            "specific indications, therapeutic areas, and products"
+          ],
+          "company_name": "Medtronic",
+          "dropped_unsupported": [],
+          "model": "ollama:qwen2.5:7b",
+          "prompt_version": "medical-profile-v2"
+        },
+        "semantic_profile": {
+          "activity_summary": "Primary focus signals: Medical devices / medtech (58.5% relevance, n=3); Digital health (25.2% relevance, n=1).",
+          "focus_clusters": [
+            {
+              "id": "medtech_devices",
+              "label": "Medical devices / medtech",
+              "stage": "mid",
+              "canonical": "medical device",
+              "count": 3,
+              "lead_count": 3,
+              "relevance": 58.5,
+              "top_term": "medical device"
+            },
+            {
+              "id": "digital_health",
+              "label": "Digital health",
+              "stage": "mid",
+              "canonical": "digital health",
+              "count": 1,
+              "lead_count": 0,
+              "relevance": 25.2,
+              "top_term": "digital health"
+            }
+          ],
+          "early_ranked": [
+            {
+              "term": "medical device",
+              "stage": "early",
+              "cluster_id": "medtech_devices",
+              "cluster_label": "Medical devices / medtech",
+              "count": 3,
+              "lead_count": 3,
+              "relevance": 65.0,
+              "semantic_boost": 8.0
+            },
+            {
+              "term": "digital health",
+              "stage": "mid",
+              "cluster_id": "digital_health",
+              "cluster_label": "Digital health",
+              "count": 1,
+              "lead_count": 0,
+              "relevance": 28.5,
+              "semantic_boost": 8.0
+            }
+          ],
+          "mid_ranked": [],
+          "late_ranked": []
+        }
+      },
+      "match": {
+        "match_rate": 17.0,
+        "tier": "D — Weak / monitor",
+        "reasons": [
+          "Domain scope: Life Science only (sectors: biopharma, biotech, cdmo, digital_health, labtech, medtech, nutrition, pharma). Sources: University of Bern, ARTORG, Diabetes Center Berne.",
+          "Sector 'medtech' is within the life-science domain.",
+          "P2 / front relevance — strongest keyword 'medical device' (65.0% relevance, n=3). Run navigator on highest-relevance terms first.",
+          "Match rate 17.0% = capability fit 7.8/35 + breadth 3.1/10 + needs alignment 0.0/15 + bern presence 0.0/10 + focus synergy 2.9/10 + evidence 3.2/20.",
+          "No Canton of Bern presence detected — presence would add +10.",
+          "Sector 'medtech' / surgical robotics maps to Bern's life-science value proposition.",
+          "Main theme 'medtech_devices' maps to Bern capability 'surgical_robotics' (+2.9).",
+          "Aligns with Bern capability 'Biomedical Engineering & Medical Devices' via terms: medical device, medtech. Source ecosystem: ARTORG Center.",
+          "Aligns with Bern capability 'Surgical Robotics & Computer-Assisted Intervention' via terms: surgical robotics. Source ecosystem: ARTORG Center.",
+          "Aligns with Bern capability 'Digital Health & Remote Monitoring' via terms: digital health. Source ecosystem: ARTORG / Diabetes Center Berne.",
+          "Few specific overlapping terms with the best Bern capability — add product/technology detail.",
+          "No stated partnership needs (clinical validation, university, talent…)."
+        ],
+        "score_breakdown": {
+          "model": "bounded-v2",
+          "components": {
+            "capability_fit": 7.8,
+            "breadth": 3.1,
+            "needs_alignment": 0.0,
+            "bern_presence": 0.0,
+            "focus_synergy": 2.9,
+            "evidence": 3.2
+          },
+          "component_max": {
+            "capability_fit": 35.0,
+            "breadth": 10.0,
+            "needs_alignment": 15.0,
+            "bern_presence": 10.0,
+            "focus_synergy": 10.0,
+            "evidence": 20.0
+          },
+          "details": {
+            "capability_fit_ratio": 0.222,
+            "best_capability": "surgical_robotics",
+            "needs_scored": [],
+            "focus_cluster": "medtech_devices",
+            "evidence_source": "term_proxy"
+          },
+          "match_rate": 17.0,
+          "formula": "match_rate = capability_fit(≤35) + breadth(≤10) + needs_alignment(≤15) + bern_presence(≤10) + focus_synergy(≤10) + evidence(≤20; ≤8 without Bern records). Fits use 1-exp(-raw/3.0) saturation.",
+          "capability_hits": [
+            {
+              "id": "biomed_eng",
+              "name": "Biomedical Engineering & Medical Devices",
+              "score": 3.2,
+              "overlap_terms": [
+                "medical device",
+                "medtech"
+              ],
+              "source": "ARTORG Center"
+            },
+            {
+              "id": "surgical_robotics",
+              "name": "Surgical Robotics & Computer-Assisted Intervention",
+              "score": 1.98,
+              "overlap_terms": [
+                "surgical robotics"
+              ],
+              "source": "ARTORG Center"
+            },
+            {
+              "id": "digital_health",
+              "name": "Digital Health & Remote Monitoring",
+              "score": 1.87,
+              "overlap_terms": [
+                "digital health"
+              ],
+              "source": "ARTORG / Diabetes Center Berne"
+            }
+          ],
+          "bern_records_loaded": 0,
+          "why_not_higher": [
+            "Few specific overlapping terms with the best Bern capability — add product/technology detail.",
+            "No stated partnership needs (clinical validation, university, talent…).",
+            "No Canton of Bern site/HQ detected (+10 if present).",
+            "No verified Bern expert/unit records matched yet (load teammate data in data/bern_records/) — evidence capped at 8/20."
+          ]
+        },
+        "reasoning": {
+          "summary": "17.0% Bern life-science fit (D — Weak / monitor). Top capability: Biomedical Engineering & Medical Devices via medical device, medtech.",
+          "reasons": [
+            "Domain scope: Life Science only (sectors: biopharma, biotech, cdmo, digital_health, labtech, medtech, nutrition, pharma). Sources: University of Bern, ARTORG, Diabetes Center Berne.",
+            "Sector 'medtech' is within the life-science domain.",
+            "P2 / front relevance — strongest keyword 'medical device' (65.0% relevance, n=3). Run navigator on highest-relevance terms first.",
+            "Match rate 17.0% = capability fit 7.8/35 + breadth 3.1/10 + needs alignment 0.0/15 + bern presence 0.0/10 + focus synergy 2.9/10 + evidence 3.2/20.",
+            "No Canton of Bern presence detected — presence would add +10.",
+            "Sector 'medtech' / surgical robotics maps to Bern's life-science value proposition.",
+            "Main theme 'medtech_devices' maps to Bern capability 'surgical_robotics' (+2.9).",
+            "Aligns with Bern capability 'Biomedical Engineering & Medical Devices' via terms: medical device, medtech. Source ecosystem: ARTORG Center.",
+            "Aligns with Bern capability 'Surgical Robotics & Computer-Assisted Intervention' via terms: surgical robotics. Source ecosystem: ARTORG Center.",
+            "Aligns with Bern capability 'Digital Health & Remote Monitoring' via terms: digital health. Source ecosystem: ARTORG / Diabetes Center Berne.",
+            "Few specific overlapping terms with the best Bern capability — add product/technology detail.",
+            "No stated partnership needs (clinical validation, university, talent…)."
+          ],
+          "score_breakdown": {
+            "model": "bounded-v2",
+            "components": {
+              "capability_fit": 7.8,
+              "breadth": 3.1,
+              "needs_alignment": 0.0,
+              "bern_presence": 0.0,
+              "focus_synergy": 2.9,
+              "evidence": 3.2
+            },
+            "component_max": {
+              "capability_fit": 35.0,
+              "breadth": 10.0,
+              "needs_alignment": 15.0,
+              "bern_presence": 10.0,
+              "focus_synergy": 10.0,
+              "evidence": 20.0
+            },
+            "details": {
+              "capability_fit_ratio": 0.222,
+              "best_capability": "surgical_robotics",
+              "needs_scored": [],
+              "focus_cluster": "medtech_devices",
+              "evidence_source": "term_proxy"
+            },
+            "match_rate": 17.0,
+            "formula": "match_rate = capability_fit(≤35) + breadth(≤10) + needs_alignment(≤15) + bern_presence(≤10) + focus_synergy(≤10) + evidence(≤20; ≤8 without Bern records). Fits use 1-exp(-raw/3.0) saturation.",
+            "capability_hits": [
+              {
+                "id": "biomed_eng",
+                "name": "Biomedical Engineering & Medical Devices",
+                "score": 3.2,
+                "overlap_terms": [
+                  "medical device",
+                  "medtech"
+                ],
+                "source": "ARTORG Center"
+              },
+              {
+                "id": "surgical_robotics",
+                "name": "Surgical Robotics & Computer-Assisted Intervention",
+                "score": 1.98,
+                "overlap_terms": [
+                  "surgical robotics"
+                ],
+                "source": "ARTORG Center"
+              },
+              {
+                "id": "digital_health",
+                "name": "Digital Health & Remote Monitoring",
+                "score": 1.87,
+                "overlap_terms": [
+                  "digital health"
+                ],
+                "source": "ARTORG / Diabetes Center Berne"
+              }
+            ],
+            "bern_records_loaded": 0,
+            "why_not_higher": [
+              "Few specific overlapping terms with the best Bern capability — add product/technology detail.",
+              "No stated partnership needs (clinical validation, university, talent…).",
+              "No Canton of Bern site/HQ detected (+10 if present).",
+              "No verified Bern expert/unit records matched yet (load teammate data in data/bern_records/) — evidence capped at 8/20."
+            ]
+          },
+          "focus_synergy": [
+            "Main theme 'medtech_devices' maps to Bern capability 'surgical_robotics' (+2.9)."
+          ],
+          "economic_hooks": [
+            "Medtech / AI fit → ARTORG co-development and validation pathway."
+          ],
+          "bern_units": [
+            "ARTORG Center for Biomedical Engineering Research",
+            "ARTORG Center",
+            "Inselspital surgical research groups",
+            "ARTORG",
+            "Diabetes Center Berne"
+          ],
+          "bern_matches": [],
+          "backend_hints": {
+            "priority_rating": "P2",
+            "priority_stage": "early",
+            "run_first": [
+              "medical device",
+              "medtech",
+              "surgical robotics",
+              "digital health",
+              "cardiovascular",
+              "neurovascular",
+              "robotic-assisted surgery",
+              "healthcare technologies"
+            ],
+            "run_later": [
+              "digital health",
+              "therapies"
+            ],
+            "capability_ids": [
+              "biomed_eng",
+              "surgical_robotics",
+              "digital_health"
+            ]
+          }
+        },
+        "early_keywords": [
+          "medical device",
+          "medtech",
+          "surgical robotics"
+        ],
+        "mid_keywords": [
+          "digital health"
+        ],
+        "late_keywords": [],
+        "early_relevance": [
+          {
+            "term": "medical device",
+            "stage": "early",
+            "cluster_id": "medtech_devices",
+            "cluster_label": "Medical devices / medtech",
+            "count": 3,
+            "lead_count": 3,
+            "relevance": 65.0,
+            "semantic_boost": 8.0
+          },
+          {
+            "term": "medtech",
+            "stage": "early",
+            "count": 1,
+            "relevance": 42.0,
+            "cluster_label": "capability overlap"
+          },
+          {
+            "term": "surgical robotics",
+            "stage": "early",
+            "count": 1,
+            "relevance": 42.0,
+            "cluster_label": "capability overlap"
+          }
+        ],
+        "focus_clusters": [
+          {
+            "id": "medtech_devices",
+            "label": "Medical devices / medtech",
+            "stage": "mid",
+            "canonical": "medical device",
+            "count": 3,
+            "lead_count": 3,
+            "relevance": 58.5,
+            "top_term": "medical device"
+          },
+          {
+            "id": "digital_health",
+            "label": "Digital health",
+            "stage": "mid",
+            "canonical": "digital health",
+            "count": 1,
+            "lead_count": 0,
+            "relevance": 25.2,
+            "top_term": "digital health"
+          }
+        ],
+        "bern_units": [
+          "ARTORG Center for Biomedical Engineering Research",
+          "ARTORG Center",
+          "Inselspital surgical research groups",
+          "ARTORG",
+          "Diabetes Center Berne"
+        ],
+        "bern_matches": [],
+        "economic_hooks": [
+          "Medtech / AI fit → ARTORG co-development and validation pathway."
+        ],
+        "capability_matches": [
+          {
+            "id": "biomed_eng",
+            "name": "Biomedical Engineering & Medical Devices",
+            "score": 3.2,
+            "overlap_terms": [
+              "medical device",
+              "medtech"
+            ],
+            "source": "ARTORG Center",
+            "units": [
+              "ARTORG Center for Biomedical Engineering Research"
+            ],
+            "reason": "Aligns with Bern capability 'Biomedical Engineering & Medical Devices' via terms: medical device, medtech. Source ecosystem: ARTORG Center."
+          },
+          {
+            "id": "surgical_robotics",
+            "name": "Surgical Robotics & Computer-Assisted Intervention",
+            "score": 1.98,
+            "overlap_terms": [
+              "surgical robotics"
+            ],
+            "source": "ARTORG Center",
+            "units": [
+              "ARTORG Center",
+              "Inselspital surgical research groups"
+            ],
+            "reason": "Aligns with Bern capability 'Surgical Robotics & Computer-Assisted Intervention' via terms: surgical robotics. Source ecosystem: ARTORG Center."
+          },
+          {
+            "id": "digital_health",
+            "name": "Digital Health & Remote Monitoring",
+            "score": 1.87,
+            "overlap_terms": [
+              "digital health"
+            ],
+            "source": "ARTORG / Diabetes Center Berne",
+            "units": [
+              "ARTORG",
+              "Diabetes Center Berne"
+            ],
+            "reason": "Aligns with Bern capability 'Digital Health & Remote Monitoring' via terms: digital health. Source ecosystem: ARTORG / Diabetes Center Berne."
+          }
+        ],
+        "teammate_queries_early": [
+          "medical device",
+          "medtech",
+          "surgical robotics",
+          "digital health",
+          "cardiovascular",
+          "neurovascular",
+          "robotic-assisted surgery",
+          "healthcare technologies"
+        ],
+        "teammate_queries_later": [
+          "digital health",
+          "therapies"
+        ],
+        "suggested_queries": [
+          "medical device",
+          "medtech",
+          "surgical robotics",
+          "digital health",
+          "cardiovascular",
+          "neurovascular",
+          "robotic-assisted surgery",
+          "healthcare technologies",
+          "therapies"
+        ],
+        "handoff_note": "P2 / front relevance — strongest keyword 'medical device' (65.0% relevance, n=3). Run navigator on highest-relevance terms first."
+      },
+      "extraction": {
+        "confidence": 0.95,
+        "method": "llm-profile",
+        "warnings": []
+      },
+      "queue": {
+        "position": 1,
+        "priority_rating": "P2",
+        "priority_stage": "early",
+        "priority_score": 53.7
+      },
+      "source_text_excerpt": "Medtronic\n\nCompany name: Medtronic\n\n[1] Medtronic\nMedtronic plc is an international medical device company. The company's legal and executive headquarters are in Ireland, while its operational headquarters are in Minneapolis, Minnesota. Medtronic rebased to Ireland following its acquisition of Irish-based Covidien in 2015. While it primarily operates in the United States, it operates in more than 150 countries and employs over 90,000 people. It develops and manufactures healthcare technologies and therapies. It is one of the biggest medical tech companies in the world and is currently the largest medical device company in the world by revenue.\nSource: https://en.wikipedia.org/wiki/Medtronic\n\n[2] Health tech for the digital age | Medtronic\nPeople-centered, data-driven, personalized. Solving our world&#x27;s biggest health challenges with advanced technology.\nSource: https://www.medtronic.com/\n\n[3] Where health meets high tech - Medtronic\nFrom the advanced cardiac and neurovascular care to robotic-assisted surgery, Medtronic transforms the lives of millions worldwide with innovative healt tech.\nSource: https://www.medtronic.com/en-us/our-company.html\n\n[4] Expanding Access to Healthcare For All | Medtronic LABS\nMedtronic LABS is the only health systems innovator that develops tech-enabled solutions for underserved communities worldwide. Explore our solutions.\nSource: https://www.medtroniclabs.org/\n\n[5] Technology | Our Digital Health Platform | Medtronic LABS\nOur patented SPICE technology supports healthcare delivery models with communities that pair digital and product technologies across the care continuum.\nSource: https://www.medtroniclabs.org/technology-platform/"
+    }
+  ]
+}

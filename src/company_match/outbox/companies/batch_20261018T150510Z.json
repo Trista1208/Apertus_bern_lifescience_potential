@@ -1,0 +1,541 @@
+{
+  "schema_version": "2.0",
+  "generated_at": "2026-10-18T15:05:10.060583+00:00",
+  "domain": "life_science",
+  "owner_layer": "company_match",
+  "how_to_use": "Backend / teammate: load companies[]. Use match.score_breakdown.components (sums to match_rate) and match.bern_matches (records from data/bern_records with source_url). See src/company_match/BACKEND_CONTRACT.md. website_info holds the ingested site metadata. Push each company object (or this batch) to your API.",
+  "source_count": 1,
+  "company_count": 1,
+  "companies": [
+    {
+      "schema_version": "2.0",
+      "generated_at": "2026-10-18T15:05:10.060538+00:00",
+      "id": "mindray",
+      "name": "Mindray",
+      "domain": "life_science",
+      "in_scope": true,
+      "website_info": {
+        "url": null,
+        "source_type": "text",
+        "source_ref": "inline",
+        "meta_title": "",
+        "meta_description": "Mindray Bio-Medical Electronics Co., Ltd., simply known as Mindray, is a Chinese multinational health technology company based in Shenzhen, Guangdong. Mindray designs and produces medical equipment and accessories for both human and veterinary use. The company is organized into three key business lines: Patient Monitoring & Life Support, In-Vitro Diagnostic Products, and Medical Imaging Systems. In 2008, Mindray was recognized as China's largest medical device manufacturer.",
+        "fetched_language": "en",
+        "translated_to_english": false,
+        "translation_method": "identity",
+        "web_enrich_method": "wikipedia+duckduckgo+snippet",
+        "web_sources": [
+          "https://en.wikipedia.org/wiki/Mindray_(company)",
+          "https://www.mindray.com/en",
+          "https://www.mindray.com/en/solutions/laboratory-diagnostics",
+          "https://www.medtechfirms.com/company/mindray",
+          "https://en.wikipedia.org/wiki/Mindray",
+          "https://www.mindraysupply.com/"
+        ],
+        "summary_method": "web:wikipedia+duckduckgo+snippet"
+      },
+      "profile": {
+        "sector": "medtech",
+        "subsector": "imaging & diagnostics",
+        "description": "Mindray Bio-Medical Electronics Co., Ltd., simply known as Mindray, is a Chinese multinational health technology company based in Shenzhen, Guangdong. Mindray designs and produces medical equipment and accessories for both human and veterinary use. The company is organized into three key business lines: Patient Monitoring & Life Support, In-Vitro Diagnostic Products, and Medical Imaging Systems. In 2008, Mindray was recognized as China's largest medical device manufacturer.",
+        "what_they_do": "Medical device company in imaging & diagnostics (source terms: medical imaging, veterinary, diagnostic, diagnostics, laboratory).",
+        "keywords": [
+          "medical device",
+          "medical imaging",
+          "veterinary",
+          "medtech",
+          "diagnostic",
+          "diagnostics",
+          "laboratory"
+        ],
+        "needs": [],
+        "hq_city": "Shenzhen",
+        "hq_country": "People's Republic of China",
+        "canton_bern_presence": false,
+        "hq_source": {
+          "method": "wikidata",
+          "evidence": "Wikidata Q15138136 (matched by exact name + company description)",
+          "url": "https://www.wikidata.org/wiki/Q15138136",
+          "verified": true
+        },
+        "bern_sites": [],
+        "medical_profile": null,
+        "semantic_profile": {
+          "activity_summary": "Primary focus signals: Medical devices / medtech (52.5% relevance, n=3); Medical imaging & clinical AI (46.2% relevance, n=2).",
+          "focus_clusters": [
+            {
+              "id": "medtech_devices",
+              "label": "Medical devices / medtech",
+              "stage": "mid",
+              "canonical": "medical device",
+              "count": 3,
+              "lead_count": 2,
+              "relevance": 52.5,
+              "top_term": "medical device"
+            },
+            {
+              "id": "imaging_ai",
+              "label": "Medical imaging & clinical AI",
+              "stage": "mid",
+              "canonical": "medical imaging",
+              "count": 2,
+              "lead_count": 2,
+              "relevance": 46.2,
+              "top_term": "medical imaging"
+            }
+          ],
+          "early_ranked": [
+            {
+              "term": "medical device",
+              "stage": "early",
+              "cluster_id": "medtech_devices",
+              "cluster_label": "Medical devices / medtech",
+              "count": 3,
+              "lead_count": 2,
+              "relevance": 57.0,
+              "semantic_boost": 8.0
+            },
+            {
+              "term": "medical imaging",
+              "stage": "early",
+              "cluster_id": "imaging_ai",
+              "cluster_label": "Medical imaging & clinical AI",
+              "count": 2,
+              "lead_count": 2,
+              "relevance": 51.8,
+              "semantic_boost": 8.0
+            }
+          ],
+          "mid_ranked": [],
+          "late_ranked": []
+        }
+      },
+      "match": {
+        "match_rate": 32.2,
+        "tier": "D — Weak / monitor",
+        "reasons": [
+          "Domain scope: Life Science only (sectors: biopharma, biotech, cdmo, digital_health, labtech, medtech, nutrition, pharma). Sources: University of Bern, ARTORG, Diabetes Center Berne.",
+          "Sector 'medtech' is within the life-science domain.",
+          "P2 / front relevance — strongest keyword 'medical device' (57.0% relevance, n=3). Run navigator on highest-relevance terms first.",
+          "Match rate 32.2% = capability fit 15.9/35 + breadth 4.5/10 + needs alignment 0.0/15 + bern presence 0.0/10 + focus synergy 4.6/10 + evidence 7.2/20.",
+          "No Canton of Bern presence detected — presence would add +10.",
+          "Sector 'medtech' / imaging & diagnostics maps to Bern's life-science value proposition.",
+          "Main theme 'medtech_devices' maps to Bern capability 'medical_imaging_ai' (+4.6).",
+          "Aligns with Bern capability 'Biomedical Engineering & Medical Devices' via terms: medical device, medtech, medical technology. Source ecosystem: ARTORG Center.",
+          "Aligns with Bern capability 'Medical Imaging & Clinical AI' via terms: medical imaging, ultrasound, clinical ai. Source ecosystem: University of Bern / ARTORG.",
+          "Aligns with Bern capability 'Diabetes & Continuous Glucose Monitoring' via terms: diagnostic, diagnostics. Source ecosystem: Diabetes Center Berne.",
+          "Aligns with Bern capability 'One Health & Veterinary Sciences' via terms: veterinary. Source ecosystem: University of Bern.",
+          "Few specific overlapping terms with the best Bern capability — add product/technology detail.",
+          "No stated partnership needs (clinical validation, university, talent…)."
+        ],
+        "score_breakdown": {
+          "model": "bounded-v2",
+          "components": {
+            "capability_fit": 15.9,
+            "breadth": 4.5,
+            "needs_alignment": 0.0,
+            "bern_presence": 0.0,
+            "focus_synergy": 4.6,
+            "evidence": 7.2
+          },
+          "component_max": {
+            "capability_fit": 35.0,
+            "breadth": 10.0,
+            "needs_alignment": 15.0,
+            "bern_presence": 10.0,
+            "focus_synergy": 10.0,
+            "evidence": 20.0
+          },
+          "details": {
+            "capability_fit_ratio": 0.454,
+            "best_capability": "medical_imaging_ai",
+            "needs_scored": [],
+            "focus_cluster": "medtech_devices",
+            "evidence_source": "term_proxy"
+          },
+          "match_rate": 32.2,
+          "formula": "match_rate = capability_fit(≤35) + breadth(≤10) + needs_alignment(≤15) + bern_presence(≤10) + focus_synergy(≤10) + evidence(≤20; ≤8 without Bern records). Fits use 1-exp(-raw/3.0) saturation.",
+          "capability_hits": [
+            {
+              "id": "biomed_eng",
+              "name": "Biomedical Engineering & Medical Devices",
+              "score": 5.4,
+              "overlap_terms": [
+                "medical device",
+                "medtech",
+                "medical technology"
+              ],
+              "source": "ARTORG Center"
+            },
+            {
+              "id": "medical_imaging_ai",
+              "name": "Medical Imaging & Clinical AI",
+              "score": 4.86,
+              "overlap_terms": [
+                "medical imaging",
+                "ultrasound",
+                "clinical ai"
+              ],
+              "source": "University of Bern / ARTORG"
+            },
+            {
+              "id": "diabetes_cgm",
+              "name": "Diabetes & Continuous Glucose Monitoring",
+              "score": 2.3,
+              "overlap_terms": [
+                "diagnostic",
+                "diagnostics"
+              ],
+              "source": "Diabetes Center Berne"
+            },
+            {
+              "id": "one_health_vet",
+              "name": "One Health & Veterinary Sciences",
+              "score": 0.7,
+              "overlap_terms": [
+                "veterinary"
+              ],
+              "source": "University of Bern"
+            }
+          ],
+          "bern_records_loaded": 0,
+          "why_not_higher": [
+            "Few specific overlapping terms with the best Bern capability — add product/technology detail.",
+            "No stated partnership needs (clinical validation, university, talent…).",
+            "No Canton of Bern site/HQ detected (+10 if present).",
+            "No verified Bern expert/unit records matched yet (load teammate data in data/bern_records/) — evidence capped at 8/20."
+          ]
+        },
+        "reasoning": {
+          "summary": "32.2% Bern life-science fit (D — Weak / monitor). Top capability: Biomedical Engineering & Medical Devices via medical device, medtech, medical technology.",
+          "reasons": [
+            "Domain scope: Life Science only (sectors: biopharma, biotech, cdmo, digital_health, labtech, medtech, nutrition, pharma). Sources: University of Bern, ARTORG, Diabetes Center Berne.",
+            "Sector 'medtech' is within the life-science domain.",
+            "P2 / front relevance — strongest keyword 'medical device' (57.0% relevance, n=3). Run navigator on highest-relevance terms first.",
+            "Match rate 32.2% = capability fit 15.9/35 + breadth 4.5/10 + needs alignment 0.0/15 + bern presence 0.0/10 + focus synergy 4.6/10 + evidence 7.2/20.",
+            "No Canton of Bern presence detected — presence would add +10.",
+            "Sector 'medtech' / imaging & diagnostics maps to Bern's life-science value proposition.",
+            "Main theme 'medtech_devices' maps to Bern capability 'medical_imaging_ai' (+4.6).",
+            "Aligns with Bern capability 'Biomedical Engineering & Medical Devices' via terms: medical device, medtech, medical technology. Source ecosystem: ARTORG Center.",
+            "Aligns with Bern capability 'Medical Imaging & Clinical AI' via terms: medical imaging, ultrasound, clinical ai. Source ecosystem: University of Bern / ARTORG.",
+            "Aligns with Bern capability 'Diabetes & Continuous Glucose Monitoring' via terms: diagnostic, diagnostics. Source ecosystem: Diabetes Center Berne.",
+            "Aligns with Bern capability 'One Health & Veterinary Sciences' via terms: veterinary. Source ecosystem: University of Bern.",
+            "Few specific overlapping terms with the best Bern capability — add product/technology detail.",
+            "No stated partnership needs (clinical validation, university, talent…)."
+          ],
+          "score_breakdown": {
+            "model": "bounded-v2",
+            "components": {
+              "capability_fit": 15.9,
+              "breadth": 4.5,
+              "needs_alignment": 0.0,
+              "bern_presence": 0.0,
+              "focus_synergy": 4.6,
+              "evidence": 7.2
+            },
+            "component_max": {
+              "capability_fit": 35.0,
+              "breadth": 10.0,
+              "needs_alignment": 15.0,
+              "bern_presence": 10.0,
+              "focus_synergy": 10.0,
+              "evidence": 20.0
+            },
+            "details": {
+              "capability_fit_ratio": 0.454,
+              "best_capability": "medical_imaging_ai",
+              "needs_scored": [],
+              "focus_cluster": "medtech_devices",
+              "evidence_source": "term_proxy"
+            },
+            "match_rate": 32.2,
+            "formula": "match_rate = capability_fit(≤35) + breadth(≤10) + needs_alignment(≤15) + bern_presence(≤10) + focus_synergy(≤10) + evidence(≤20; ≤8 without Bern records). Fits use 1-exp(-raw/3.0) saturation.",
+            "capability_hits": [
+              {
+                "id": "biomed_eng",
+                "name": "Biomedical Engineering & Medical Devices",
+                "score": 5.4,
+                "overlap_terms": [
+                  "medical device",
+                  "medtech",
+                  "medical technology"
+                ],
+                "source": "ARTORG Center"
+              },
+              {
+                "id": "medical_imaging_ai",
+                "name": "Medical Imaging & Clinical AI",
+                "score": 4.86,
+                "overlap_terms": [
+                  "medical imaging",
+                  "ultrasound",
+                  "clinical ai"
+                ],
+                "source": "University of Bern / ARTORG"
+              },
+              {
+                "id": "diabetes_cgm",
+                "name": "Diabetes & Continuous Glucose Monitoring",
+                "score": 2.3,
+                "overlap_terms": [
+                  "diagnostic",
+                  "diagnostics"
+                ],
+                "source": "Diabetes Center Berne"
+              },
+              {
+                "id": "one_health_vet",
+                "name": "One Health & Veterinary Sciences",
+                "score": 0.7,
+                "overlap_terms": [
+                  "veterinary"
+                ],
+                "source": "University of Bern"
+              }
+            ],
+            "bern_records_loaded": 0,
+            "why_not_higher": [
+              "Few specific overlapping terms with the best Bern capability — add product/technology detail.",
+              "No stated partnership needs (clinical validation, university, talent…).",
+              "No Canton of Bern site/HQ detected (+10 if present).",
+              "No verified Bern expert/unit records matched yet (load teammate data in data/bern_records/) — evidence capped at 8/20."
+            ]
+          },
+          "focus_synergy": [
+            "Main theme 'medtech_devices' maps to Bern capability 'medical_imaging_ai' (+4.6)."
+          ],
+          "economic_hooks": [
+            "Diabetes / metabolic fit → Diabetes Center Berne + device/drug collaboration.",
+            "Medtech / AI fit → ARTORG co-development and validation pathway."
+          ],
+          "bern_units": [
+            "ARTORG Center for Biomedical Engineering Research",
+            "ARTORG",
+            "Department of Diagnostic, Interventional and Pediatric Radiology",
+            "Diabetes Center Berne",
+            "Department of Diabetes, Endocrinology, Nutritional Medicine & Metabolism",
+            "Vetsuisse Faculty"
+          ],
+          "bern_matches": [],
+          "backend_hints": {
+            "priority_rating": "P2",
+            "priority_stage": "early",
+            "run_first": [
+              "medical device",
+              "medical imaging",
+              "medtech",
+              "diagnostic",
+              "diagnostics",
+              "medical technology",
+              "ultrasound",
+              "clinical ai"
+            ],
+            "run_later": [
+              "medical technology",
+              "ultrasound",
+              "clinical ai",
+              "diagnostic",
+              "diagnostics",
+              "veterinary",
+              "laboratory"
+            ],
+            "capability_ids": [
+              "biomed_eng",
+              "medical_imaging_ai",
+              "diabetes_cgm",
+              "one_health_vet"
+            ]
+          }
+        },
+        "early_keywords": [
+          "medical device",
+          "medical imaging",
+          "medtech"
+        ],
+        "mid_keywords": [
+          "medical technology",
+          "ultrasound",
+          "clinical ai"
+        ],
+        "late_keywords": [
+          "diagnostic",
+          "diagnostics",
+          "veterinary"
+        ],
+        "early_relevance": [
+          {
+            "term": "medical device",
+            "stage": "early",
+            "cluster_id": "medtech_devices",
+            "cluster_label": "Medical devices / medtech",
+            "count": 3,
+            "lead_count": 2,
+            "relevance": 57.0,
+            "semantic_boost": 8.0
+          },
+          {
+            "term": "medical imaging",
+            "stage": "early",
+            "cluster_id": "imaging_ai",
+            "cluster_label": "Medical imaging & clinical AI",
+            "count": 2,
+            "lead_count": 2,
+            "relevance": 51.8,
+            "semantic_boost": 8.0
+          },
+          {
+            "term": "medtech",
+            "stage": "early",
+            "count": 1,
+            "relevance": 42.0,
+            "cluster_label": "capability overlap"
+          }
+        ],
+        "focus_clusters": [
+          {
+            "id": "medtech_devices",
+            "label": "Medical devices / medtech",
+            "stage": "mid",
+            "canonical": "medical device",
+            "count": 3,
+            "lead_count": 2,
+            "relevance": 52.5,
+            "top_term": "medical device"
+          },
+          {
+            "id": "imaging_ai",
+            "label": "Medical imaging & clinical AI",
+            "stage": "mid",
+            "canonical": "medical imaging",
+            "count": 2,
+            "lead_count": 2,
+            "relevance": 46.2,
+            "top_term": "medical imaging"
+          }
+        ],
+        "bern_units": [
+          "ARTORG Center for Biomedical Engineering Research",
+          "ARTORG",
+          "Department of Diagnostic, Interventional and Pediatric Radiology",
+          "Diabetes Center Berne",
+          "Department of Diabetes, Endocrinology, Nutritional Medicine & Metabolism",
+          "Vetsuisse Faculty"
+        ],
+        "bern_matches": [],
+        "economic_hooks": [
+          "Diabetes / metabolic fit → Diabetes Center Berne + device/drug collaboration.",
+          "Medtech / AI fit → ARTORG co-development and validation pathway."
+        ],
+        "capability_matches": [
+          {
+            "id": "biomed_eng",
+            "name": "Biomedical Engineering & Medical Devices",
+            "score": 5.4,
+            "overlap_terms": [
+              "medical device",
+              "medtech",
+              "medical technology"
+            ],
+            "source": "ARTORG Center",
+            "units": [
+              "ARTORG Center for Biomedical Engineering Research"
+            ],
+            "reason": "Aligns with Bern capability 'Biomedical Engineering & Medical Devices' via terms: medical device, medtech, medical technology. Source ecosystem: ARTORG Center."
+          },
+          {
+            "id": "medical_imaging_ai",
+            "name": "Medical Imaging & Clinical AI",
+            "score": 4.86,
+            "overlap_terms": [
+              "medical imaging",
+              "ultrasound",
+              "clinical ai"
+            ],
+            "source": "University of Bern / ARTORG",
+            "units": [
+              "ARTORG",
+              "Department of Diagnostic, Interventional and Pediatric Radiology"
+            ],
+            "reason": "Aligns with Bern capability 'Medical Imaging & Clinical AI' via terms: medical imaging, ultrasound, clinical ai. Source ecosystem: University of Bern / ARTORG."
+          },
+          {
+            "id": "diabetes_cgm",
+            "name": "Diabetes & Continuous Glucose Monitoring",
+            "score": 2.3,
+            "overlap_terms": [
+              "diagnostic",
+              "diagnostics"
+            ],
+            "source": "Diabetes Center Berne",
+            "units": [
+              "Diabetes Center Berne",
+              "Department of Diabetes, Endocrinology, Nutritional Medicine & Metabolism"
+            ],
+            "reason": "Aligns with Bern capability 'Diabetes & Continuous Glucose Monitoring' via terms: diagnostic, diagnostics. Source ecosystem: Diabetes Center Berne."
+          },
+          {
+            "id": "one_health_vet",
+            "name": "One Health & Veterinary Sciences",
+            "score": 0.7,
+            "overlap_terms": [
+              "veterinary"
+            ],
+            "source": "University of Bern",
+            "units": [
+              "Vetsuisse Faculty"
+            ],
+            "reason": "Aligns with Bern capability 'One Health & Veterinary Sciences' via terms: veterinary. Source ecosystem: University of Bern."
+          }
+        ],
+        "teammate_queries_early": [
+          "medical device",
+          "medical imaging",
+          "medtech",
+          "diagnostic",
+          "diagnostics",
+          "medical technology",
+          "ultrasound",
+          "clinical ai"
+        ],
+        "teammate_queries_later": [
+          "medical technology",
+          "ultrasound",
+          "clinical ai",
+          "diagnostic",
+          "diagnostics",
+          "veterinary",
+          "laboratory"
+        ],
+        "suggested_queries": [
+          "medical device",
+          "medtech",
+          "medical imaging",
+          "diagnostic",
+          "diagnostics",
+          "medical technology",
+          "ultrasound",
+          "clinical ai",
+          "veterinary",
+          "laboratory"
+        ],
+        "handoff_note": "P2 / front relevance — strongest keyword 'medical device' (57.0% relevance, n=3). Run navigator on highest-relevance terms first."
+      },
+      "extraction": {
+        "confidence": 0.88,
+        "method": "web-enrich",
+        "warnings": [
+          "Ollama HTTP 402: {\"error\":\"this model is not included in your free usage, add usage credits to pay as you go: https://ollama.com/settings or upgrade for included usage: https://ollama.com/upgrade. Try gemma4:31b-cloud, which is in the Free plan. (ref: aff57ca0-b346-412e-bc99-16a7520671e7)\"}\n",
+          "LLM profile: no valid JSON returned; using rule-based fields.",
+          "Ollama HTTP 402: {\"error\":\"this model is not included in your free usage, add usage credits to pay as you go: https://ollama.com/settings or upgrade for included usage: https://ollama.com/upgrade. Try gemma4:31b-cloud, which is in the Free plan. (ref: 425a91f4-b9ae-49f1-8556-7edc8498c9e4)\"}\n"
+        ]
+      },
+      "queue": {
+        "position": 1,
+        "priority_rating": "P2",
+        "priority_stage": "early",
+        "priority_score": 54.4
+      },
+      "source_text_excerpt": "Mindray\n\nCompany name: Mindray\n\n[1] Mindray (company)\nMindray Bio-Medical Electronics Co., Ltd., simply known as Mindray, is a Chinese multinational health technology company based in Shenzhen, Guangdong. Mindray designs and produces medical equipment and accessories for both human and veterinary use. The company is organized into three key business lines: Patient Monitoring & Life Support, In-Vitro Diagnostic Products, and Medical Imaging Systems. In 2008, Mindray was recognized as China's largest medical device manufacturer.\nSource: https://en.wikipedia.org/wiki/Mindray_(company)\n\n[2] Medical Technology and Solutions Supplier - Mindray\nAs a medical equipment and solutions supplier with a deep focus on healthcare, Mindray strives to develop and share medical technologies and devotes to providing better care for more people across the globe.\nSource: https://www.mindray.com/en\n\n[3] Laboratory Diagnostics - Mindray\nMindray empowers this trust through technology, innovation, and our commitment to the advancement of in-vitro diagnostics science. Mindray has developed reliable and robust solutions to empower trust, delivering accurate results while meeting increasing demands on efficiency in laboratories worldwide.\nSource: https://www.mindray.com/en/solutions/laboratory-diagnostics\n\n[4] Mindray | Innovative Medical Technology &amp; Diagnostic Solutions\nMindray develops patient monitoring imaging ultrasound and laboratory diagnostic solutions that improve clinical efficiency accuracy and patient care worldwide.\nSource: https://www.medtechfirms.com/company/mindray\n\n[5] Mindray - Wikipedia\nMindray Bio-Medical Electronics Co., Ltd., simply known as Mindray (Chinese: 迈瑞; pinyin: Màiruì), is a Chinese multinational health technology company based in Shenzhen, Guangdong. Mindray designs and produces medical equipment and accessories for both human and veterinary use. The company is organized into three key business lines: Patient Monitoring &amp; Life Support, In-Vitro Diagnostic ...\nSource: https://en.wikipedia.org/wiki/Mindray\n\n[6] Mindray Medical Device Systems - engineered clinical systems for ...\nPatient monitoring · respiratory care · home rehabilitation Clinical systems engineered for measured decisions from ICU to home care. Mindray aligns bedside monitors, anesthesia workstations, portable ultrasound workflows, and discharge-ready DME programs with traceable performance data, service accountability, and interoperability documentation.\nSource: https://www.mindraysupply.com/"
+    }
+  ]
+}
