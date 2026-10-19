@@ -398,6 +398,19 @@ button:disabled {
 .chip.early { background: rgba(15, 106, 79, 0.1); border-color: rgba(15, 106, 79, 0.28); }
 .chip.mid { background: rgba(47, 111, 143, 0.1); border-color: rgba(47, 111, 143, 0.28); }
 .chip.late { background: rgba(138, 106, 47, 0.12); border-color: rgba(138, 106, 47, 0.28); }
+.chip.focused-early {
+  background: rgba(15, 106, 79, 0.14);
+  border-color: rgba(15, 106, 79, 0.4);
+  font-weight: 600;
+}
+.chip.focused {
+  background: rgba(47, 111, 143, 0.12);
+  border-color: rgba(47, 111, 143, 0.32);
+}
+.chip.mini {
+  padding: 0.12rem 0.4rem;
+  font-size: 0.72rem;
+}
 
 .chip-score {
   display: inline-block;
@@ -406,6 +419,44 @@ button:disabled {
   font-size: 0.72rem;
   color: var(--muted);
   font-weight: 600;
+}
+
+.focused-box {
+  margin: 0.85rem 0 1rem;
+  padding: 0.85rem 1rem;
+  border: 1px solid rgba(15, 106, 79, 0.28);
+  background: linear-gradient(135deg, rgba(15, 106, 79, 0.06), rgba(247, 244, 236, 0.9));
+}
+
+.focused-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.35rem;
+}
+
+.focused-hint {
+  margin: 0 0 0.65rem;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.focused-sub {
+  margin: 0.55rem 0 0.3rem;
+  font-size: 0.82rem;
+  font-weight: 650;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.queue-kw {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.28rem;
+  margin-top: 0.35rem;
 }
 
 .layer-box {

@@ -111,6 +111,19 @@ Quick demo: start Ollama + API + UI, paste a company name or website, click
 **Extract & prioritize**. Layer view shows the active model (e.g.
 `ollama:qwen2.5:3b`), not Kimi.
 
+### Focused crawler (Bern research side)
+
+Teammate branch `focused-crawler` lives under `src/navigator/focused/`. Docs:
+[`Docs/Focused Crawler.md`](Docs/Focused%20Crawler.md).
+
+```bash
+pip install -r src/requirements-focused.txt
+export PYTHONPATH=src
+python -m navigator focused-crawl --source-check --only artorg dcberne
+python -m navigator focused-crawl --max-fetches 150 --export data/highlights.json
+python -m company_match import-focused data/highlights.json   # → Bern records for matching
+```
+
 ## License
 
 All Hack Apertus projects are open-sourced. Please check our Terms & Conditions for specific licensing details (6. What you build is open source): https://hackapertus.ch/terms-and-conditions

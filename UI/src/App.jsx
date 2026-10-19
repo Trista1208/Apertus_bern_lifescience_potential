@@ -313,6 +313,70 @@ function CompanyCard({ card }) {
         </>
       )}
 
+      {(() => {
+        const focused =
+          kw.focused_early?.length || kw.focused_medical?.length || kw.focused?.length
+            ? {
+                early: kw.focused_early || [],
+                medical: kw.focused_medical || [],
+                all: kw.focused || [],
+                score: kw.focused_score,
+              }
+            : null;
+        const sbFocused = (match.score_breakdown?.details || {}).focused_keywords || [];
+        const sbScore = (match.score_breakdown?.details || {}).focused_keyword_score;
+        const early = focused?.early?.length ? focused.early : [];
+        const medical = focused?.medical?.length
+          ? focused.medical
+          : focused?.all?.length
+            ? focused.all
+            : sbFocused;
+        const score = focused?.score ?? sbScore;
+        const focusedPts = match.score_breakdown?.components?.focused_keywords;
+        const focusedMax =
+          match.score_breakdown?.component_max?.focused_keywords ?? 15;
+        if (!medical.length && score == null && focusedPts == null) return null;
+        const midLate = medical.filter((t) => !early.includes(t));
+        return (
+          <div className="focused-box">
+            <div className="focused-head">
+              <h3 style={{ margin: 0 }}>Teammate focused-crawler keywords</h3>
+              <div className="badge-row">
+                {score != null ? (
+                  <span className="pill p1" title="Alignment with research crawler vocabulary">
+                    keyword score {score}
+                  </span>
+                ) : null}
+                {focusedPts != null ? (
+                  <span className="pill" title="Points in collaboration potential">
+                    {focusedPts}/{focusedMax} match pts
+                  </span>
+                ) : null}
+              </div>
+            </div>
+            <p className="focused-hint">
+              Same EN/DE medical labels the research crawler tags — used to score and
+              prioritize this company after web enrich.
+            </p>
+            {early.length > 0 && (
+              <>
+                <h4 className="focused-sub">Bern early (queue first)</h4>
+                <ChipList items={early} kind="focused-early" />
+              </>
+            )}
+            {midLate.length > 0 && (
+              <>
+                <h4 className="focused-sub">Other medical / subject tags</h4>
+                <ChipList items={midLate} kind="focused" />
+              </>
+            )}
+            {!early.length && !midLate.length && medical.length > 0 && (
+              <ChipList items={medical} kind="focused" />
+            )}
+          </div>
+        );
+      })()}
+
       <h3>Front keywords (highest relevance)</h3>
       <ChipList items={kw.early} scored={kw.early_relevance} kind="early" />
       <h3>Supporting keywords</h3>
@@ -435,8 +499,8 @@ export default function App() {
     { id: "translate", label: "Translate", detail: "→ English (bridge / Apertus)" },
     { id: "web", label: "Web enrich", detail: "Search by company name → context + keywords" },
     { id: "llm", label: "LLM summary", detail: "ollama:qwen2.5:3b (local) on page/search context" },
-    { id: "extract", label: "Extract", detail: "Name, sector, keywords, needs" },
-    { id: "priority", label: "Prioritize", detail: "Semantic frequency → early front" },
+    { id: "extract", label: "Extract", detail: "Name, sector, focused crawler keywords, needs" },
+    { id: "priority", label: "Prioritize", detail: "Focused + semantic keywords → early front" },
     { id: "match", label: "Match", detail: "Collaboration potential % + judge verdict" },
     { id: "qdrant", label: "Qdrant", detail: "Later-stage vector index" },
     { id: "handoff", label: "Handoff", detail: "Queries for navigator teammate" },
@@ -759,8 +823,26 @@ export default function App() {
                       <strong>{card.company_name}</strong>
                       <div className="meta">
                         {(card.priority || {}).rating} · {(card.priority || {}).stage} ·{" "}
-                        {(card.match || {}).match_rate}% potential · {(card.priority || {}).rating || "—"}
+                        {(card.match || {}).match_rate}% potential
+                        {(card.keywords || {}).focused_score != null
+                          ? ` · focused ${(card.keywords || {}).focused_score}`
+                          : ""}
                       </div>
+                      {((card.keywords || {}).focused_early || (card.keywords || {}).focused || [])
+                        .slice(0, 4).length > 0 && (
+                        <div className="queue-kw">
+                          {((card.keywords || {}).focused_early?.length
+                            ? card.keywords.focused_early
+                            : card.keywords.focused || []
+                          )
+                            .slice(0, 4)
+                            .map((t) => (
+                              <span key={t} className="chip focused-early mini">
+                                {t}
+                              </span>
+                            ))}
+                        </div>
+                      )}
                     </span>
                     <span className={`pill ${((card.priority || {}).rating || "p4").toLowerCase()}`}>
                       {(card.priority || {}).rating || "—"}

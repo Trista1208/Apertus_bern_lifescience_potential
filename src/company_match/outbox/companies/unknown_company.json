@@ -1,19 +1,19 @@
 {
   "schema_version": "2.0",
-  "generated_at": "2026-10-18T15:01:17.244812+00:00",
+  "generated_at": "2026-10-18T18:17:08.257372+00:00",
   "id": "unknown_company",
   "name": "Unknown company",
   "domain": "life_science",
   "in_scope": false,
   "website_info": {
-    "url": null,
-    "source_type": "text",
-    "source_ref": "inline",
-    "meta_title": "",
-    "meta_description": "",
-    "fetched_language": "en",
+    "url": "https://www.dexcom.com/g7-cgm-system?ipc=CH",
+    "source_type": "url",
+    "source_ref": "https://www.dexcom.com/g7-cgm-system?ipc=CH",
+    "meta_title": null,
+    "meta_description": null,
+    "fetched_language": null,
     "translated_to_english": false,
-    "translation_method": "identity",
+    "translation_method": null,
     "web_enrich_method": "",
     "web_sources": [],
     "summary_method": "rules"
@@ -21,28 +21,17 @@
   "profile": {
     "sector": null,
     "subsector": null,
-    "description": "Insufficient public page content to build a reliable summary.",
-    "what_they_do": "Life-science company.",
+    "description": "",
+    "what_they_do": "",
     "keywords": [],
     "needs": [],
     "hq_city": null,
     "hq_country": null,
     "canton_bern_presence": false,
-    "hq_source": {
-      "method": "none",
-      "evidence": null,
-      "url": null,
-      "verified": false
-    },
+    "hq_source": null,
     "bern_sites": [],
     "medical_profile": null,
-    "semantic_profile": {
-      "activity_summary": "No strong life-science semantic focus detected in source text.",
-      "focus_clusters": [],
-      "early_ranked": [],
-      "mid_ranked": [],
-      "late_ranked": []
-    }
+    "semantic_profile": {}
   },
   "match": {
     "match_rate": 0.0,
@@ -87,12 +76,10 @@
     "handoff_note": "Out of life-science scope — do not queue for navigator matching."
   },
   "extraction": {
-    "confidence": 0.35,
+    "confidence": 0.0,
     "method": "rules",
     "warnings": [
-      "LLM profile skipped: source too short.",
-      "Could not confidently detect company name.",
-      "Insufficient life-science evidence in the source — not matched in this domain layer."
+      "Could not read source: Failed to fetch URL: https://www.dexcom.com/g7-cgm-system?ipc=CH (Tunnel connection failed: 403 Forbidden)"
     ]
   },
   "queue": {
@@ -101,5 +88,5 @@
     "priority_stage": "none",
     "priority_score": 0.0
   },
-  "source_text_excerpt": "norvatis"
+  "source_text_excerpt": ""
 }

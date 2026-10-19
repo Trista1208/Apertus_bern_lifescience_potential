@@ -11,44 +11,55 @@ from typing import Any, Iterable
 
 from .semantics import score_source_semantics
 
-# Kept for engine suggested-query bucketing / imports
+# Aligned with teammate focused-crawler MEDICAL / GENERAL labels
+# (see navigator.focused.keywords + company_match.focused_keywords).
 EARLY_KEYWORDS: list[str] = [
-    "cgm",
     "continuous glucose monitoring",
-    "glucose sensor",
-    "glucose sensors",
+    "glucose monitoring",
     "glucose",
-    "biosensing",
-    "biosensor",
+    "biosensors",
     "diabetes",
+    "type 1 diabetes",
+    "type 2 diabetes",
     "insulin",
+    "insulin delivery",
+    "automated insulin delivery",
+    "hypoglycemia",
+    "endocrinology",
+    "metabolic disease",
+    "obesity",
+    "wearable devices",
+    "digital health",
+    "patient monitoring",
+    "clinical validation",
+    "clinical trials",
+    # legacy aliases still seen in company text
+    "cgm",
+    "biosensor",
+    "biosensing",
     "insulin pump",
     "closed loop",
-    "aid",
-    "metabolic monitoring",
-    "wearable sensing",
     "artificial pancreas",
-    "type 1",
-    "type 2",
 ]
 
 MID_KEYWORDS: list[str] = [
+    "medical devices",
     "biomedical engineering",
-    "medical device",
-    "medtech",
     "surgical robotics",
-    "robotic surgery",
-    "surgical navigation",
     "medical imaging",
-    "ai diagnostics",
-    "digital pathology",
-    "clinical trial",
-    "clinical validation",
-    "translational",
-    "digital health",
-    "remote monitoring",
-    "implant",
-    "wearable",
+    "diagnostics",
+    "biomarkers",
+    "molecular diagnostics",
+    "implants",
+    "precision medicine",
+    "regenerative medicine",
+    "immunology",
+    "oncology",
+    "cardiology",
+    "neurology",
+    "clinical research",
+    "medtech",
+    "medical device",
 ]
 
 LATE_KEYWORDS: list[str] = [
@@ -58,11 +69,11 @@ LATE_KEYWORDS: list[str] = [
     "hospital partnership",
     "swiss hub",
     "eu partners",
-    "lab automation",
-    "biologics",
-    "immunology",
+    "artificial intelligence",
+    "machine learning",
     "nutrition",
-    "obesity",
+    "public health",
+    "biologics",
     "cdmo",
     "biomanufacturing",
 ]
@@ -136,6 +147,41 @@ def compute_priority(
     focus = list(profile.get("focus_clusters") or [])
     activity = profile.get("activity_summary") or company.get("what_they_do") or ""
 
+    # Inject teammate focused-crawler keywords (early Bern medical first)
+    from .focused_keywords import annotate_company
+
+    if not company.get("focused_keywords"):
+        annotate_company(company)
+    known = {str(t.get("term") or "").lower() for t in early_rel + mid_rel + late_rel}
+    for term in company.get("focused_early_keywords") or []:
+        tl = str(term).lower().strip()
+        if not tl or tl in known:
+            continue
+        known.add(tl)
+        early_rel.append(
+            {
+                "term": term,
+                "stage": "early",
+                "count": 2,
+                "relevance": 72.0,
+                "cluster_label": "focused-crawler",
+            }
+        )
+    for term in company.get("focused_mid_keywords") or []:
+        tl = str(term).lower().strip()
+        if not tl or tl in known:
+            continue
+        known.add(tl)
+        mid_rel.append(
+            {
+                "term": term,
+                "stage": "mid",
+                "count": 1,
+                "relevance": 48.0,
+                "cluster_label": "focused-crawler",
+            }
+        )
+
     # Merge overlap terms into the front tier by relevance (theme-neutral)
     if overlap_terms:
         known = {t["term"].lower() for t in early_rel + mid_rel + late_rel}
@@ -181,17 +227,21 @@ def compute_priority(
     top_early_rel = float(early_rel[0]["relevance"]) if early_rel else 0.0
     top_cluster_rel = float(focus[0]["relevance"]) if focus else 0.0
 
-    # Score: collaboration % is primary; keywords refine queue order
+    # Score: collaboration % is primary; focused keywords refine queue order
+    focused_score = float(company.get("focused_keyword_score") or 0.0)
     score = (
-        min(55.0, float(match_rate) * 0.55)
-        + min(25.0, top_early_rel * 0.25)
-        + min(10.0, top_cluster_rel * 0.1)
-        + min(10.0, len(early_rel) * 2.0)
+        min(50.0, float(match_rate) * 0.50)
+        + min(20.0, top_early_rel * 0.20)
+        + min(15.0, focused_score * 0.15)
+        + min(8.0, top_cluster_rel * 0.08)
+        + min(7.0, len(early_rel) * 1.5)
     )
     if company.get("canton_bern_presence"):
         score = min(100.0, score + 8.0)
     if str(company.get("hq_country") or "").lower().find("switzerland") >= 0:
         score = min(100.0, score + 5.0)
+    if company.get("focused_early_keywords"):
+        score = min(100.0, score + 4.0)
 
     if match_rate >= 70 or (early_rel and top_early_rel >= 55):
         stage = "early"

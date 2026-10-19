@@ -198,6 +198,10 @@ def _ui_view(batch_dict: dict[str, Any]) -> dict[str, Any]:
                     "early_relevance": match.get("early_relevance") or [],
                     "mid_relevance": match.get("mid_relevance") or [],
                     "late_relevance": match.get("late_relevance") or [],
+                    "focused": company.get("focused_keywords") or [],
+                    "focused_medical": company.get("focused_medical_keywords") or [],
+                    "focused_early": company.get("focused_early_keywords") or [],
+                    "focused_score": company.get("focused_keyword_score"),
                 },
                 "semantics": {
                     "activity_summary": match.get("activity_summary")

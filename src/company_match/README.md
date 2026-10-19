@@ -6,29 +6,24 @@ any language), extracts a structured profile, and scores how well the company
 fits the **Canton of Bern's life-science ecosystem** (University of Bern,
 ARTORG Center, Diabetes Center Berne).
 
-Every result explains its score: a **collaboration potential** from 0 to 100
-(judge verdict + P1–P4 priority), how each point was earned, what would raise
-it, and links to the public pages behind each claim.
+Every result explains its score: a match rate from 0 to 100, how each point was
+earned, what would raise it, and links to the public pages behind each claim.
 
 ```
-company source (PDF / URL / text / name-only, any language)
+company source (PDF / URL / text, any language)
         │
         ▼
- 1. Ingest          extractors.py   PDF, HTML, JSON, or company name
- 2. Translate       i18n.py         → English (bridge; Apertus when configured)
- 3. Web enrich      web_enrich.py   name search (Wikipedia…) → context + keywords + website
- 4. LLM summary     llm_client.py   local Ollama (qwen2.5) by default; Apertus / Kimi optional
-                                    (UI layer view shows the live model label — not Kimi-only)
- 5. Extract         extractors.py   name, sector, needs, HQ, Bern presence
-    Medical profile medical_profile.py   optional Deep LLM (slow JSON); off for fast demos
- 6. Understand      semantics.py    focus clusters by synonym frequency
- 7. Match + score   engine.py + scoring.py   collaboration potential % + judge verdict
- 8. Hand off        company_output.py / handoff.py → outbox/*.json for the navigator
+ 1. Read            extractors.py   text from PDF, HTML, JSON; several companies per file
+ 2. Translate       i18n.py         detect language → English (Apertus first)
+ 3. Extract         extractors.py   name, sector, keywords, needs, HQ, Bern presence
+    Medical profile  medical_profile.py + profile_prompts.py   LLM (Apertus): what they do,
+                                    medical summary, therapeutic areas, indications, modalities…
+                                    each item verified against a verbatim source quote
+ 4. Understand      semantics.py    main themes ("focus clusters") by how often synonyms appear
+ 5. Match           engine.py       overlap with Bern capabilities + teammate Bern records
+ 6. Score           scoring.py      five capped parts that add up to the match rate (0–100)
+ 7. Hand off        company_output.py / handoff.py → outbox/*.json for the navigator backend
 ```
-
-**UI:** `http://127.0.0.1:5173` → API `8088`. Paste a company name or website,
-click **Extract & prioritize** (10–30s typical). Layer view steps come from the
-API and name the **active** LLM (e.g. `ollama:qwen2.5:3b`).
 
 **Scope: life science only.** Medtech, pharma, biotech, biopharma, digital
 health, labtech, CDMO and medical nutrition. Any other company is flagged
@@ -44,19 +39,19 @@ All LLM calls (medical profile, summary, translation, `--llm`) go through
 | Order | Provider | Setup | API key in project? |
 |---|---|---|---|
 | 1 | **Apertus** | `LLM_NAME` / `LLM_BASE_URL` / `LLM_API_KEY` | yes |
-| 2 | **Ollama** (default local `qwen2.5:3b`; free) | Ollama app + `ollama pull qwen2.5:3b` | **no** |
+| 2 | **Ollama** (default local `qwen2.5:7b`; free) | Ollama app + `ollama pull qwen2.5:7b` | **no** |
 | 3 | Kimi API | `KIMI_API_KEY` | yes |
 
 ```bash
-ollama pull qwen2.5:3b        # free local model (recommended; faster demos)
-ollama run qwen2.5:3b "hi"    # quick check
-curl localhost:8088/health    # shows "llm": {"provider": "ollama", "model": "ollama:qwen2.5:3b", ...}
+ollama pull qwen2.5:7b        # free local model (recommended)
+ollama run qwen2.5:7b "hi"    # quick check
+curl localhost:8088/health    # shows "llm": {"provider": "ollama", "model": "ollama:qwen2.5:7b", ...}
 ```
 
 Notes:
-- Prefer a **local** model (`qwen2.5:3b`). Cloud models like `kimi-k2.6:cloud` need
+- Prefer a **local** model (`qwen2.5:7b`). Cloud models like `kimi-k2.6:cloud` need
   paid Ollama credits (HTTP 402); on failure the client auto-retries with a local model.
-  Override via `OLLAMA_MODEL` (e.g. `qwen2.5:7b`). A locally pulled Apertus GGUF also works offline.
+  Override via `OLLAMA_MODEL`. A locally pulled Apertus GGUF also works offline.
 - Thinking text is discarded. Keep `OLLAMA_THINK=0` for local models (faster + better JSON).
 - The challenge requires Apertus v1.5 for the submission. Local Ollama is for demos.
 
@@ -162,16 +157,12 @@ extracted profile that goes in.)
 
 | Part | Max | What earns points |
 |---|---:|---|
-| `capability_overlap` | **40** | Specific overlap with Bern capabilities (+ Bern records when loaded) |
-| `partnership_readiness` | **20** | Stated needs Bern can serve (trials, hospital, university…) |
-| `domain_fit` | **15** | Life-science sector Bern prioritises (pharma / medtech / biotech…) |
-| `swiss_proximity` | **15** | Canton of Bern site, or Swiss / nearby HQ |
-| `signal_depth` | **10** | Usable description, keywords, website |
-| **Total** | **100** | `match_rate` = collaboration potential = sum of the five parts |
-
-Capability overlap is the largest part on purpose: sector and country alone
-must not push every medtech into the 80–95 band. Each fact counts once
-(Bern presence only under `swiss_proximity`).
+| `capability_overlap` | **40** | How specifically the company overlaps with Bern capabilities, backed by matched Bern records |
+| `partnership_readiness` | **20** | Needs the company states that Bern can actually serve (clinical trials, hospital, university, talent…) |
+| `domain_fit` | **15** | The company is in a life-science sector Bern prioritises |
+| `swiss_proximity` | **15** | Site in the Canton of Bern, or a Swiss / nearby-country HQ |
+| `signal_depth` | **10** | The source gave enough to judge: a real description, keywords, a website |
+| **Total** | **100** | `match_rate = sum of the five parts` |
 
 ### How each part is calculated
 
@@ -186,11 +177,11 @@ credit:
 | Short word / acronym | 0.5 | `cgm`, `mri` |
 | Generic term | 0.3 | `sensor`, `diagnostic`, `insulin`, `medtech`, `type 1` |
 
-**Part 1: capability overlap (≤ 40).** Built from capability points
-(fit + breadth + focus + evidence), then scaled into 40:
+**Part 1: capability overlap (≤ 40).** Built from four capability points
+(75 in total), then scaled to 40:
 
 ```
-capability_overlap = 40 × min(1, cap_points / cap_max)
+capability_overlap = 40 × (fit_points + breadth + focus + evidence) / 75
 ```
 
 - **fit_points (≤ 35):** the single best capability. Its term credits are added
@@ -216,7 +207,8 @@ capability_overlap = 40 × min(1, cap_points / cap_max)
     at 34/40 without real Bern data.
 
 **Part 2: partnership readiness (≤ 20).** Needs found in the source (only
-sentences that express intent, like "we are seeking…"):
+sentences that express intent, like "we are seeking…") are valued by how
+concretely Bern can serve them:
 
 | Need | Value |
 |---|---:|
@@ -282,30 +274,34 @@ considers how early the key terms appear in the source.
 
 | Part | Calculation | Points |
 |---|---|---:|
-| capability_overlap | Diabetes/CGM fit + breadth + focus + term evidence (no records) | **~26** |
-| partnership_readiness | clinical validation + university + EU needs | **~18** |
+| capability_overlap | fit_points: best = *Diabetes & CGM* (weight 1.15); continuous glucose monitoring 1.0, metabolic monitoring 1.0, diabetes 0.6, glucose 0.6, biosensing 0.6, cgm 0.5, insulin 0.3, type 1 0.3, type 2 0.3 → raw 5.2 → fit 0.823 → **28.8**. Breadth **3.1**, focus (*Glucose sensing*, 85.7 %) **8.6**, evidence without records **8.0**. Sum 48.5 of 75 → 40 × 48.5 / 75 | **25.8** |
+| partnership_readiness | clinical validation 1.0 + university collaboration 0.9 + EU partners 0.3 = 2.2 → 20 × 2.2 / 2.5 ("studies with academic hospitals" is a plan, not a stated need) | **17.6** |
 | domain_fit | medtech → 15 × 0.95 | **14.2** |
-| swiss_proximity | HQ Zurich, near Bern → 15 × 0.9 | **13.5** |
-| signal_depth | rich description + keywords + website | **10.0** |
-| **Match rate** | | **~81 → Strong potential** |
+| swiss_proximity | HQ Zurich, Switzerland, near Bern, no Bern site → 15 × 0.9 | **13.5** |
+| signal_depth | description 213 characters 0.45 + 13 keywords 0.35 + website 0.2 → 10 × 1.0 | **10.0** |
+| **Match rate** | | **81.1 → Strong potential** |
 
-Exact numbers: re-run
-`python -m company_match ingest --file src/company_match/samples/two_companies.txt -v`.
+The output's `why_not_higher` explains the gap:
+*"Swiss company but no Canton of Bern site yet."* and
+*"No verified Bern expert/unit records matched yet — capability overlap capped
+at 34/40 until teammate records are loaded."*
+With the example Bern records loaded, capability overlap rises to 31.5 and the
+match rate to **86.8**.
 
 ### Results on the samples
 
-Offline (no LLM, no web search), after the weight rebalance:
+Offline (no LLM, no web search). The last column has the example Bern records
+(`_EXAMPLE_records.json`) loaded.
 
-| Company | Profile | Match rate |
-|---|---|---:|
-| Bern Biosense Labs | glucose sensors, HQ in Burgdorf (BE), 3 needs | 82.6 |
-| Helix Glucose | CGM, Zurich, 3 needs | 81.1 |
-| Alpine Surgical Systems | surgical navigation, Munich, 3 needs | 70.3 |
-| ARKRAY (Japanese source) | blood-glucose diagnostics, Japan, no needs | 46.1 |
-| One-line "wearable sensors" pitch | almost no detail | 25.9 |
-| Fintech company | not life science | 0.0 |
-
-With teammate Bern records loaded, scores rise ~5 points.
+| Company | Profile | Match rate | With Bern records |
+|---|---|---:|---:|
+| Bern Biosense Labs | glucose sensors, HQ in Burgdorf (BE), 3 needs | 82.6 | 88.6 |
+| Helix Glucose | CGM, Zurich, 3 needs | 81.1 | 86.8 |
+| Alpine Surgical Systems | surgical navigation, Munich, 3 needs | 70.3 | 76.1 |
+| ARKRAY (Japanese source) | blood-glucose diagnostics, Japan, no needs | 46.1 | 52.1 |
+| Terumo (Japanese source) | medical devices, little detail | 32.9 | 38.2 |
+| One-line "wearable sensors" pitch | almost no detail | 25.9 | 29.8 |
+| Fintech company | not life science | 0.0 | 0.0 |
 
 ### Bern record matching (teammate data)
 
@@ -370,10 +366,7 @@ Keep the five maximums adding up to 100 so the match rate stays a percentage.
 ```bash
 export PYTHONPATH=src
 pip install -r src/company_match/requirements.txt
-cp .env.example .env
-# Demo LLM (recommended): install Ollama, then:
-#   ollama pull qwen2.5:3b
-# Submission LLM: set LLM_NAME / LLM_BASE_URL / LLM_API_KEY (Apertus)
+cp .env.example .env          # set LLM_NAME / LLM_BASE_URL / LLM_API_KEY (Apertus)
 
 # Command line
 python -m company_match ingest --file src/company_match/samples/two_companies.txt -v
@@ -382,8 +375,7 @@ python -m company_match bern-records -q "glucose sensors"     # check teammate r
 
 # API + UI
 uvicorn company_match.api:app --app-dir src --port 8088
-cd src/company_match/web && npm install && npm run dev     # http://127.0.0.1:5173
-curl -s localhost:8088/health   # confirms provider, e.g. ollama:qwen2.5:3b
+cd UI && npm install && npm run dev     # http://localhost:5173
 ```
 
 | Endpoint | Purpose |
@@ -398,11 +390,8 @@ curl -s localhost:8088/health   # confirms provider, e.g. ollama:qwen2.5:3b
 
 | Variable | Default | Effect |
 |---|---|---|
-| `OLLAMA_MODEL` | `qwen2.5:3b` | Local demo LLM (no API key; faster than 7b) |
-| `LLM_NAME`, `LLM_BASE_URL`, `LLM_API_KEY` | – | Apertus (submission): translation / summaries / profile |
-| `LLM_PROFILE_NAME_SEED` | `0` | `1` = heavy JSON medical profile on name-only (slow) |
-| `FAST_WEB_SNIPPET` | `0` | `1` = name-only uses Wikipedia snippet, skip LLM rewrite |
-| `WEB_ENRICH` | `0` | `1` = always web-search by name (name-only seeds always search) |
+| `LLM_NAME`, `LLM_BASE_URL`, `LLM_API_KEY` | – | Apertus: translation, summaries, optional `--llm` extraction |
+| `WEB_ENRICH` | `0` | `1` = also search the web by company name (no longer offline) |
 | `BERN_RECORDS_PATH` | `data/bern_records/` | teammate records file or folder |
 | `ALLOW_LOCAL_PATHS` | `0` | `1` = `POST /ingest` may read server file paths (local dev only) |
 | `ALLOW_PRIVATE_URLS` | `0` | `1` = allow fetching localhost / private-network URLs |
@@ -434,6 +423,6 @@ Teammates only read the files; they don't need to import this package.
 | `bern_records.py` | load, check and match teammate Bern records |
 | `priority.py` | P1–P4 order of which companies the navigator should look at first |
 | `company_output.py`, `handoff.py` | JSON / Markdown output for the backend |
-| `api.py`, `cli.py`, `web/` | HTTP API, command line, React UI |
+| `api.py`, `cli.py` | HTTP API, command line (React UI lives in `UI/` at the repo root) |
 | `data/bern_expertise.json` | Bern capability taxonomy (keywords, synonyms, units, weights) |
 | `data/bern_records/` | teammate records (example format in `_EXAMPLE_records.json`) |

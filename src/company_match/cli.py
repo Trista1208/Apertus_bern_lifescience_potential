@@ -41,6 +41,14 @@ def _print_result(result, verbose: bool = True) -> None:
         print(f"Run first:   {', '.join(result.teammate_queries_early)}")
     if result.teammate_queries_later:
         print(f"Run later:   {', '.join(result.teammate_queries_later[:8])}")
+    focused = (result.input_summary or {}).get("focused_keywords") or []
+    focused_score = (result.input_summary or {}).get("focused_keyword_score")
+    if focused:
+        print(f"Focused KW:  {', '.join(focused[:10])}" + (f" (score={focused_score})" if focused_score is not None else ""))
+    sb = result.score_breakdown or {}
+    if isinstance(sb, dict) and sb.get("components", {}).get("focused_keywords") is not None:
+        mx = (sb.get("component_max") or sb.get("maxima") or {}).get("focused_keywords", 15)
+        print(f"Focused pts: {sb['components']['focused_keywords']}/{mx}")
     if result.handoff_note:
         print(f"Handoff:     {result.handoff_note}")
     print("\nMatch reasons:")
@@ -332,6 +340,42 @@ def cmd_bern_records(args: argparse.Namespace) -> int:
     return 1 if rs.issues and args.strict else 0
 
 
+def cmd_import_focused(args: argparse.Namespace) -> int:
+    """Import navigator focused-crawler highlights into Bern records."""
+    from company_match.focused_import import import_focused_export
+
+    dest, n = import_focused_export(args.export, out=args.out, min_score=args.min_score)
+    print(f"Imported {n} focused findings → {dest}")
+    print("Company match will load them via data/bern_records/ on the next run.")
+    return 0
+
+
+def cmd_focused_keywords(args: argparse.Namespace) -> int:
+    """Show teammate focused-crawler vocabulary, or tag a text blob."""
+    from company_match.focused_keywords import tag_text, vocabulary_summary
+
+    if args.text:
+        tagged = tag_text(args.text, title=args.title or "")
+        if args.json:
+            print(json.dumps(tagged, indent=2, ensure_ascii=False))
+        else:
+            print(f"Score:   {tagged['score']}  (link_bonus={tagged['link_bonus']})")
+            print(f"Early:   {', '.join(tagged['early']) or '-'}")
+            print(f"Medical: {', '.join(tagged['medical']) or '-'}")
+            print(f"General: {', '.join(tagged['general']) or '-'}")
+        return 0
+
+    summary = vocabulary_summary()
+    if args.json:
+        print(json.dumps(summary, indent=2, ensure_ascii=False))
+    else:
+        print(f"Source:  {summary['source']}")
+        print(f"Medical labels: {summary['medical_labels']}  |  general: {summary['general_labels']}")
+        print("Bern early (queue first):")
+        print("  " + ", ".join(summary["bern_early"]))
+    return 0
+
+
 def cmd_llm_bench(args: argparse.Namespace) -> int:
     """Time the instant pass and the AI pass on one source (default: a sample pitch)."""
     import time
@@ -466,6 +510,25 @@ def build_parser() -> argparse.ArgumentParser:
     br.add_argument("--limit", type=int, default=8)
     br.add_argument("--strict", action="store_true", help="Exit 1 if any record is invalid (CI)")
     br.set_defaults(func=cmd_bern_records)
+
+    fi = sub.add_parser(
+        "import-focused",
+        help="Import navigator focused-crawl highlights JSON into data/bern_records/",
+    )
+    fi.add_argument("export", help="Path to highlights export (from `python -m navigator highlights --out …`)")
+    fi.add_argument("--out", help="Destination JSON (default: data/bern_records/focused_highlights.json)")
+    fi.add_argument("--min-score", type=int, default=2, choices=(2, 3, 4),
+                    help="Minimum focused priority score to import")
+    fi.set_defaults(func=cmd_import_focused)
+
+    fk = sub.add_parser(
+        "focused-keywords",
+        help="Show teammate focused-crawler keyword vocabulary, or tag text",
+    )
+    fk.add_argument("--text", "-t", help="Text to tag with focused keywords")
+    fk.add_argument("--title", default="", help="Optional title for tagging")
+    fk.add_argument("--json", action="store_true")
+    fk.set_defaults(func=cmd_focused_keywords)
 
     preview_p = sub.add_parser("preview", help="Preview raw text extracted from a source")
     preview_p.add_argument("source", help="Path, URL, or text")

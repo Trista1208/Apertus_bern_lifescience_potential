@@ -261,11 +261,18 @@ def match_company(
     capabilities: Iterable[dict[str, Any]],
 ) -> CompanyMatchResult:
     """Score one company against Bern life-science capabilities only."""
+    from .focused_keywords import annotate_company
+
+    if not company.get("focused_keywords"):
+        annotate_company(company)
+
     in_scope, scope_reason, scope_confidence = is_life_science_company(company)
     summary = {
         "sector": company.get("sector"),
         "subsector": company.get("subsector"),
         "keywords": company.get("keywords") or [],
+        "focused_keywords": company.get("focused_keywords") or [],
+        "focused_keyword_score": company.get("focused_keyword_score"),
         "needs": company.get("needs") or [],
         "canton_bern_presence": bool(company.get("canton_bern_presence")),
         "domain": DOMAIN,

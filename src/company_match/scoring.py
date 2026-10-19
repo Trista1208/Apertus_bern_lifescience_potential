@@ -6,7 +6,8 @@ component; domain fit and Swiss proximity matter for the judge.
 
     component                 max   what earns it
     ------------------------  ----  --------------------------------------------
-    capability_overlap         40   specific overlap with Bern capabilities + evidence
+    capability_overlap         25   specific overlap with Bern capabilities + evidence
+    focused_keywords           15   teammate focused-crawler medical keyword fit
     partnership_readiness      20   stated needs Bern can serve (trials, hospital…)
     domain_fit                 15   in-scope life-science sector (pharma, medtech…)
     swiss_proximity            15   Canton of Bern site / Swiss HQ / nearby country
@@ -34,7 +35,8 @@ WEIGHTS_PATH = DATA_DIR / "scoring_weights.json"
 
 DEFAULT_WEIGHTS: dict[str, float] = {
     # Judge-facing collaboration potential (sums to 100)
-    "capability_overlap": 40.0,
+    "capability_overlap": 25.0,
+    "focused_keywords": 15.0,
     "partnership_readiness": 20.0,
     "domain_fit": 15.0,
     "swiss_proximity": 15.0,
@@ -272,6 +274,20 @@ def score_company(
     details["capability_points"] = round(cap_points, 1)
     details["capability_points_max"] = round(cap_max, 1)
 
+    # Teammate focused-crawler vocabulary (diabetes/CGM/medical subject tags)
+    from .focused_keywords import focused_score_ratio
+
+    focused_ratio = focused_score_ratio(company)
+    focused_keywords = w["focused_keywords"] * focused_ratio
+    details["focused_keyword_score"] = company.get("focused_keyword_score")
+    details["focused_keywords"] = list(company.get("focused_keywords") or [])[:12]
+    details["focused_early_keywords"] = list(company.get("focused_early_keywords") or [])[:8]
+    if focused_ratio < 0.25:
+        tips.append(
+            "Few teammate focused-crawler medical keywords matched — "
+            "add diabetes/CGM/device detail to raise focused_keywords score."
+        )
+
     partnership_readiness = w["partnership_readiness"] * min(1.0, need_raw / NEEDS_SATURATION)
 
     components = {
@@ -279,6 +295,7 @@ def score_company(
         "swiss_proximity": round(swiss_proximity, 1),
         "signal_depth": round(signal_depth, 1),
         "capability_overlap": round(capability_overlap, 1),
+        "focused_keywords": round(focused_keywords, 1),
         "partnership_readiness": round(partnership_readiness, 1),
     }
     maxima = {k: w[k] for k in components}
@@ -325,6 +342,7 @@ def formula_text() -> str:
     w = load_weights()
     return (
         f"collaboration_potential = capability_overlap(≤{w['capability_overlap']:.0f}) "
+        f"+ focused_keywords(≤{w['focused_keywords']:.0f}) "
         f"+ partnership_readiness(≤{w['partnership_readiness']:.0f}) "
         f"+ domain_fit(≤{w['domain_fit']:.0f}) "
         f"+ swiss_proximity(≤{w['swiss_proximity']:.0f}) "

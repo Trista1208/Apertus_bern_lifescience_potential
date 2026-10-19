@@ -1,6 +1,6 @@
 {
   "schema_version": "1.1",
-  "generated_at": "2026-10-18T17:28:56.380259+00:00",
+  "generated_at": "2026-10-18T23:11:11.291144+00:00",
   "domain": "life_science",
   "domain_label": "Life Science",
   "owner_layer": "company_match",
@@ -11,17 +11,19 @@
     {
       "queue_position": 1,
       "company_name": "Novartis",
-      "priority_rating": "P3",
-      "priority_stage": "late",
-      "priority_score": 25.4,
-      "match_rate": 37.0,
+      "priority_rating": "P4",
+      "priority_stage": "mid",
+      "priority_score": 29.8,
+      "match_rate": 26.8,
       "run_first": [
+        "cardiology",
+        "oncology",
         "pharmaceutical",
         "pharma"
       ],
       "run_later": [],
       "bern_units": [],
-      "handoff_note": "P3 — collaboration potential 37% (add needs / product detail to raise score).",
+      "handoff_note": "P4 / front relevance — strongest keyword 'cardiology' (48.0% relevance). Collaboration potential 27%.",
       "source_ref": "inline"
     }
   ],
@@ -31,49 +33,56 @@
       "company_name": "Novartis",
       "in_scope": true,
       "domain": "life_science",
-      "priority_rating": "P3",
-      "priority_stage": "late",
-      "priority_score": 25.4,
-      "match_rate": 37.0,
-      "tier": "Possible — need more signal",
+      "priority_rating": "P4",
+      "priority_stage": "mid",
+      "priority_score": 29.8,
+      "match_rate": 26.8,
+      "tier": "Weak — low priority",
       "run_first": [
+        "cardiology",
+        "oncology",
         "pharmaceutical",
         "pharma"
       ],
       "run_later": [],
-      "early_keywords": [],
+      "early_keywords": [
+        "cardiology",
+        "oncology"
+      ],
       "mid_keywords": [],
       "late_keywords": [],
       "bern_units": [],
       "reasons": [
         "Domain scope: Life Science only (sectors: biopharma, biotech, cdmo, digital_health, labtech, medtech, nutrition, pharma). Sources: University of Bern, ARTORG, Diabetes Center Berne.",
         "Sector 'pharma' is within the life-science domain.",
-        "P3 — collaboration potential 37% (add needs / product detail to raise score).",
-        "Possible — gather more needs / capability detail (37.0%).",
-        "Collaboration potential 37.0% = domain fit 15.0/15 + swiss proximity 13.5/15 + signal depth 8.5/10 + capability overlap 0.0/40 + partnership readiness 0.0/20.",
+        "P4 / front relevance — strongest keyword 'cardiology' (48.0% relevance). Collaboration potential 27%.",
+        "Weak — low collaboration priority for now (26.8%).",
+        "Collaboration potential 26.8% = domain fit 15.0/15 + swiss proximity 0.0/15 + signal depth 8.0/10 + capability overlap 0.0/25 + focused keywords 3.8/15 + partnership readiness 0.0/20.",
         "No Canton of Bern presence detected — partnership readiness would rise with a local site.",
         "Sector 'pharma' maps to Bern's life-science value proposition.",
         "In life-science domain, but no reliable overlap with indexed Bern capabilities yet — collect more keywords/needs or mark as insufficient source signal.",
-        "Swiss company but no Canton of Bern site yet.",
+        "HQ outside Switzerland — lower proximity score.",
         "No stated partnership needs (clinical validation, university, talent…)."
       ],
       "score_breakdown": {
         "model": "collaboration-v1",
         "meaning": "Collaboration potential for Bern life-science outreach (0–100).",
-        "verdict": "possible",
-        "verdict_label": "Possible — gather more needs / capability detail",
+        "verdict": "weak",
+        "verdict_label": "Weak — low collaboration priority for now",
         "components": {
           "domain_fit": 15.0,
-          "swiss_proximity": 13.5,
-          "signal_depth": 8.5,
+          "swiss_proximity": 0.0,
+          "signal_depth": 8.0,
           "capability_overlap": 0.0,
+          "focused_keywords": 3.8,
           "partnership_readiness": 0.0
         },
         "component_max": {
           "domain_fit": 15.0,
           "swiss_proximity": 15.0,
           "signal_depth": 10.0,
-          "capability_overlap": 40.0,
+          "capability_overlap": 25.0,
+          "focused_keywords": 15.0,
           "partnership_readiness": 20.0
         },
         "details": {
@@ -91,52 +100,61 @@
           },
           "capability_points": 0.0,
           "capability_points_max": 75.0,
-          "verdict": "possible",
-          "verdict_label": "Possible — gather more needs / capability detail",
+          "focused_keyword_score": 25.0,
+          "focused_keywords": [
+            "cardiology",
+            "oncology"
+          ],
+          "focused_early_keywords": [],
+          "verdict": "weak",
+          "verdict_label": "Weak — low collaboration priority for now",
           "score_meaning": "Collaboration potential for Canton of Bern life-science outreach (0–100)."
         },
-        "match_rate": 37.0,
-        "formula": "collaboration_potential = capability_overlap(≤40) + partnership_readiness(≤20) + domain_fit(≤15) + swiss_proximity(≤15) + signal_depth(≤10).",
+        "match_rate": 26.8,
+        "formula": "collaboration_potential = capability_overlap(≤25) + focused_keywords(≤15) + partnership_readiness(≤20) + domain_fit(≤15) + swiss_proximity(≤15) + signal_depth(≤10).",
         "capability_hits": [],
         "bern_records_loaded": 0,
         "why_not_higher": [
-          "Swiss company but no Canton of Bern site yet.",
+          "HQ outside Switzerland — lower proximity score.",
           "No stated partnership needs (clinical validation, university, talent…).",
           "Few specific overlaps with indexed Bern capabilities — add product/tech detail.",
-          "No verified Bern expert/unit records matched yet — capability overlap capped at 34/40 until teammate records are loaded."
+          "No verified Bern expert/unit records matched yet — capability overlap capped at 21/25 until teammate records are loaded.",
+          "No company website on file."
         ]
       },
       "reasoning": {
-        "summary": "37.0% collaboration potential — Possible — gather more needs / capability detail. Top capability: none yet (domain/Swiss proximity still score).",
+        "summary": "26.8% collaboration potential — Weak — low collaboration priority for now. Top capability: none yet (domain/Swiss proximity still score).",
         "reasons": [
           "Domain scope: Life Science only (sectors: biopharma, biotech, cdmo, digital_health, labtech, medtech, nutrition, pharma). Sources: University of Bern, ARTORG, Diabetes Center Berne.",
           "Sector 'pharma' is within the life-science domain.",
-          "P3 — collaboration potential 37% (add needs / product detail to raise score).",
-          "Possible — gather more needs / capability detail (37.0%).",
-          "Collaboration potential 37.0% = domain fit 15.0/15 + swiss proximity 13.5/15 + signal depth 8.5/10 + capability overlap 0.0/40 + partnership readiness 0.0/20.",
+          "P4 / front relevance — strongest keyword 'cardiology' (48.0% relevance). Collaboration potential 27%.",
+          "Weak — low collaboration priority for now (26.8%).",
+          "Collaboration potential 26.8% = domain fit 15.0/15 + swiss proximity 0.0/15 + signal depth 8.0/10 + capability overlap 0.0/25 + focused keywords 3.8/15 + partnership readiness 0.0/20.",
           "No Canton of Bern presence detected — partnership readiness would rise with a local site.",
           "Sector 'pharma' maps to Bern's life-science value proposition.",
           "In life-science domain, but no reliable overlap with indexed Bern capabilities yet — collect more keywords/needs or mark as insufficient source signal.",
-          "Swiss company but no Canton of Bern site yet.",
+          "HQ outside Switzerland — lower proximity score.",
           "No stated partnership needs (clinical validation, university, talent…)."
         ],
         "score_breakdown": {
           "model": "collaboration-v1",
           "meaning": "Collaboration potential for Bern life-science outreach (0–100).",
-          "verdict": "possible",
-          "verdict_label": "Possible — gather more needs / capability detail",
+          "verdict": "weak",
+          "verdict_label": "Weak — low collaboration priority for now",
           "components": {
             "domain_fit": 15.0,
-            "swiss_proximity": 13.5,
-            "signal_depth": 8.5,
+            "swiss_proximity": 0.0,
+            "signal_depth": 8.0,
             "capability_overlap": 0.0,
+            "focused_keywords": 3.8,
             "partnership_readiness": 0.0
           },
           "component_max": {
             "domain_fit": 15.0,
             "swiss_proximity": 15.0,
             "signal_depth": 10.0,
-            "capability_overlap": 40.0,
+            "capability_overlap": 25.0,
+            "focused_keywords": 15.0,
             "partnership_readiness": 20.0
           },
           "details": {
@@ -154,19 +172,26 @@
             },
             "capability_points": 0.0,
             "capability_points_max": 75.0,
-            "verdict": "possible",
-            "verdict_label": "Possible — gather more needs / capability detail",
+            "focused_keyword_score": 25.0,
+            "focused_keywords": [
+              "cardiology",
+              "oncology"
+            ],
+            "focused_early_keywords": [],
+            "verdict": "weak",
+            "verdict_label": "Weak — low collaboration priority for now",
             "score_meaning": "Collaboration potential for Canton of Bern life-science outreach (0–100)."
           },
-          "match_rate": 37.0,
-          "formula": "collaboration_potential = capability_overlap(≤40) + partnership_readiness(≤20) + domain_fit(≤15) + swiss_proximity(≤15) + signal_depth(≤10).",
+          "match_rate": 26.8,
+          "formula": "collaboration_potential = capability_overlap(≤25) + focused_keywords(≤15) + partnership_readiness(≤20) + domain_fit(≤15) + swiss_proximity(≤15) + signal_depth(≤10).",
           "capability_hits": [],
           "bern_records_loaded": 0,
           "why_not_higher": [
-            "Swiss company but no Canton of Bern site yet.",
+            "HQ outside Switzerland — lower proximity score.",
             "No stated partnership needs (clinical validation, university, talent…).",
             "Few specific overlaps with indexed Bern capabilities — add product/tech detail.",
-            "No verified Bern expert/unit records matched yet — capability overlap capped at 34/40 until teammate records are loaded."
+            "No verified Bern expert/unit records matched yet — capability overlap capped at 21/25 until teammate records are loaded.",
+            "No company website on file."
           ]
         },
         "focus_synergy": [],
@@ -176,9 +201,11 @@
         "bern_units": [],
         "bern_matches": [],
         "backend_hints": {
-          "priority_rating": "P3",
-          "priority_stage": "late",
+          "priority_rating": "P4",
+          "priority_stage": "mid",
           "run_first": [
+            "cardiology",
+            "oncology",
             "pharmaceutical",
             "pharma"
           ],
@@ -186,32 +213,31 @@
           "capability_ids": []
         }
       },
-      "handoff_note": "P3 — collaboration potential 37% (add needs / product detail to raise score).",
+      "handoff_note": "P4 / front relevance — strongest keyword 'cardiology' (48.0% relevance). Collaboration potential 27%.",
       "source_type": "text",
       "source_ref": "inline",
       "website_info": {
-        "url": "http://www.novartis.com",
+        "url": null,
         "meta_title": "",
-        "meta_description": "Novartis AG is a Swiss multinational pharmaceutical corporation based in Basel, Switzerland. Novartis is one of the largest pharmaceutical companies in the world and was the eighth largest by revenue in 2024.",
-        "web_enrich_method": "wikipedia+snippet",
-        "web_sources": [
-          "http://www.novartis.com/about-novartis/company-history/index.shtml",
-          "https://en.wikipedia.org/wiki/Novartis"
-        ],
-        "summary_method": "ollama:qwen2.5:3b"
+        "meta_description": "Novartis is a multinational pharmaceutical company headquartered in Switzerland. It focuses on developing and producing a wide range of therapies, including treatments for eye diseases, cardiovascular conditions, and oncology.",
+        "web_enrich_method": "llm-knowledge:ollama:qwen2.5:7b+snippet",
+        "web_sources": [],
+        "summary_method": "ollama:qwen2.5:7b"
       },
       "extracted": {
         "sector": "pharma",
         "subsector": null,
         "keywords": [
+          "cardiology",
+          "oncology",
           "pharmaceutical",
           "pharma"
         ],
         "needs": [],
-        "website": "http://www.novartis.com",
-        "hq_city": "Basel",
-        "hq_country": "Switzerland",
-        "description": "It is one of the largest pharmaceutical companies in the world and was the eighth largest by revenue in 2024. Novartis focuses on developing and manufacturing drugs for various diseases including cancer, cardiovascular conditions, and infectious diseases."
+        "website": null,
+        "hq_city": null,
+        "hq_country": null,
+        "description": "It focuses on developing and producing a wide range of therapies, including treatments for eye diseases, cardiovascular conditions, and oncology."
       }
     }
   ]
